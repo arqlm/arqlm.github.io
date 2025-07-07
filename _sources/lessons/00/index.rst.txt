@@ -5,6 +5,6 @@
 .. toctree::
    :maxdepth: 1
 
-   Configuring your computer <setting_up_your_computer.ipynb>
-   Introduction to JupyterLab <intro_to_jupyterlab.ipynb>
+   Configuring your computer <Untitled2.ipynb>
    Introduction to LaTeX <GeostatsPy_categorical_indictor_kriging.ipynb>
+

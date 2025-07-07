@@ -3,46 +3,46 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="es" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introduction to JupyterLab &mdash; documentación de bebi103 - </title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+  <title>Introduction to JupyterLab &mdash; documentación de MIN 431 - Evaluacion de Yacimientos - </title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-      <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=720011df" />
+      <link rel="stylesheet" type="text/css" href="../../_static/./custom.css?v=905461ed" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=e2bb6099"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
       <script src="../../_static/doctools.js?v=9a2dae69"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f281be69"></script>
-      <script src="../../_static/translations.js?v=efdbd0b9"></script>
+      <script src="../../_static/translations.js?v=f85f4cfb"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../_static/require.min.js?v=8a87acde"></script>
+      <script src="../../_static/hide_code_cells.js?v=51dbf054"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
-    <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="GeostatsPy Well-documented Demonstration Workflows" href="GeostatsPy_categorical_indictor_kriging.html" />
-    <link rel="prev" title="Setting up computing resources" href="setting_up_your_computer.html" /> 
+    <link rel="search" title="Búsqueda" href="../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search"  style="background: #F0F0F0" >
+        <div class="wy-side-nav-search" >
 
           
           
-          <a href="../../index.html">
-            
-              <img src="../../_static/logo.png" class="logo" alt="Logotipo"/>
+          <a href="../../index.html" class="icon icon-home">
+            MIN 431 - Evaluacion de Yacimientos
+              <img src="../../_static/logoEvYac2.png" class="logo" alt="Logotipo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -53,33 +53,8 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Lessons</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">0. Preparing computing resources for the course</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="setting_up_your_computer.html">Configuring your computer</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction to JupyterLab</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#The-Python-interpreter">The Python interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#%22Hello,-world.%22-and-the-print()-function">«Hello, world.» and the print() function</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#.py-files">.py files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Jupyter">Jupyter</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#What-is-Jupyter?">What is Jupyter?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Why-Jupyter-notebooks?">Why Jupyter notebooks?</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Launching-a-Jupyter-notebook">Launching a Jupyter notebook</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Cells">Cells</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Code-cells">Code cells</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Display-of-graphics">Display of graphics</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Proper-formatting-of-cells">Proper formatting of cells</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Best-practices-for-code-cells">Best practices for code cells</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Markdown-cells">Markdown cells</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Quick-keys">Quick keys</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#Rendering-of-notebooks-as-HTML">Rendering of notebooks as HTML</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Computing-environment">Computing environment</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="GeostatsPy_categorical_indictor_kriging.html">Introduction to LaTeX</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">0. Preparing computing resources for the course</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Schedule</span></p>
 <ul>
@@ -108,9 +83,9 @@
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #F0F0F0" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">bebi103</a>
+          <a href="../../index.html">MIN 431 - Evaluacion de Yacimientos</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -118,11 +93,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="index.html">0. Preparing computing resources for the course</a></li>
       <li class="breadcrumb-item active">Introduction to JupyterLab</li>
       <li class="wy-breadcrumbs-aside">
               <!-- User defined GitHub URL -->
-              <a href="https://github.com/pyro-ppl/numpyro/blob/master/notebooks/source/intro_to_jupyterlab.ipynb" class="fa fa-github"> Editar en GitHub</a>
+              <a href="https://github.com/pyro-ppl/numpyro/blob/master/notebooks/source/lessons00intro_to_jupyterlab.ipynb" class="fa fa-github"> Editar en GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -941,17 +915,12 @@ jupyterlab: 4.0.6
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
-        <a href="setting_up_your_computer.html" class="btn btn-neutral float-left" title="Setting up computing resources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-        <a href="GeostatsPy_categorical_indictor_kriging.html" class="btn btn-neutral float-right" title="GeostatsPy Well-documented Demonstration Workflows" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-      <span class="lastupdated">Actualizado por última vez en 04 de julio de 2025.
-      </span></p>
+    <p>&#169; Derechos de autor 2025, Alvaro I. Riquelme.</p>
   </div>
 
    
@@ -963,7 +932,7 @@ jupyterlab: 4.0.6
   </div>
   <script>
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script> 
 
