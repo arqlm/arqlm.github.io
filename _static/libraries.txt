@@ -24,7 +24,6 @@ packaging
 pandas
 pandoc
 param
-pip
 pytest
 scikit-image
 scikit-learn
