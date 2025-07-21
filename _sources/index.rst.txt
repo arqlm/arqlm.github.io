@@ -1,0 +1,26 @@
+MIN 431: Evaluación de Yacimientos
+=====================================================================
+
+La evaluación de los recursos y reservas de un yacimiento es una disciplina altamente cuantitativa,
+y los profesionales dedicados a ésta deben contar con las competencias necesarias para analizar
+cuantitativamente la información disponible. Este curso toma una enfoque práctico para desarrollar
+estas competencias. Juntos, analizaremos información real tomada de yacimientos. Aprenderemos a
+cómo organizar, analizar y generar nueva información gráfica e interactiva a partir de los
+datos geológicos recibidos, útil para la toma de decisiones sobre inversion y planificación.
+
+Cuerpo docente
+------
+
+- Instructor
+
+   + Álvaro Riquelme (alvaro.riquelme@uai.cl)
+
+- Ayudante
+
+   + Por definir
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Clases
+
+   lessons/01/01_EDA.ipynb
