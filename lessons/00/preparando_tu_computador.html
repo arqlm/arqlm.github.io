@@ -73,7 +73,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#Configuración-de-un-entorno-conda">Configuración de un entorno conda</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Lanzar-JupyterLab">Lanzar JupyterLab</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Verificando-tu-distribución">Verificando tu distribución</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Entorno-computacional">Entorno computacional</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="intro_to_jupyterlab.html">Introducción a Jupyter</a></li>
@@ -119,20 +118,7 @@
   </span>
 </div><section id="Configuración-de-recursos-computacionales">
 <h1>Configuración de recursos computacionales<a class="headerlink" href="#Configuración-de-recursos-computacionales" title="Link to this heading"></a></h1>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configuración para Colab ------------------</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span><span class="o">,</span><span class="w"> </span><span class="nn">subprocess</span>
-<span class="k">if</span> <span class="s2">&quot;google.colab&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
-    <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;pip install --upgrade watermark&quot;</span>
-    <span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
-    <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<p>En esta lección configurarás un entorno de computación en Python para computación científica en tu propio computador y también aprenderás un poco sobre Google Colab, un servicio en la nube para ejecutar notebooks de Jupyter.</p>
+<p>En esta sección configurarás un entorno de computación en Python para computación científica en tu propio computador y también aprenderás un poco sobre Google Colab, un servicio en la nube para ejecutar notebooks de Jupyter.</p>
 <p>Es ventajoso aprender a configurar una distribución de Python y gestionar paquetes en tu propio equipo, ya que cada persona puede tener diferentes necesidades. Dicho esto, <a class="reference external" href="https://colab.research.google.com/">Google Colab</a> es un recurso gratuito muy útil para ejecutar notebooks de Jupyter en los computadores de Google sin necesidad de instalaciones locales.</p>
 <section id="Configuración-de-Google-Colab">
 <h2>Configuración de Google Colab<a class="headerlink" href="#Configuración-de-Google-Colab" title="Link to this heading"></a></h2>
@@ -173,7 +159,7 @@ ejemplo más importante algunas aplicaciones de dashboard.</p>
 <section id="Windows">
 <h3>Windows<a class="headerlink" href="#Windows" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
-<li><p>Ve a la <a class="reference external" href="https://www.anaconda.com/products/distribution#download-section">página oficial de descargas de Anaconda</a>.</p></li>
+<li><p>Ve a la <a class="reference external" href="https://www.anaconda.com/products/distribution#download-section">página oficial de descargas de Anaconda</a>. Puedes saltarte el registro presionando en <em>Skip registration</em></p></li>
 <li><p>Haz clic en el botón de descarga para Windows (elige la versión recomendada para tu sistema, normalmente de 64 bits).</p></li>
 <li><p>Una vez descargado el instalador, haz doble clic en el archivo <code class="docutils literal notranslate"><span class="pre">.exe</span></code> para iniciar la instalación.</p></li>
 <li><p>Sigue las instrucciones del instalador. Se recomienda dejar las opciones por defecto.</p></li>
@@ -183,7 +169,7 @@ ejemplo más importante algunas aplicaciones de dashboard.</p>
 <section id="macOS">
 <h3>macOS<a class="headerlink" href="#macOS" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
-<li><p>Ve a la <a class="reference external" href="https://www.anaconda.com/products/distribution#download-section">página oficial de descargas de Anaconda</a>.</p></li>
+<li><p>Ve a la <a class="reference external" href="https://www.anaconda.com/products/distribution#download-section">página oficial de descargas de Anaconda</a>. Puedes saltarte el registro presionando en <em>Skip registration</em></p></li>
 <li><p>Haz clic en el botón de descarga para macOS (elige la versión recomendada para tu sistema, Apple Silicon o Intel según corresponda).</p></li>
 <li><p>Una vez descargado el archivo <code class="docutils literal notranslate"><span class="pre">.pkg</span></code>, haz doble clic para iniciar la instalación.</p></li>
 <li><p>Sigue las instrucciones del instalador. Se recomienda dejar las opciones por defecto.</p></li>
@@ -193,7 +179,7 @@ ejemplo más importante algunas aplicaciones de dashboard.</p>
 <section id="Linux">
 <h3>Linux<a class="headerlink" href="#Linux" title="Link to this heading"></a></h3>
 <ol class="arabic">
-<li><p>Ve a la <a class="reference external" href="https://www.anaconda.com/products/distribution#download-section">página oficial de descargas de Anaconda</a>.</p></li>
+<li><p>Ve a la <a class="reference external" href="https://www.anaconda.com/products/distribution#download-section">página oficial de descargas de Anaconda</a>. Puedes saltarte el registro presionando en <em>Skip registration</em>.</p></li>
 <li><p>Descarga el instalador para Linux (archivo <code class="docutils literal notranslate"><span class="pre">.sh</span></code>).</p></li>
 <li><p>Abre una terminal y navega a la carpeta donde descargaste el archivo.</p></li>
 <li><p>Ejecuta el siguiente comando para iniciar la instalación:</p>
@@ -211,14 +197,14 @@ ejemplo más importante algunas aplicaciones de dashboard.</p>
 <h2>Configuración de un entorno conda<a class="headerlink" href="#Configuración-de-un-entorno-conda" title="Link to this heading"></a></h2>
 <p>He creado un entorno conda para usar en este curso. Puedes descargar el archivo YML de especificación del entorno en el siguiente enlace (puede que necesites hacer clic derecho y luego descargar).</p>
 <blockquote>
-<div><p><a class="reference external" href="https://raw.githubusercontent.com/bebi103a/bebi103a.github.io/main/_static/bebi103.yml">Descargar bebi103.yml</a></p>
+<div><p><a class="reference external" href="https://raw.githubusercontent.com/arqlm/arqlm.github.io/main/_static/min431.yml">Descargar min431.yml</a></p>
 </div></blockquote>
-<p>Puedes configurar y activar el entorno desde la línea de comandos. (Por «línea de comandos» me refiero a un prompt en una ventana de PowerShell o terminal). Navega al directorio donde guardaste el archivo <code class="docutils literal notranslate"><span class="pre">bebi103.yml</span></code>. (Por ejemplo, si está en un directorio llamado <code class="docutils literal notranslate"><span class="pre">Downloads</span></code> en tu carpeta personal, deberías hacer <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Downloads</span></code> en la línea de comandos para ir allí). Luego, en la línea de comandos, escribe</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda env create -f bebi103.yml
+<p>Puedes configurar y activar el entorno desde la línea de comandos. (Por «línea de comandos» me refiero a un prompt en una ventana de PowerShell o terminal). Navega al directorio donde guardaste el archivo <code class="docutils literal notranslate"><span class="pre">bebi103.yml</span></code>. (Por ejemplo, si está en un directorio llamado <code class="docutils literal notranslate"><span class="pre">Descargas</span></code> en tu carpeta personal, deberías hacer <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Descargas</span></code> en la línea de comandos para ir allí). Luego, en la línea de comandos, escribe</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda env create -f min431.yml
 </pre></div>
 </div>
 <p>Esto debería crear el entorno para ti (puede tardar varios minutos). Para activarlo, escribe</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate bebi103
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate min431
 </pre></div>
 </div>
 <p>en la línea de comandos.</p>
@@ -227,12 +213,12 @@ ejemplo más importante algunas aplicaciones de dashboard.</p>
 <h2>Lanzar JupyterLab<a class="headerlink" href="#Lanzar-JupyterLab" title="Link to this heading"></a></h2>
 <p>Puedes lanzar JupyterLab desde el programa de terminal de tu sistema operativo (Terminal en macOS y PowerShell en Windows). Si estás en Mac, abre el programa <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>. Puedes hacerlo presionando <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">+</span> <span class="pre">espacio</span></code> y buscando «terminal». En Windows, debes abrir PowerShell. Puedes hacerlo presionando <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">+</span> <span class="pre">R</span></code> y escribiendo «powershell» en la caja de texto.</p>
 <p>Una vez que tengas una ventana de terminal o PowerShell abierta, tendrás un prompt. En el prompt, escribe</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate bebi103
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate min431
 </pre></div>
 </div>
-<p>Esto asegurará que estás usando el entorno bebi103 que acabas de crear.</p>
-<p><strong>Debes asegurarte de estar usando el entorno bebi103 cada vez que lances JupyterLab, así que debes hacer conda activate bebi103 cada vez que abras una terminal.</strong></p>
-<p>Ahora que has activado el entorno bebi103, puedes lanzar JupyterLab escribiendo</p>
+<p>Esto asegurará que estás usando el entorno min431 que acabas de crear.</p>
+<p><strong>Debes asegurarte de estar usando el entorno min431 cada vez que lances JupyterLab, así que debes hacer conda activate min431 cada vez que abras una terminal.</strong></p>
+<p>Ahora que has activado el entorno min431, puedes lanzar JupyterLab escribiendo</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter lab
 </pre></div>
 </div>
@@ -248,7 +234,7 @@ ejemplo más importante algunas aplicaciones de dashboard.</p>
 <p>Usa el lanzador de JupyterLab (puedes obtener un nuevo lanzador haciendo clic en el ícono <code class="docutils literal notranslate"><span class="pre">+</span></code> en el panel izquierdo de JupyterLab) para abrir un notebook. En la primera celda (la caja junto al prompt <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]:</span></code>), pega el siguiente código. Para ejecutarlo, presiona <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code> mientras el cursor está dentro de la celda. Deberías ver un gráfico como el que aparece abajo. Si lo ves, ¡tienes un entorno de Python funcional para computación científica!</p>
 <p>También puedes probar esto en Colab (y debería funcionar sin problemas).</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -264,7 +250,7 @@ ejemplo más importante algunas aplicaciones de dashboard.</p>
 
 <span class="n">p</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">275</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">text</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;BE/Bi 103 a&#39;</span><span class="p">,</span> <span class="n">text_align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Min 431&#39;</span><span class="p">,</span> <span class="n">text_align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">add_layout</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 
 <span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
@@ -285,7 +271,7 @@ ejemplo más importante algunas aplicaciones de dashboard.</p>
 </style>
 <div>
     <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
-    <span id="db847be1-deab-48ea-827d-4c215424510f">Loading BokehJS ...</span>
+    <span id="dd6eb3ee-b72f-4784-bb02-04cacd6768b7">Loading BokehJS ...</span>
 </div></div>
 </div>
 <div class="nboutput docutils container">
@@ -458,7 +444,7 @@ const JS_MIME_TYPE = 'application/javascript';
      "</div>"}};
 
   function display_loaded(error = null) {
-    const el = document.getElementById("db847be1-deab-48ea-827d-4c215424510f");
+    const el = document.getElementById("dd6eb3ee-b72f-4784-bb02-04cacd6768b7");
     if (el != null) {
       const html = (() => {
         if (typeof root.Bokeh === "undefined") {
@@ -592,7 +578,7 @@ function(Bokeh) {
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      const cell = $(document.getElementById("db847be1-deab-48ea-827d-4c215424510f")).parents('.cell').data().cell;
+      const cell = $(document.getElementById("dd6eb3ee-b72f-4784-bb02-04cacd6768b7")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
   }
@@ -613,7 +599,7 @@ function(Bokeh) {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="f8af9723-3fc6-43e9-9b35-b89907766cde" data-root-id="p1001" style="display: contents;"></div></div>
+<div id="eb2ad23f-b1b0-4709-bca4-1738aac211e7" data-root-id="p1001" style="display: contents;"></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -624,8 +610,8 @@ function(Bokeh) {
 var element = document.currentScript.previousSibling.previousSibling;
 (function(root) {
   function embed_document(root) {
-  const docs_json = {"78eff8ad-a74f-472a-8937-f1d5e2b73adc":{"version":"3.6.2","title":"Bokeh Application","roots":[{"type":"object","name":"Figure","id":"p1001","attributes":{"width":275,"height":250,"x_range":{"type":"object","name":"DataRange1d","id":"p1002"},"y_range":{"type":"object","name":"DataRange1d","id":"p1003"},"x_scale":{"type":"object","name":"LinearScale","id":"p1010"},"y_scale":{"type":"object","name":"LinearScale","id":"p1011"},"title":{"type":"object","name":"Title","id":"p1008"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1041","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1035","attributes":{"selected":{"type":"object","name":"Selection","id":"p1036","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1037"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[200],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[200],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1042","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1043"}}},"glyph":{"type":"object","name":"Line","id":"p1038","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_width":3}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1039","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.1,"line_width":3}},"muted_glyph":{"type":"object","name":"Line","id":"p1040","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.2,"line_width":3}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1009","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1022"},{"type":"object","name":"WheelZoomTool","id":"p1023","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1024","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1025","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1031","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1030","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1032"},{"type":"object","name":"ResetTool","id":"p1033"},{"type":"object","name":"HelpTool","id":"p1034"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1017","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1018","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1019"},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1020"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1012","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1013","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1014"},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1015"}}}],"center":[{"type":"object","name":"Grid","id":"p1016","attributes":{"axis":{"id":"p1012"}}},{"type":"object","name":"Grid","id":"p1021","attributes":{"dimension":1,"axis":{"id":"p1017"}}},{"type":"object","name":"Label","id":"p1044","attributes":{"text":"BE/Bi 103 a","text_align":"center","x":0,"y":0}}]}}]}};
-  const render_items = [{"docid":"78eff8ad-a74f-472a-8937-f1d5e2b73adc","roots":{"p1001":"f8af9723-3fc6-43e9-9b35-b89907766cde"},"root_ids":["p1001"]}];
+  const docs_json = {"304e5ed0-cf33-47f5-9940-14206c6597c0":{"version":"3.6.2","title":"Bokeh Application","roots":[{"type":"object","name":"Figure","id":"p1001","attributes":{"width":275,"height":250,"x_range":{"type":"object","name":"DataRange1d","id":"p1002"},"y_range":{"type":"object","name":"DataRange1d","id":"p1003"},"x_scale":{"type":"object","name":"LinearScale","id":"p1010"},"y_scale":{"type":"object","name":"LinearScale","id":"p1011"},"title":{"type":"object","name":"Title","id":"p1008"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1041","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1035","attributes":{"selected":{"type":"object","name":"Selection","id":"p1036","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1037"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[200],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[200],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1042","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1043"}}},"glyph":{"type":"object","name":"Line","id":"p1038","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_width":3}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1039","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.1,"line_width":3}},"muted_glyph":{"type":"object","name":"Line","id":"p1040","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.2,"line_width":3}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1009","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1022"},{"type":"object","name":"WheelZoomTool","id":"p1023","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1024","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1025","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1031","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1030","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1032"},{"type":"object","name":"ResetTool","id":"p1033"},{"type":"object","name":"HelpTool","id":"p1034"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1017","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1018","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1019"},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1020"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1012","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1013","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1014"},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1015"}}}],"center":[{"type":"object","name":"Grid","id":"p1016","attributes":{"axis":{"id":"p1012"}}},{"type":"object","name":"Grid","id":"p1021","attributes":{"dimension":1,"axis":{"id":"p1017"}}},{"type":"object","name":"Label","id":"p1044","attributes":{"text":"Min 431","text_align":"center","x":0,"y":0}}]}}]}};
+  const render_items = [{"docid":"304e5ed0-cf33-47f5-9940-14206c6597c0","roots":{"p1001":"eb2ad23f-b1b0-4709-bca4-1738aac211e7"},"root_ids":["p1001"]}];
   void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
   }
   if (root.Bokeh !== undefined) {
@@ -647,78 +633,6 @@ var element = document.currentScript.previousSibling.previousSibling;
   }
 })(window);
 </script></div>
-</div>
-</section>
-<section id="Entorno-computacional">
-<h2>Entorno computacional<a class="headerlink" href="#Entorno-computacional" title="Link to this heading"></a></h2>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
-<span class="o">%</span><span class="k">watermark</span> -v -p numpy,bokeh,jupyterlab
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">ModuleNotFoundError</span>                       Traceback (most recent call last)
-Cell <span class="ansi-green-intense-fg ansi-bold">In[3], line 1</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span> get_ipython()<span style="color: rgb(98,98,98)">.</span>run_line_magic(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">load_ext</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">watermark</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-fg">      2</span> get_ipython()<span style="color: rgb(98,98,98)">.</span>run_line_magic(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">watermark</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">-v -p numpy,bokeh,jupyterlab</span><span style="color: rgb(175,0,0)">&#39;</span>)
-
-File <span class="ansi-green-intense-fg ansi-bold">~\anaconda3\Lib\site-packages\IPython\core\interactiveshell.py:2480</span>, in <span class="ansi-cyan-fg">InteractiveShell.run_line_magic</span><span class="ansi-blue-intense-fg ansi-bold">(self, magic_name, line, _stack_depth)</span>
-<span class="ansi-green-fg">   2478</span>     kwargs[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">local_ns</span><span style="color: rgb(175,0,0)">&#39;</span>] <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_local_scope(stack_depth)
-<span class="ansi-green-fg">   2479</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>builtin_trap:
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 2480</span>     result <span style="color: rgb(98,98,98)">=</span> fn(<span style="color: rgb(98,98,98)">*</span>args, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs)
-<span class="ansi-green-fg">   2482</span> <span style="color: rgb(95,135,135)"># The code below prevents the output from being displayed</span>
-<span class="ansi-green-fg">   2483</span> <span style="color: rgb(95,135,135)"># when using magics with decorator @output_can_be_silenced</span>
-<span class="ansi-green-fg">   2484</span> <span style="color: rgb(95,135,135)"># when the last Python token in the expression is a &#39;;&#39;.</span>
-<span class="ansi-green-fg">   2485</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">getattr</span>(fn, magic<span style="color: rgb(98,98,98)">.</span>MAGIC_OUTPUT_CAN_BE_SILENCED, <span class="ansi-bold" style="color: rgb(0,135,0)">False</span>):
-
-File <span class="ansi-green-intense-fg ansi-bold">~\anaconda3\Lib\site-packages\IPython\core\magics\extension.py:33</span>, in <span class="ansi-cyan-fg">ExtensionMagics.load_ext</span><span class="ansi-blue-intense-fg ansi-bold">(self, module_str)</span>
-<span class="ansi-green-fg">     31</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> module_str:
-<span class="ansi-green-fg">     32</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> UsageError(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Missing module name.</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 33</span> res <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>shell<span style="color: rgb(98,98,98)">.</span>extension_manager<span style="color: rgb(98,98,98)">.</span>load_extension(module_str)
-<span class="ansi-green-fg">     35</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> res <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">already loaded</span><span style="color: rgb(175,0,0)">&#39;</span>:
-<span class="ansi-green-fg">     36</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">The </span><span class="ansi-bold" style="color: rgb(175,95,135)">%s</span><span style="color: rgb(175,0,0)"> extension is already loaded. To reload it, use:</span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(98,98,98)">%</span> module_str)
-
-File <span class="ansi-green-intense-fg ansi-bold">~\anaconda3\Lib\site-packages\IPython\core\extensions.py:62</span>, in <span class="ansi-cyan-fg">ExtensionManager.load_extension</span><span class="ansi-blue-intense-fg ansi-bold">(self, module_str)</span>
-<span class="ansi-green-fg">     55</span> <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Load an IPython extension by its module name.</span>
-<span class="ansi-green-fg">     56</span>
-<span class="ansi-green-fg">     57</span> <span style="color: rgb(175,0,0)">Returns the string &#34;already loaded&#34; if the extension is already loaded,</span>
-<span class="ansi-green-fg">     58</span> <span style="color: rgb(175,0,0)">&#34;no load function&#34; if the module doesn&#39;t have a load_ipython_extension</span>
-<span class="ansi-green-fg">     59</span> <span style="color: rgb(175,0,0)">function, or None if it succeeded.</span>
-<span class="ansi-green-fg">     60</span> <span style="color: rgb(175,0,0)">&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">     61</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 62</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_load_extension(module_str)
-<span class="ansi-green-fg">     63</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ModuleNotFoundError</span>:
-<span class="ansi-green-fg">     64</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> module_str <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> BUILTINS_EXTS:
-
-File <span class="ansi-green-intense-fg ansi-bold">~\anaconda3\Lib\site-packages\IPython\core\extensions.py:77</span>, in <span class="ansi-cyan-fg">ExtensionManager._load_extension</span><span class="ansi-blue-intense-fg ansi-bold">(self, module_str)</span>
-<span class="ansi-green-fg">     75</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>shell<span style="color: rgb(98,98,98)">.</span>builtin_trap:
-<span class="ansi-green-fg">     76</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> module_str <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> sys<span style="color: rgb(98,98,98)">.</span>modules:
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 77</span>         mod <span style="color: rgb(98,98,98)">=</span> import_module(module_str)
-<span class="ansi-green-fg">     78</span>     mod <span style="color: rgb(98,98,98)">=</span> sys<span style="color: rgb(98,98,98)">.</span>modules[module_str]
-<span class="ansi-green-fg">     79</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_call_load_ipython_extension(mod):
-
-File <span class="ansi-green-intense-fg ansi-bold">~\anaconda3\Lib\importlib\__init__.py:88</span>, in <span class="ansi-cyan-fg">import_module</span><span class="ansi-blue-intense-fg ansi-bold">(name, package)</span>
-<span class="ansi-green-fg">     86</span>             <span class="ansi-bold" style="color: rgb(0,135,0)">break</span>
-<span class="ansi-green-fg">     87</span>         level <span style="color: rgb(98,98,98)">+</span><span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">1</span>
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 88</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> _bootstrap<span style="color: rgb(98,98,98)">.</span>_gcd_import(name[level:], package, level)
-
-File <span class="ansi-green-intense-fg ansi-bold">&lt;frozen importlib._bootstrap&gt;:1387</span>, in <span class="ansi-cyan-fg">_gcd_import</span><span class="ansi-blue-intense-fg ansi-bold">(name, package, level)</span>
-
-File <span class="ansi-green-intense-fg ansi-bold">&lt;frozen importlib._bootstrap&gt;:1360</span>, in <span class="ansi-cyan-fg">_find_and_load</span><span class="ansi-blue-intense-fg ansi-bold">(name, import_)</span>
-
-File <span class="ansi-green-intense-fg ansi-bold">&lt;frozen importlib._bootstrap&gt;:1324</span>, in <span class="ansi-cyan-fg">_find_and_load_unlocked</span><span class="ansi-blue-intense-fg ansi-bold">(name, import_)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">ModuleNotFoundError</span>: No module named &#39;watermark&#39;
-</pre></div></div>
 </div>
 </section>
 </section>

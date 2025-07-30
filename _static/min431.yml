@@ -50,7 +50,6 @@ dependencies:
     - altair
     - arviz>=0.17.0
     - awscli
-    - bebi103
     - black
     - blackcellmagic
     - cmdstanpy>=1.2.0
