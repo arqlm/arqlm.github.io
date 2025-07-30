@@ -23,4 +23,5 @@ Cuerpo docente
    :maxdepth: 1
    :caption: Clases
 
+   lessons/00/index.rst
    lessons/01/01_EDA.ipynb

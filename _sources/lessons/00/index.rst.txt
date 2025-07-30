@@ -1,10 +1,11 @@
 ***********************************************
-0. Preparing computing resources for the course
+Capítulo 0. Preparando tu computador para este curso
 ***********************************************
 
 .. toctree::
    :maxdepth: 1
 
-   Configuring your computer <Untitled2.ipynb>
-   Introduction to LaTeX <GeostatsPy_categorical_indictor_kriging.ipynb>
+   Configurando tu computador <preparando_tu_computador.ipynb>
+   Introducción a Jupyter <intro_to_jupyterlab.ipynb>
+   Introducción a LaTeX <intro_to_latex.ipynb>
 
