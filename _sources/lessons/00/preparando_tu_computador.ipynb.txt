@@ -27,7 +27,7 @@
     "\n",
     "Muchos probablemente usan su cuenta personal de Google en su computador, por lo que puede ser molesto iniciar y cerrar sesión. Un truco útil es usar un navegador, por ejemplo, Safari o Microsoft Edge, para tu uso personal y navegación web, y otro navegador diferente para tu trabajo científico, incluyendo el trabajo de este curso. Google Colab está más probado en Chrome, Firefox y Safari (de hecho, JupyterLab, que usarás en tu propio computador, solo soporta estos tres navegadores).\n",
     "\n",
-    "Una vez que hayas cerrado sesión en todas tus cuentas personales o tengas un navegador diferente abierto, puedes lanzar un notebook de Colab simplemente navegando a [https://colab.research.google.com/](https://colab.research.google.com/). Alternativamente, puedes hacer clic en el botón \"Launch in Colab\" en la parte superior derecha de esta página, y se abrirá este notebook en Colab. Ese botón aparecerá en la parte superior derecha de todas las páginas del contenido del curso generado desde notebooks."
+    "Una vez que hayas cerrado sesión en todas tus cuentas personales o tengas un navegador diferente abierto, puedes abrir un notebook de Colab simplemente navegando a [https://colab.research.google.com/](https://colab.research.google.com/). Alternativamente, puedes hacer clic en el botón \"Launch in Colab\" en la parte superior derecha de esta página, y se abrirá este notebook en Colab. Ese botón aparecerá en la parte superior derecha de todas las páginas del contenido del curso generado desde notebooks."
    ]
   },
   {
@@ -144,7 +144,7 @@
     "\n",
     "He creado un entorno conda para usar en este curso. Puedes descargar el archivo YML de especificación del entorno en el siguiente enlace (puede que necesites hacer clic derecho y luego descargar).\n",
     "\n",
-    "> [Descargar min431.yml](https://raw.githubusercontent.com/arqlm/arqlm.github.io/main/_static/min431.yml)\n",
+    "> [Descargar min431.yml](https://raw.githubusercontent.com/arqlm/arqlm.github.io/main/_static/min431.yml) (hacer click derecho y \"Guardar enlace como...\")\n",
     "\n",
     "Puedes configurar y activar el entorno desde la línea de comandos. (Por \"línea de comandos\" me refiero a un prompt en una ventana de PowerShell o terminal). Navega al directorio donde guardaste el archivo `bebi103.yml`. (Por ejemplo, si está en un directorio llamado `Descargas` en tu carpeta personal, deberías hacer `cd ~/Descargas` en la línea de comandos para ir allí). Luego, en la línea de comandos, escribe\n",
     "\n",
@@ -161,19 +161,19 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Lanzar JupyterLab\n",
+    "## Ejecutando JupyterLab\n",
     "\n",
-    "Puedes lanzar JupyterLab desde el programa de terminal de tu sistema operativo (Terminal en macOS y PowerShell en Windows). Si estás en Mac, abre el programa `Terminal`. Puedes hacerlo presionando `Command + espacio` y buscando \"terminal\". En Windows, debes abrir PowerShell. Puedes hacerlo presionando `Windows + R` y escribiendo \"powershell\" en la caja de texto.\n",
+    "Puedes ejecutar JupyterLab desde el programa de terminal de tu sistema operativo (Terminal en macOS y PowerShell en Windows). Si estás en Mac, abre el programa `Terminal`. Puedes hacerlo presionando `Command + espacio` y buscando \"terminal\". En Windows, debes el programa **Anaconda Prompt (Anaconda3)**\n",
     "\n",
-    "Una vez que tengas una ventana de terminal o PowerShell abierta, tendrás un prompt. En el prompt, escribe\n",
+    "Una vez que tengas una ventana de terminal abierta, tendrás un prompt. En el prompt, escribe\n",
     "\n",
     "    conda activate min431\n",
     "\n",
     "Esto asegurará que estás usando el entorno min431 que acabas de crear.\n",
     "\n",
-    "**Debes asegurarte de estar usando el entorno min431 cada vez que lances JupyterLab, así que debes hacer conda activate min431 cada vez que abras una terminal.**\n",
+    "**Debes asegurarte de estar usando el entorno min431 cada vez que ejecutes JupyterLab, así que debes hacer conda activate min431 cada vez que abras una terminal.**\n",
     "\n",
-    "Ahora que has activado el entorno min431, puedes lanzar JupyterLab escribiendo\n",
+    "Ahora que has activado el entorno min431, puedes ejecutar JupyterLab escribiendo\n",
     "\n",
     "    jupyter lab\n",
     "\n",
@@ -188,10 +188,10 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Verificando tu distribución\n",
+    "## Verificando tu instalación\n",
     "Ahora haremos una prueba rápida para asegurarnos de que todo funciona correctamente. Haremos un gráfico rápido que requiere algunas de las librerías científicas que usaremos.\n",
     "\n",
-    "Usa el lanzador de JupyterLab (puedes obtener un nuevo lanzador haciendo clic en el ícono `+` en el panel izquierdo de JupyterLab) para abrir un notebook. En la primera celda (la caja junto al prompt `[ ]:`), pega el siguiente código. Para ejecutarlo, presiona `Shift+Enter` mientras el cursor está dentro de la celda. Deberías ver un gráfico como el que aparece abajo. Si lo ves, ¡tienes un entorno de Python funcional para computación científica!\n",
+    "Abre JupyterLab (puedes obtener un nueva instancia haciendo clic en el ícono `+` en el panel izquierdo de JupyterLab) para abrir un notebook. En la primera celda (la caja junto al prompt `[ ]:`), pega el siguiente código. Para ejecutarlo, presiona `Shift+Enter` mientras el cursor está dentro de la celda. Deberías ver un gráfico como el que aparece abajo. Si lo ves, ¡tienes un entorno de Python funcional para computación científica!\n",
     "\n",
     "También puedes probar esto en Colab (y debería funcionar sin problemas)."
    ]

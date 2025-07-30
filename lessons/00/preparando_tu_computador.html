@@ -29,7 +29,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="next" title="Introduction to JupyterLab" href="intro_to_jupyterlab.html" />
+    <link rel="next" title="Introducción a JupyterLab" href="intro_a_jupyterlab.html" />
     <link rel="prev" title="Capítulo 0. Preparando tu computador para este curso" href="index.html" /> 
 </head>
 
@@ -71,12 +71,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#Configuración-de-un-entorno-conda">Configuración de un entorno conda</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Lanzar-JupyterLab">Lanzar JupyterLab</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Verificando-tu-distribución">Verificando tu distribución</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Ejecutando-JupyterLab">Ejecutando JupyterLab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Verificando-tu-instalación">Verificando tu instalación</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="intro_to_jupyterlab.html">Introducción a Jupyter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro_to_latex.html">Introducción a LaTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_a_jupyterlab.html">Introducción a Jupyter</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../01/01_EDA.html">Capítulo 1. Estudio Exploratorio de Datos</a></li>
@@ -124,7 +123,7 @@
 <h2>Configuración de Google Colab<a class="headerlink" href="#Configuración-de-Google-Colab" title="Link to this heading"></a></h2>
 <p>Para usar Google Colab, debes tener una cuenta de Google. Muchos de ustedes probablemente tienen una cuenta personal de Google, generalmente creada para cosas como GMail, YouTube, etc. Para tu trabajo en este curso, <strong>usa tu cuenta de la UAI.</strong> Esto facilitará la colaboración con tus compañeros y con el personal del curso.</p>
 <p>Muchos probablemente usan su cuenta personal de Google en su computador, por lo que puede ser molesto iniciar y cerrar sesión. Un truco útil es usar un navegador, por ejemplo, Safari o Microsoft Edge, para tu uso personal y navegación web, y otro navegador diferente para tu trabajo científico, incluyendo el trabajo de este curso. Google Colab está más probado en Chrome, Firefox y Safari (de hecho, JupyterLab, que usarás en tu propio computador, solo soporta estos tres navegadores).</p>
-<p>Una vez que hayas cerrado sesión en todas tus cuentas personales o tengas un navegador diferente abierto, puedes lanzar un notebook de Colab simplemente navegando a <a class="reference external" href="https://colab.research.google.com/">https://colab.research.google.com/</a>. Alternativamente, puedes hacer clic en el botón «Launch in Colab» en la parte superior derecha de esta página, y se abrirá este notebook en Colab. Ese botón aparecerá en la parte superior derecha de todas las páginas del contenido del curso generado desde notebooks.</p>
+<p>Una vez que hayas cerrado sesión en todas tus cuentas personales o tengas un navegador diferente abierto, puedes abrir un notebook de Colab simplemente navegando a <a class="reference external" href="https://colab.research.google.com/">https://colab.research.google.com/</a>. Alternativamente, puedes hacer clic en el botón «Launch in Colab» en la parte superior derecha de esta página, y se abrirá este notebook en Colab. Ese botón aparecerá en la parte superior derecha de todas las páginas del contenido del curso generado desde notebooks.</p>
 <section id="Advertencias-al-usar-Colab">
 <h3>Advertencias al usar Colab<a class="headerlink" href="#Advertencias-al-usar-Colab" title="Link to this heading"></a></h3>
 <p>Si ejecutas un notebook en Colab, estás haciendo tus cálculos en uno de los computadores de Google mediante una máquina virtual. Obtienes dos núcleos de CPU y una cantidad limitada (alrededor de 12 GB, pero varía) de RAM. También puedes obtener GPUs y TPUs (unidades de procesamiento tensorial de Google), pero no las usaremos en este curso. Los recursos computacionales deberían ser suficientes para todos nuestros cálculos este semestre (aunque necesitarás más potencia en la continuación de este
@@ -197,7 +196,7 @@ ejemplo más importante algunas aplicaciones de dashboard.</p>
 <h2>Configuración de un entorno conda<a class="headerlink" href="#Configuración-de-un-entorno-conda" title="Link to this heading"></a></h2>
 <p>He creado un entorno conda para usar en este curso. Puedes descargar el archivo YML de especificación del entorno en el siguiente enlace (puede que necesites hacer clic derecho y luego descargar).</p>
 <blockquote>
-<div><p><a class="reference external" href="https://raw.githubusercontent.com/arqlm/arqlm.github.io/main/_static/min431.yml">Descargar min431.yml</a></p>
+<div><p><a class="reference external" href="https://raw.githubusercontent.com/arqlm/arqlm.github.io/main/_static/min431.yml">Descargar min431.yml</a> (hacer click derecho y «Guardar enlace como…»)</p>
 </div></blockquote>
 <p>Puedes configurar y activar el entorno desde la línea de comandos. (Por «línea de comandos» me refiero a un prompt en una ventana de PowerShell o terminal). Navega al directorio donde guardaste el archivo <code class="docutils literal notranslate"><span class="pre">bebi103.yml</span></code>. (Por ejemplo, si está en un directorio llamado <code class="docutils literal notranslate"><span class="pre">Descargas</span></code> en tu carpeta personal, deberías hacer <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Descargas</span></code> en la línea de comandos para ir allí). Luego, en la línea de comandos, escribe</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda env create -f min431.yml
@@ -209,16 +208,16 @@ ejemplo más importante algunas aplicaciones de dashboard.</p>
 </div>
 <p>en la línea de comandos.</p>
 </section>
-<section id="Lanzar-JupyterLab">
-<h2>Lanzar JupyterLab<a class="headerlink" href="#Lanzar-JupyterLab" title="Link to this heading"></a></h2>
-<p>Puedes lanzar JupyterLab desde el programa de terminal de tu sistema operativo (Terminal en macOS y PowerShell en Windows). Si estás en Mac, abre el programa <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>. Puedes hacerlo presionando <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">+</span> <span class="pre">espacio</span></code> y buscando «terminal». En Windows, debes abrir PowerShell. Puedes hacerlo presionando <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">+</span> <span class="pre">R</span></code> y escribiendo «powershell» en la caja de texto.</p>
-<p>Una vez que tengas una ventana de terminal o PowerShell abierta, tendrás un prompt. En el prompt, escribe</p>
+<section id="Ejecutando-JupyterLab">
+<h2>Ejecutando JupyterLab<a class="headerlink" href="#Ejecutando-JupyterLab" title="Link to this heading"></a></h2>
+<p>Puedes ejecutar JupyterLab desde el programa de terminal de tu sistema operativo (Terminal en macOS y PowerShell en Windows). Si estás en Mac, abre el programa <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>. Puedes hacerlo presionando <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">+</span> <span class="pre">espacio</span></code> y buscando «terminal». En Windows, debes el programa <strong>Anaconda Prompt (Anaconda3)</strong></p>
+<p>Una vez que tengas una ventana de terminal abierta, tendrás un prompt. En el prompt, escribe</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate min431
 </pre></div>
 </div>
 <p>Esto asegurará que estás usando el entorno min431 que acabas de crear.</p>
-<p><strong>Debes asegurarte de estar usando el entorno min431 cada vez que lances JupyterLab, así que debes hacer conda activate min431 cada vez que abras una terminal.</strong></p>
-<p>Ahora que has activado el entorno min431, puedes lanzar JupyterLab escribiendo</p>
+<p><strong>Debes asegurarte de estar usando el entorno min431 cada vez que ejecutes JupyterLab, así que debes hacer conda activate min431 cada vez que abras una terminal.</strong></p>
+<p>Ahora que has activado el entorno min431, puedes ejecutar JupyterLab escribiendo</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter lab
 </pre></div>
 </div>
@@ -228,10 +227,10 @@ ejemplo más importante algunas aplicaciones de dashboard.</p>
 </div>
 <p>en la línea de comandos.</p>
 </section>
-<section id="Verificando-tu-distribución">
-<h2>Verificando tu distribución<a class="headerlink" href="#Verificando-tu-distribución" title="Link to this heading"></a></h2>
+<section id="Verificando-tu-instalación">
+<h2>Verificando tu instalación<a class="headerlink" href="#Verificando-tu-instalación" title="Link to this heading"></a></h2>
 <p>Ahora haremos una prueba rápida para asegurarnos de que todo funciona correctamente. Haremos un gráfico rápido que requiere algunas de las librerías científicas que usaremos.</p>
-<p>Usa el lanzador de JupyterLab (puedes obtener un nuevo lanzador haciendo clic en el ícono <code class="docutils literal notranslate"><span class="pre">+</span></code> en el panel izquierdo de JupyterLab) para abrir un notebook. En la primera celda (la caja junto al prompt <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]:</span></code>), pega el siguiente código. Para ejecutarlo, presiona <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code> mientras el cursor está dentro de la celda. Deberías ver un gráfico como el que aparece abajo. Si lo ves, ¡tienes un entorno de Python funcional para computación científica!</p>
+<p>Abre JupyterLab (puedes obtener un nueva instancia haciendo clic en el ícono <code class="docutils literal notranslate"><span class="pre">+</span></code> en el panel izquierdo de JupyterLab) para abrir un notebook. En la primera celda (la caja junto al prompt <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]:</span></code>), pega el siguiente código. Para ejecutarlo, presiona <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code> mientras el cursor está dentro de la celda. Deberías ver un gráfico como el que aparece abajo. Si lo ves, ¡tienes un entorno de Python funcional para computación científica!</p>
 <p>También puedes probar esto en Colab (y debería funcionar sin problemas).</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -642,7 +641,7 @@ var element = document.currentScript.previousSibling.previousSibling;
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
         <a href="index.html" class="btn btn-neutral float-left" title="Capítulo 0. Preparando tu computador para este curso" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
-        <a href="intro_to_jupyterlab.html" class="btn btn-neutral float-right" title="Introduction to JupyterLab" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="intro_a_jupyterlab.html" class="btn btn-neutral float-right" title="Introducción a JupyterLab" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

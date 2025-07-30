@@ -6,6 +6,6 @@ Capítulo 0. Preparando tu computador para este curso
    :maxdepth: 1
 
    Configurando tu computador <preparando_tu_computador.ipynb>
-   Introducción a Jupyter <intro_to_jupyterlab.ipynb>
-   Introducción a LaTeX <intro_to_latex.ipynb>
+   Introducción a Jupyter <intro_a_jupyterlab.ipynb>
+   Introducción a LaTeX <intro_a_latex.ipynb>
 
