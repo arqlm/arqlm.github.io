@@ -21,7 +21,18 @@ Cuerpo docente
 
 .. toctree::
    :maxdepth: 1
-   :caption: Clases
+   :caption: Apuntes
 
-   lessons/00/index.rst
-   lessons/01/01_EDA.ipynb
+   lessons/00/index
+   lessons/01/index
+   lessons/02/index
+
+Recursos
+------
+
+- Estas notas se construyeron en base a los siguientes recursos:
+   + `Notas online del Profesor Julian M. Ortiz <https://julianmortiz.com/articles?blogcategory=Lectures>`_
+   + `Apuntes del Profesor Xavier Emery <https://www.u-cursos.cl/ingenieria/2007/2/MI75D/1/material_docente/bajar?bajar=1&id=138609>`_
+   + `Material online del Profesor Michael Pyrcz <https://geostatsguy.github.io/GeostatsPyDemos_Book/>`_
+   + `Módulos correspondientes al curso de Introducción a Data Analytics en Geociencias con Python <https://www.youtube.com/playlist?list=PLmlIjcqay_fw0Km6chOslDtVrX9PYAuEn>`_
+   + `github copilot <https://github.com/features/copilot>`_
