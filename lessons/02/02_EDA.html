@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Distribución estadística de valores &mdash; documentación de MIN 431 - Evaluacion de Yacimientos - </title>
+  <title>2. Distribución estadística de valores &mdash; documentación de MIN 431 - Evaluacion de Yacimientos - </title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -30,7 +30,8 @@
       <script src="../../_static/hide_code_cells.js?v=51dbf054"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
-    <link rel="search" title="Búsqueda" href="../../search.html" /> 
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="prev" title="1. Despliegue de datos" href="01_EDA.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,10 +55,20 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Apuntes</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../00/index.html">Capítulo 0. Preparando tu computador para este curso</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../01/index.html">Capítulo 1. Estudio Exploratorio de Datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Capítulo 2. Spatial Data Analysis</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Capítulo 1. Estudio Exploratorio de Datos</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_EDA.html">1. Despliegue de datos (mapas)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. Distribución estadística de valores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Histograma">2.1. Histograma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Histograma-acumulado">2.2. Histograma acumulado</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Gráfico-de-probabilidad">2.3. Gráfico de probabilidad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Estadísticas-elementales">2.4. Estadísticas elementales</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -74,7 +85,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Distribución estadística de valores</li>
+          <li class="breadcrumb-item"><a href="index.html">Capítulo 1. Estudio Exploratorio de Datos</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Distribución estadística de valores</li>
       <li class="wy-breadcrumbs-aside">
               <!-- User defined GitHub URL -->
               <a href="https://github.com/arqlm/arqlm.github.io/blob/main/lessons/02/02_EDA.ipynb" class="fa fa-github"> Editar en GitHub</a>
@@ -360,10 +372,10 @@
 </div>
 <hr class="docutils" />
 <section id="Distribución-estadística-de-valores">
-<h1>Distribución estadística de valores<a class="headerlink" href="#Distribución-estadística-de-valores" title="Link to this heading"></a></h1>
+<h1><span class="section-number">2. </span>Distribución estadística de valores<a class="headerlink" href="#Distribución-estadística-de-valores" title="Link to this heading"></a></h1>
 <p>Además de visualizar mapas de los datos, interesa conocer la distribución estadística de sus valores. Para ello, existen varias herramientas, siendo la más conocida el histograma.</p>
 <section id="Histograma">
-<h2>Histograma<a class="headerlink" href="#Histograma" title="Link to this heading"></a></h2>
+<h2><span class="section-number">2.1. </span>Histograma<a class="headerlink" href="#Histograma" title="Link to this heading"></a></h2>
 <p>El histograma representa gráficamente las frecuencias de ocurrencia en función del valor. Consiste en dividir el rango de los valores en intervalos (generalmente, con el mismo ancho) y visualizar la proporción de datos que caben dentro de cada intervalo (Figura 5). Las clases se miden en el eje de abscisa, mientras que el número de observaciones o las frecuencias se miden en el eje de ordenada.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -645,7 +657,7 @@ partición de una zona mineralizada según la caracterización mineralógica o e
 <p><center><p>Tabla 1: Mapa de locación, proyectando la data en los tres planos principales.</p>
 </center></p></section>
 <section id="Histograma-acumulado">
-<h2>Histograma acumulado<a class="headerlink" href="#Histograma-acumulado" title="Link to this heading"></a></h2>
+<h2><span class="section-number">2.2. </span>Histograma acumulado<a class="headerlink" href="#Histograma-acumulado" title="Link to this heading"></a></h2>
 <p>En la Tabla 2.2 hemos tomado la información de la Tabla 2.1 y la hemos presentado en forma acumulativa. En lugar de registrar el número de valores dentro de ciertas clases, registramos el número total de valores por debajo de ciertos umbrales. El histograma acumulativo correspondiente, mostrado en la Figura 2.3, es una función no decreciente entre 0 y 100%. Las formas de frecuencia porcentual y frecuencia porcentual acumulativa se usan indistintamente, ya que una puede obtenerse a partir de la
 otra.</p>
 <div class="nbinput docutils container">
@@ -734,7 +746,7 @@ otra.</p>
 <p><center><p>Figura 7: Histograma acumulado de las concentraciones de cobre (en porcentaje)..</p>
 </center></p></section>
 <section id="Gráfico-de-probabilidad">
-<h2>Gráfico de probabilidad<a class="headerlink" href="#Gráfico-de-probabilidad" title="Link to this heading"></a></h2>
+<h2><span class="section-number">2.3. </span>Gráfico de probabilidad<a class="headerlink" href="#Gráfico-de-probabilidad" title="Link to this heading"></a></h2>
 <p>Este gráfico sirve para comparar una distribución experimental con una distribución de referencia (en general, una normal o una lognormal). Consiste en cambiar la escala de los ejes del histograma acumulado de tal modo que, si la distribución experimental coincide con la distribución de referencia, se dibujaría una recta. En el caso de los datos de cobalto, la distribución difiere de una normal (Figuras 8 y 9).</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -948,7 +960,7 @@ otra.</p>
 <p><center><p>Figura 9: Gráfico de probabilidad normal para las concentraciones de cobre. Note que la escala del eje de ordenada (frecuencia acumulada) ya no es aritmética.</p>
 </center></p></section>
 <section id="Estadísticas-elementales">
-<h2>Estadísticas elementales<a class="headerlink" href="#Estadísticas-elementales" title="Link to this heading"></a></h2>
+<h2><span class="section-number">2.4. </span>Estadísticas elementales<a class="headerlink" href="#Estadísticas-elementales" title="Link to this heading"></a></h2>
 <p>Las características más importantes de de los histogramas pueden capturarse mediante algunas estadísticas resumidas. Las estadísticas resumidas que utilizamos aquí se dividen en tres categorías: medidas de <strong>ubicación</strong>, medidas de <strong>dispersión</strong> y medidas de <strong>forma</strong>.</p>
 <p>Las estadísticas del primer grupo nos brindan información sobre <em>dónde</em> se encuentran diversas partes de la distribución. La media, la mediana y la moda pueden darnos una idea de dónde se encuentra el centro de la distribución. La ubicación de otras partes de la distribución se indica mediante diversas cantidades.</p>
 <p>El segundo grupo incluye la varianza, la desviación estándar y el rango intercuartil, que se utilizan para describir la <em>variabilidad</em> de los valores de los datos.</p>
@@ -1342,7 +1354,9 @@ CV = \frac{m}{\sigma}
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="01_EDA.html" class="btn btn-neutral float-left" title="1. Despliegue de datos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
 
   <hr/>
 

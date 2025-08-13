@@ -26,6 +26,8 @@ Cuerpo docente
    lessons/00/index
    lessons/01/index
    lessons/02/index
+   lessons/03/index
+
 
 Recursos
 ------
