@@ -17,7 +17,7 @@ Cuerpo docente
 
 - Ayudante
 
-   + Fernanda Torres (alvaro.riquelme@uai.cl)
+   + Fernanda Torres (fernantorres@alumnos.uai.cl)
 
 .. toctree::
    :maxdepth: 1
