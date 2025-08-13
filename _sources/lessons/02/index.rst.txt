@@ -17,4 +17,6 @@ proveniente de la naturaleza.
    :maxdepth: 2
    :numbered:
 
-   Desagrupamiento <01_SDA>
+   Simulación de variables aleatorias reales <01_SVA>
+   Simulación de Monte-Carlo <02_SMC>
+   Simulación de campos aleatorios <03_SRF>
