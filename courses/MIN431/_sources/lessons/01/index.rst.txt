@@ -1,0 +1,21 @@
+***********************************************
+Capítulo 1. Estudio Exploratorio de Datos
+***********************************************
+
+Para efectos de este curso, será importante fijar desde ya la notación matemática a utilizar.
+
+- Trabajaremos con un número :math:`N` de muestras disponibles, tomadas en distintos puntos :math:`\mathbf{u}` (del ingles *underground*, subsuelo) del espacio tridimensional. :math:`\mathbf{u}` corresponde, por lo tanto, a un vector de posición, :math:`\mathbf{u} = (x , y , z)`. Prescindiremos del triplete :math:`(x , y , z)` para economizar en notación y dejar disponibles estas letras, simplemente indicando que :math:`\mathbf{u} \in \mathbb{R}^3`.
+- Tradicionalmente se utiliza la indexación ya sea :math:`\alpha` o :math:`\beta` para referirse en forma abstracta a alguna de las muestras. Por lo tanto, :math:`\alpha,\beta \in \{1,\dots, N\}`, y una posición en la que se cuente con información se notará de la forma :math:`\mathbf{u}_\alpha`.
+- Asociado a cada muestra y en cada posición, generalmente se medirán mas de un atributo :math:`z`. Diremos que el número de atributos disponibles será de :math:`p`. Por ejemplo :math:`z_1` representará el atributo oro, :math:`z_2` el atributo plata, :math:`z_3` el atributo cobre, y asi sucesivamente hasta :math:`z_p`. Dado que los valores muestreados que encontramos para estos atributos cambian de posición a posición, diremos en que estos los valores que encontramos para estos atributos son en realidad una función de su posición, por ejemplo, :math:`z_3(\mathbf{u}_\alpha) = 0.1 [\%]` indicaría que el atributo **cobre** toma el valor de :math:`0.1 [\%]` en una cierta posición :math:`\mathbf{u}_\alpha` y, si se subentiende a qué atributo nos referimos, botamos el sub-indice :math:`i` y simplemente notamos :math:`z(\mathbf{u}_\alpha)`.
+- A partir del punto anterior, podemos referirnos al conjunto de los :math:`N` valores muestreados de un cierto atributo :math:`i \in \{1,\dots,p\},` según el contexto y la economía en notación que se requiera, de la forma :math:`\{z_i(\mathbf{u}_\alpha), \alpha = 1,\dots,N\}`, :math:`\{z_i(\mathbf{u}_\alpha)\}_{\alpha = 1}^N` o simplemente mediante :math:`\{z_\alpha\}_{\alpha = 1}^N` (si se entiende a cuál atributo nos referimos).
+
+.. rubric:: Contenidos
+
+.. toctree::
+   :maxdepth: 2
+   :numbered:
+
+   Despliegue de datos (mapas) <01_EDA>
+   Distribución estadística de valores <02_EDA>
+   Análisis multivariable <03_EDA>
+

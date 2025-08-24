@@ -1,0 +1,12 @@
+***********************************************
+Capítulo 0. Preparando tu computador para este curso
+***********************************************
+
+.. toctree::
+   :maxdepth: 1
+   :numbered:
+   
+   Configurando tu computador <preparando_tu_computador.ipynb>
+   Introducción a Jupyter <intro_a_jupyterlab.ipynb>
+   Introducción a LaTeX <intro_a_latex.ipynb>
+
