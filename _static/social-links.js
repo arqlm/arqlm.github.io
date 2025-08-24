@@ -132,23 +132,46 @@
         document.head.appendChild(styleSheet);
     }
     
-    // Function to create social links HTML
+    // Function to create social links HTML with name
     function createSocialLinks() {
+        // Remove any existing name block to prevent duplicates
+        const oldName = document.querySelector('.social-name-block');
+        if (oldName && oldName.parentNode) {
+            oldName.parentNode.removeChild(oldName);
+        }
+
+        const wrapper = document.createElement('div');
+        wrapper.style.display = 'flex';
+        wrapper.style.flexDirection = 'column';
+        wrapper.style.alignItems = 'center';
+
+        // Name block
+        const nameDiv = document.createElement('div');
+        nameDiv.textContent = 'Álvaro I. Riquelme';
+        nameDiv.className = 'social-name-block';
+    nameDiv.style.fontWeight = 'bold';
+    nameDiv.style.fontSize = '1.15em';
+    nameDiv.style.marginBottom = '6px';
+    nameDiv.style.marginTop = '2px';
+    nameDiv.style.letterSpacing = '0.5px';
+    nameDiv.style.textAlign = 'center';
+    nameDiv.style.fontFamily = 'Palatino Linotype, Palatino, serif';
+        wrapper.appendChild(nameDiv);
+
+        // Social links
         const socialContainer = document.createElement('div');
         socialContainer.className = 'social-links-js';
-        
-        // Create links for each social platform
         Object.keys(config).forEach(platform => {
             const link = document.createElement('a');
             link.href = config[platform].url;
             link.target = '_blank';
             link.className = `social-link-js ${platform}`;
             link.title = config[platform].title;
-            link.innerHTML = `<div class="social-icon-js">${config[platform].icon}</div>`;
+            link.innerHTML = `<div class=\"social-icon-js\">${config[platform].icon}</div>`;
             socialContainer.appendChild(link);
         });
-        
-        return socialContainer;
+        wrapper.appendChild(socialContainer);
+        return wrapper;
     }
     
     // Function to inject social links into the sidebar
