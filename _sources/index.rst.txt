@@ -2,7 +2,7 @@ About
 =====================================================================
 
 I'm an Assistant Professor at the `Faculty of Engineering and Sciences <https://www.uai.cl/ingenieria-y-ciencias/>`_ at `Universidad Adolfo Ibáñez <https://www.uai.cl/>`_.
-I completed my PhD in 2022 at the `The Robert M. Buchan Department of Mining <https://smithengineering.queensu.ca/mining/index.html/>`_, `Queen's University <https://www.queensu.ca/>`_, advised by `Julian M. Ortiz <https://experts.exeter.ac.uk/43202-julian-ortiz>`_.
+I completed my Ph.D. in 2022 at the `The Robert M. Buchan Department of Mining <https://smithengineering.queensu.ca/mining/index.html/>`_, `Queen's University <https://www.queensu.ca/>`_, advised by `Julian M. Ortiz <https://experts.exeter.ac.uk/43202-julian-ortiz>`_.
 I'm currently working on projects related to mineral resource estimation, predictive geometallurgy, mineral exploration and predictive geomechanics. 
 
 
