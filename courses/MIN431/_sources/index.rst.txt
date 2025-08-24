@@ -13,7 +13,7 @@ Cuerpo docente
 
 - Instructor
 
-   + Álvaro Riquelme (alvaro.riquelme@uai.cl)
+   + `Álvaro Riquelme <https://arqlm.github.io/>`_ (alvaro.riquelme@uai.cl)
 
 - Ayudante
 
