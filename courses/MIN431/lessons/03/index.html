@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="es" data-content_root="../../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Capítulo 3. Spatial Data Analysis &mdash; documentación de MIN 431 - Evaluacion de Yacimientos - </title>
+  <title>Capítulo 3. Algoritmos de simulación &mdash; documentación de MIN 431 - Evaluacion de Yacimientos - </title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -21,14 +21,17 @@
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../../_static/copybutton.js?v=f281be69"></script>
-      <script src="../../_static/translations.js?v=efdbd0b9"></script>
+      <script src="../../_static/translations.js?v=f85f4cfb"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       <script src="../../_static/require.min.js?v=8a87acde"></script>
       <script src="../../_static/hide_code_cells.js?v=51dbf054"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="prev" title="1. Simulación de variables aleatorias reales" href="../02/01_SVA.html" /> 
+    <link rel="next" title="1. Simulación de variables aleatorias reales" href="01_SVA.html" />
+    <link rel="prev" title="1. Introducción" href="../02/01_SDA.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -55,8 +58,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../00/index.html">Capítulo 0. Preparando tu computador para este curso</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../01/index.html">Capítulo 1. Estudio Exploratorio de Datos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02/index.html">Capítulo 2. Algoritmos de simulación</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Capítulo 3. Spatial Data Analysis</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../02/index.html">Capítulo 2. Análisis Espacial de Datos</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Capítulo 3. Algoritmos de simulación</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_SVA.html">1. Simulación de variables aleatorias reales</a></li>
 </ul>
 </li>
 </ul>
@@ -75,7 +79,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Capítulo 3. Spatial Data Analysis</li>
+      <li class="breadcrumb-item active">Capítulo 3. Algoritmos de simulación</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -84,27 +88,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="capitulo-3-spatial-data-analysis">
-<h1>Capítulo 3. Spatial Data Analysis<a class="headerlink" href="#capitulo-3-spatial-data-analysis" title="Link to this heading"></a></h1>
-<p>El análisis exploratorio estadístico de los datos debe completarse
-explorando la distribución espacial de los mismos. En el espacio,
-es necesario asumir estacionariedad para permitir la inferencia estadística.
-El comportamiento de las variables en el espacio debe entenderse
-para tomar la decisión de estacionariedad y comprender sus posibles desventajas.
-Por otro lado, también necesitamos definir dominios que se utilizarán para
-estimación o simulación. Estos dominios definen el conjunto de datos
-utilizados para inferir la variable en ubicaciones no muestreadas dentro de ese
-mismo volumen. Por lo tanto, debe haber una distribución representativa dentro
-de cada dominio para condicionar el proceso de inferencia. La distribución
-estadística de las variables debe caracterizarse dentro de cada dominio, pero a menudo,
-las muestras no son espacialmente representativas, sesgando las estadísticas
-que se pueden inferir de ellas.</p>
-<p>En este capítulo, se introduce la noción formal de estacionariedad
-y se discuten temas relacionados con la inferencia de la distribución representativa
-cuando se enfrenta a datos agrupados o muestreados preferencialmente.
-También se aborda brevemente el caso de datos censurados intencionalmente.</p>
+  <section id="capitulo-3-algoritmos-de-simulacion">
+<h1>Capítulo 3. Algoritmos de simulación<a class="headerlink" href="#capitulo-3-algoritmos-de-simulacion" title="Link to this heading"></a></h1>
+<p>Difícilmente lograra comprender bien los conceptos de probabilidad y estadística, al nivel de los requeridos para este curso, quien no es capaz
+de producir algunos procesos aleatorios básicos.</p>
+<p>En este capítulo, introduciremos algunos algoritmos básicos que nos
+permitirán entender los límites de las herramientas que se históricamente
+se utilizan en el análisis estadístico y geoestadístico de la información
+proveniente de la naturaleza.</p>
 <p class="rubric">Contenidos</p>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_SVA.html">1. Simulación de variables aleatorias reales</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_SVA.html#Simulación-de-una-variable-uniforme-en-el-intervalo-[0,1]">1.1. Simulación de una variable uniforme en el intervalo <span class="math notranslate nohighlight">\([0,1]\)</span></a></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 
@@ -112,7 +111,8 @@ También se aborda brevemente el caso de datos censurados intencionalmente.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
-        <a href="../02/01_SVA.html" class="btn btn-neutral float-left" title="1. Simulación de variables aleatorias reales" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="../02/01_SDA.html" class="btn btn-neutral float-left" title="1. Introducción" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="01_SVA.html" class="btn btn-neutral float-right" title="1. Simulación de variables aleatorias reales" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
