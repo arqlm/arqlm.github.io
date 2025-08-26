@@ -27,7 +27,8 @@ También se aborda brevemente el caso de datos censurados intencionalmente.
    :maxdepth: 2
    :numbered:
 
-   Búsqueda de controles geológicos <01_SDA>
+   Búsqueda de controles geológicos <01_SDA_p1>
+   Búsqueda de controles geológicos (continuación) <01_SDA_p2>
    Definición de unidad o dominios de estimación <02_SDA>
    Modelamiento implicito de unidades geológicas <03_SDA>
    Desagrupamiento <04_SDA>
