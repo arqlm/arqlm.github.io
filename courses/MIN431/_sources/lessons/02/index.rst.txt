@@ -31,7 +31,8 @@ También se aborda brevemente el caso de datos censurados intencionalmente.
    Búsqueda de controles geológicos (continuación, por Alteración) <01_SDA_p2>
    Búsqueda de controles geológicos (continuación, por Litología) <01_SDA_p3>
    Definición de unidades o dominios de estimación <02_SDA>
-   Modelamiento implicito de unidades geológicas <03_SDA>
-   Desagrupamiento <04_SDA>
+   Verificación de tendencias y análisis de contacto <03_SDA>
+   Modelamiento implícito de unidades geológicas <04_SDA>
+   Desagrupamiento <05_SDA>
 
 
