@@ -63,14 +63,13 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Capítulo 4. Estimación de Recursos</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01_GrillaEst.html">1. Determinación de grilla de estimación</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2. Generación de volúmenes de estimación</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Simplificacion-de-base-de-datos-compositada">2.1. Simplificacion de base de datos compositada</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Kriging-de-indicadores">2.2. Kriging de indicadores</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Formalismo-de-indicadores">2.2.1. Formalismo de indicadores</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Proporciones-de-cada-UG-en-nuestra-base-de-datos">2.2.2. Proporciones de cada UG en nuestra base de datos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Codificar-base-de-datos-en-funcion-de-indicadores">2.2.3. Codificar base de datos en funcion de indicadores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Kriging-de-indicadores">2.1. Kriging de indicadores</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Formalismo-de-indicadores">2.1.1. Formalismo de indicadores</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Proporciones-de-cada-UG-en-nuestra-base-de-datos">2.1.2. Proporciones de cada UG en nuestra base de datos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Codificar-base-de-datos-en-funcion-de-indicadores">2.1.3. Codificar base de datos en funcion de indicadores</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Variograma-de-indicadores">2.3. Variograma de indicadores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Variograma-de-indicadores">2.2. Variograma de indicadores</a></li>
 </ul>
 </li>
 </ul>
@@ -114,9 +113,7 @@
 </div><section id="Determinación-de-Volúmenes-de-estimación">
 <h1><span class="section-number">2. </span>Determinación de Volúmenes de estimación<a class="headerlink" href="#Determinación-de-Volúmenes-de-estimación" title="Link to this heading"></a></h1>
 <p>Nuestro <strong>objetivo</strong> es determinar el volumen espacial que sera el limite de estimación para cada una de las Unidades Geológicas. Es decir, la estimación realizada con la información perteneciente a cada unidad geológica definida no rebasara mas allá de los limites representados por este volumen .</p>
-<p>Nuestro punto de partida sera la base de datos compositada a 6 metros, en donde los valores -99 han sido ya filtrados.</p>
-<section id="Simplificacion-de-base-de-datos-compositada">
-<h2><span class="section-number">2.1. </span>Simplificacion de base de datos compositada<a class="headerlink" href="#Simplificacion-de-base-de-datos-compositada" title="Link to this heading"></a></h2>
+<p>Nuestro punto de partida sera la base de datos simplificada de la sección anterior.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
@@ -256,12 +253,11 @@
 <p>16882 rows × 5 columns</p>
 </div></div>
 </div>
-</section>
 <section id="Kriging-de-indicadores">
-<h2><span class="section-number">2.2. </span>Kriging de indicadores<a class="headerlink" href="#Kriging-de-indicadores" title="Link to this heading"></a></h2>
+<h2><span class="section-number">2.1. </span>Kriging de indicadores<a class="headerlink" href="#Kriging-de-indicadores" title="Link to this heading"></a></h2>
 <p>Para la determinación de cada volumen de estimación, emplearemos la técnica llamada Kriging de Indicadores.</p>
 <section id="Formalismo-de-indicadores">
-<h3><span class="section-number">2.2.1. </span>Formalismo de indicadores<a class="headerlink" href="#Formalismo-de-indicadores" title="Link to this heading"></a></h3>
+<h3><span class="section-number">2.1.1. </span>Formalismo de indicadores<a class="headerlink" href="#Formalismo-de-indicadores" title="Link to this heading"></a></h3>
 <p>A continuación, usamos métodos indicadores para estimar una variable categórica en el espacio.</p>
 <p>Si <span class="math notranslate nohighlight">\(i(\bf{u}; z_k)\)</span> es un indicador para una variable categórica <span class="math notranslate nohighlight">\(z\)</span> (como es el caso de la variable UG), definida como</p>
 <div class="math notranslate nohighlight">
@@ -278,7 +274,7 @@
 <li><p>dado la categoria, <span class="math notranslate nohighlight">\(z_1 = 1\)</span>, con una proporción en nuestra base de datos de 33.33%, y una variable aleatorea (VA) categorica lejos de los datos, <span class="math notranslate nohighlight">\(Z(\bf{u})\)</span>, entonces la probabilidad de que la VA tome el valor <span class="math notranslate nohighlight">\(z_1\)</span> es igual a <span class="math notranslate nohighlight">\(0.333\)</span>.</p></li>
 </ul>
 <section id="Variograma-indicador">
-<h4><span class="section-number">2.2.1.1. </span>Variograma indicador<a class="headerlink" href="#Variograma-indicador" title="Link to this heading"></a></h4>
+<h4><span class="section-number">2.1.1.1. </span>Variograma indicador<a class="headerlink" href="#Variograma-indicador" title="Link to this heading"></a></h4>
 <p>Los variogramas se calculan y modelan a partir de la transformación indicadora de los datos espaciales y se usan para el kriging de indicadores. El variograma indicador es,</p>
 <div class="math notranslate nohighlight">
 \[\gamma_i(\mathbf{h}; z_k) = \frac{1}{2N(\mathbf{h})}
@@ -294,7 +290,7 @@
 <p>donde <span class="math notranslate nohighlight">\(p\)</span> es la proporción de 1’s (o de ceros, ya que la función es simétrica respecto a la proporción)</p>
 </section>
 <section id="kriging-de-indicadores-1">
-<span id="id1"></span><h4><span class="section-number">2.2.1.2. </span>Kriging de indicadores<a class="headerlink" href="#kriging-de-indicadores-1" title="Link to this heading"></a></h4>
+<span id="id1"></span><h4><span class="section-number">2.1.1.2. </span>Kriging de indicadores<a class="headerlink" href="#kriging-de-indicadores-1" title="Link to this heading"></a></h4>
 <p>La aplicación de kriging simple a un conjunto indicadores, una por cada categoría para características categóricas, define directamente un modelo de probabilidad local de una cierta categoría en una ubicación desconocida, <span class="math notranslate nohighlight">\(\bf{u}\)</span>, a partir de nuestros datos.</p>
 <p>El estimador de kriging de indicadores se define como,</p>
 <div class="math notranslate nohighlight">
@@ -315,7 +311,7 @@
 </ul>
 </section>
 <section id="Cargar-las-bibliotecas-requeridas">
-<h4><span class="section-number">2.2.1.3. </span>Cargar las bibliotecas requeridas<a class="headerlink" href="#Cargar-las-bibliotecas-requeridas" title="Link to this heading"></a></h4>
+<h4><span class="section-number">2.1.1.3. </span>Cargar las bibliotecas requeridas<a class="headerlink" href="#Cargar-las-bibliotecas-requeridas" title="Link to this heading"></a></h4>
 <p>El siguiente código carga las bibliotecas requeridas.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -379,7 +375,7 @@ GeostatsPy version: 0.0.78
 </section>
 </section>
 <section id="Proporciones-de-cada-UG-en-nuestra-base-de-datos">
-<h3><span class="section-number">2.2.2. </span>Proporciones de cada UG en nuestra base de datos<a class="headerlink" href="#Proporciones-de-cada-UG-en-nuestra-base-de-datos" title="Link to this heading"></a></h3>
+<h3><span class="section-number">2.1.2. </span>Proporciones de cada UG en nuestra base de datos<a class="headerlink" href="#Proporciones-de-cada-UG-en-nuestra-base-de-datos" title="Link to this heading"></a></h3>
 <p>Verificamos la proporción de cada UG en nuestra base de datos. (Para este ejemplo solo consideramos las UGs 2, 3 y 4.)</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
@@ -416,12 +412,12 @@ GeostatsPy version: 0.0.78
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/lessons_04_02_Def_UG_Vol_9_0.png" src="../../_images/lessons_04_02_Def_UG_Vol_9_0.png" />
+<img alt="../../_images/lessons_04_02_Def_UG_Vol_8_0.png" src="../../_images/lessons_04_02_Def_UG_Vol_8_0.png" />
 </div>
 </div>
 </section>
 <section id="Codificar-base-de-datos-en-funcion-de-indicadores">
-<h3><span class="section-number">2.2.3. </span>Codificar base de datos en funcion de indicadores<a class="headerlink" href="#Codificar-base-de-datos-en-funcion-de-indicadores" title="Link to this heading"></a></h3>
+<h3><span class="section-number">2.1.3. </span>Codificar base de datos en funcion de indicadores<a class="headerlink" href="#Codificar-base-de-datos-en-funcion-de-indicadores" title="Link to this heading"></a></h3>
 <p>Convendrá agregar a nuestra base de datos 3 columnas nuevas que codifiquen la variable indicador para cada UG</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
@@ -641,7 +637,7 @@ UG4 - Media: 0.51, Varianza: 0.25
 </section>
 </section>
 <section id="Variograma-de-indicadores">
-<h2><span class="section-number">2.3. </span>Variograma de indicadores<a class="headerlink" href="#Variograma-de-indicadores" title="Link to this heading"></a></h2>
+<h2><span class="section-number">2.2. </span>Variograma de indicadores<a class="headerlink" href="#Variograma-de-indicadores" title="Link to this heading"></a></h2>
 <p>Veamos los parámetros de la función <strong>gamv</strong> para datos irregulares, la función experimental de GeostatsPy para el cálculo de variogramas.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[86]:
@@ -721,7 +717,7 @@ UG4 - Media: 0.51, Varianza: 0.25
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/lessons_04_02_Def_UG_Vol_20_0.png" src="../../_images/lessons_04_02_Def_UG_Vol_20_0.png" />
+<img alt="../../_images/lessons_04_02_Def_UG_Vol_19_0.png" src="../../_images/lessons_04_02_Def_UG_Vol_19_0.png" />
 </div>
 </div>
 </section>
