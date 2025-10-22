@@ -1,5 +1,5 @@
 ***********************************************
-Capítulo 3. Compositación
+Capítulo 3. Compositación 
 ***********************************************
 
 .. rubric:: Contenidos

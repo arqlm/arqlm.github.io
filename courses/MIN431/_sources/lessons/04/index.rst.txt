@@ -1,15 +1,6 @@
 ***********************************************
-Capítulo 3. Algoritmos de simulación
+Capítulo 4. Estimación de Recursos
 ***********************************************
-
-Difícilmente lograra comprender bien los conceptos de probabilidad y estadística, al nivel de los requeridos para este curso, quien no es capaz 
-de producir algunos procesos aleatorios básicos.
-
-En este capítulo, introduciremos algunos algoritmos básicos que nos
-permitirán entender los límites de las herramientas que se históricamente
-se utilizan en el análisis estadístico y geoestadístico de la información
-proveniente de la naturaleza.
-
 
 .. rubric:: Contenidos
 
@@ -17,6 +8,11 @@ proveniente de la naturaleza.
    :maxdepth: 2
    :numbered:
 
-   Simulación de variables aleatorias reales <01_SVA>
-   Simulación de Monte-Carlo <02_SMC>
-   Simulación de campos aleatorios <03_SRF>
+   Determinación de grilla de estimación <01_Limites>
+   Generación de volúmenes de estimación <01_VolEst>
+   Análisis variográfico de leyes <02_AnVar>
+   Selección de planes de estimación <03_SelPlan>
+   Estimación por Kriging <04_Kriging>
+   Validación de la estimación <05_ValEst>
+   Categorización de recursos <06_CatRec>
+   Inventario de recursos <07_InvRec>
