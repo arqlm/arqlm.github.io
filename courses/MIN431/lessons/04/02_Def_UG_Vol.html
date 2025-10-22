@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Determinación de Volúmenes de estimación &mdash; documentación de MIN 431 - Evaluacion de Yacimientos - </title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=720011df" />
+      <link rel="stylesheet" type="text/css" href="../../_static/./custom.css?v=905461ed" />
+
+  
+    <link rel="shortcut icon" href="../../_static/logoEvYac2.png"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/translations.js?v=f85f4cfb"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../../_static/require.min.js?v=8a87acde"></script>
+      <script src="../../_static/hide_code_cells.js?v=51dbf054"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="prev" title="Capítulo 4. Estimación de Recursos" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            MIN 431 - Evaluacion de Yacimientos
+              <img src="../../_static/logoEvYac2.png" class="logo" alt="Logotipo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Apuntes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00/index.html">Capítulo 0. Preparando tu computador para este curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/index.html">Capítulo 1. Estudio Exploratorio de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/index.html">Capítulo 2. Análisis Espacial de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/index.html">Capítulo 3. Compositación</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Capítulo 4. Estimación de Recursos</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. Generación de volúmenes de estimación</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Simplificacion-de-base-de-datos-compositada">1.1. Simplificacion de base de datos compositada</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Kriging-de-indicadores">1.2. Kriging de indicadores</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Formalismo-de-indicadores">1.2.1. Formalismo de indicadores</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Proporciones-de-cada-UG-en-nuestra-base-de-datos">1.3. Proporciones de cada UG en nuestra base de datos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Variograma-de-indicadores">1.4. Variograma de indicadores</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MIN 431 - Evaluacion de Yacimientos</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Capítulo 4. Estimación de Recursos</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Determinación de Volúmenes de estimación</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/arqlm/arqlm.github.io/blob/main/courses/MIN431/lessons/04/02_Def_UG_Vol.ipynb" class="fa fa-github"> Editar en GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+  <span style="white-space: nowrap;">
+    <a href="https://colab.research.google.com/github/arqlm/arqlm.github.io/blob/main/courses/MIN431/lessons/04/02_Def_UG_Vol.ipynb">
+      <img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"
+        style="vertical-align:text-bottom">
+    |</a>
+    <a href="02_Def_UG_Vol.ipynb" class="reference download internal" download>Descargar notebook</a>.
+  </span>
+</div><section id="Determinación-de-Volúmenes-de-estimación">
+<h1><span class="section-number">1. </span>Determinación de Volúmenes de estimación<a class="headerlink" href="#Determinación-de-Volúmenes-de-estimación" title="Link to this heading"></a></h1>
+<p>Nuestro <strong>objetivo</strong> es determinar el volumen espacial que sera el limite de estimación para cada una de las Unidades Geológicas. Es decir, la estimación realizada con la información perteneciente a cada unidad geológica definida no rebasara mas allá de los limites representados por este volumen .</p>
+<p>Nuestro punto de partida sera la base de datos compositada a 6 metros, en donde los valores -99 han sido ya filtrados.</p>
+<section id="Simplificacion-de-base-de-datos-compositada">
+<h2><span class="section-number">1.1. </span>Simplificacion de base de datos compositada<a class="headerlink" href="#Simplificacion-de-base-de-datos-compositada" title="Link to this heading"></a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Cargar data simplificada de la sección anterior</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Cargar base de datos en pandas</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+      <th>Z</th>
+      <th>cu_pct</th>
+      <th>UG</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>472187.343570</td>
+      <td>6.925806e+06</td>
+      <td>4211.772172</td>
+      <td>0.020300</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>472187.740701</td>
+      <td>6.925807e+06</td>
+      <td>4205.844155</td>
+      <td>0.009500</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>472188.089349</td>
+      <td>6.925807e+06</td>
+      <td>4199.915106</td>
+      <td>0.006767</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>472188.470072</td>
+      <td>6.925808e+06</td>
+      <td>4193.995578</td>
+      <td>0.010433</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>472188.878860</td>
+      <td>6.925809e+06</td>
+      <td>4188.084383</td>
+      <td>0.011133</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>16877</th>
+      <td>471922.691912</td>
+      <td>6.925392e+06</td>
+      <td>4022.517796</td>
+      <td>0.095000</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>16878</th>
+      <td>471924.631624</td>
+      <td>6.925395e+06</td>
+      <td>4017.651413</td>
+      <td>0.109000</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>16879</th>
+      <td>471926.586648</td>
+      <td>6.925397e+06</td>
+      <td>4012.784519</td>
+      <td>0.179667</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>16880</th>
+      <td>471928.548677</td>
+      <td>6.925400e+06</td>
+      <td>4007.918137</td>
+      <td>0.148333</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>16881</th>
+      <td>471930.530423</td>
+      <td>6.925403e+06</td>
+      <td>4003.054819</td>
+      <td>0.206000</td>
+      <td>4.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>16882 rows × 5 columns</p>
+</div></div>
+</div>
+</section>
+<section id="Kriging-de-indicadores">
+<h2><span class="section-number">1.2. </span>Kriging de indicadores<a class="headerlink" href="#Kriging-de-indicadores" title="Link to this heading"></a></h2>
+<p>Para la determinación de cada volumen de estimación, emplearemos la técnica llamada Kriging de Indicadores.</p>
+<section id="Formalismo-de-indicadores">
+<h3><span class="section-number">1.2.1. </span>Formalismo de indicadores<a class="headerlink" href="#Formalismo-de-indicadores" title="Link to this heading"></a></h3>
+<p>A continuación, usamos métodos indicadores para estimar una variable categórica en el espacio.</p>
+<p>Si <span class="math notranslate nohighlight">\(i(\bf{u}; z_k)\)</span> es un indicador para una variable categórica <span class="math notranslate nohighlight">\(z\)</span> (como es el caso de la variable UG), definida como</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}i(\bf{u}; z_k) =
+\begin{cases}
+    1, &amp; \text{si } Z(\bf{u}) = z_k \\
+    0, &amp; \text{si } Z(\bf{u}) \ne z_k
+\end{cases}\end{split}\]</div>
+<img alt="../../_images/ind1.png" src="../../_images/ind1.png" />
+<p>entonces la probabilidad de que encontrar esta categoría lejos de las posiciones de nuestra data debería ser igual a la proporción de esta categoría en nuestra base de datos (por la hipótesis de estacionariedad)</p>
+<p>por ejemplo,</p>
+<ul class="simple">
+<li><p>dado la categoria UG = 2, <span class="math notranslate nohighlight">\(z_2 = 2\)</span>, y dato en <span class="math notranslate nohighlight">\(\bf{u}_1\)</span>, <span class="math notranslate nohighlight">\(z(\bf{u}_1) = 2\)</span>, entonces <span class="math notranslate nohighlight">\(i(\bf{u}_1; z_2) = 1\)</span></p></li>
+<li><p>dado la categoria, <span class="math notranslate nohighlight">\(z_1 = 1\)</span>, con una proporción en nuestra base de datos de 33.33%, y una variable aleatorea (VA) categorica lejos de los datos, <span class="math notranslate nohighlight">\(Z(\bf{u})\)</span>, entonces la probabilidad de que la VA tome el valor <span class="math notranslate nohighlight">\(z_1\)</span> es igual a <span class="math notranslate nohighlight">\(0.333\)</span>.</p></li>
+</ul>
+<section id="Variograma-indicador">
+<h4><span class="section-number">1.2.1.1. </span>Variograma indicador<a class="headerlink" href="#Variograma-indicador" title="Link to this heading"></a></h4>
+<p>Los variogramas se calculan y modelan a partir de la transformación indicadora de los datos espaciales y se usan para el kriging de indicadores. El variograma indicador es,</p>
+<div class="math notranslate nohighlight">
+\[\gamma_i(\mathbf{h}; z_k) = \frac{1}{2N(\mathbf{h})}
+\sum_{\alpha=1}^{N(\mathbf{h})}
+\left[ i(\mathbf{u}_\alpha; z_k) - i(\mathbf{u}_\alpha + \mathbf{h}; z_k) \right]^2\]</div>
+<p>donde <span class="math notranslate nohighlight">\(i(\mathbf{u}_\alpha; z_k)\)</span> e <span class="math notranslate nohighlight">\(i(\mathbf{u}_\alpha + \mathbf{h}; z_k)\)</span> son las transformaciones indicadoras para la categoría <span class="math notranslate nohighlight">\(z_k\)</span> en la posición de cola <span class="math notranslate nohighlight">\(\mathbf{u}_\alpha\)</span> y en la posición de cabeza <span class="math notranslate nohighlight">\(\mathbf{u}_\alpha + \mathbf{h}\)</span> respectivamente.</p>
+<ul class="simple">
+<li><p>notar que la transformación indicadora <span class="math notranslate nohighlight">\(i(\bf{u},z_k)\)</span> es o bien 0 o bien 1, en cuyo caso <span class="math notranslate nohighlight">\(\left[ i(\mathbf{u}_\alpha; z_k) - i(\mathbf{u}_\alpha + \mathbf{h}; z_k) \right]^2\)</span> es igual a 0 cuando los valores en cabeza y cola pertenecen a la misma categoría $ z_k$, o 1 cuando son diferentes.</p></li>
+<li><p>la meseta (sill) de un variograma indicador es la varianza indicadora calculada como,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\sigma_i^2 = p \cdot (1 - p)\]</div>
+<p>donde <span class="math notranslate nohighlight">\(p\)</span> es la proporción de 1’s (o de ceros, ya que la función es simétrica respecto a la proporción)</p>
+</section>
+<section id="kriging-de-indicadores-1">
+<span id="id1"></span><h4><span class="section-number">1.2.1.2. </span>Kriging de indicadores<a class="headerlink" href="#kriging-de-indicadores-1" title="Link to this heading"></a></h4>
+<p>La aplicación de kriging simple a un conjunto indicadores, una por cada categoría para características categóricas, define directamente un modelo de probabilidad local de una cierta categoría en una ubicación desconocida, <span class="math notranslate nohighlight">\(\bf{u}\)</span>, a partir de nuestros datos.</p>
+<p>El estimador de kriging de indicadores se define como,</p>
+<div class="math notranslate nohighlight">
+\[p^*_{IK}(\mathbf{u}; k) =
+\sum_{\alpha=1}^n \lambda_\alpha(k) \cdot i(\mathbf{u}_\alpha; k)
++ \left( 1 - \sum_{\alpha=1}^n \lambda_\alpha(k) \right) \cdot p(k)\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\lambda_\alpha(k)\)</span> es el peso de kriging indicador para el dato <span class="math notranslate nohighlight">\(\alpha\)</span> y la categoría <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(i(\mathbf{u}_\alpha; k)\)</span> es la transformación indicadora de la categoría <span class="math notranslate nohighlight">\(k\)</span> del dato en la ubicación <span class="math notranslate nohighlight">\(\mathbf{u}_\alpha\)</span> y <span class="math notranslate nohighlight">\(p(k)\)</span> la probabilidad categórica.</p>
+<p>Los pasos para el kriging de indicadores son,</p>
+<ol class="arabic simple">
+<li><p>Establecer una serie de categorías. En nuestro caso, estas ya fueron definidas en los capítulos anteriores.</p></li>
+<li><p>Aplicar la transformación indicadora a los datos.</p></li>
+<li><p>Calcular el <em>variograma indicador</em> a partir de la transformación indicadora de los datos para cada categoría.</p></li>
+<li><p>Aplicar kriging de indicadores para estimar la probabilidad acumulada para características continuas o la probabilidad para características categóricas en una ubicación no muestreada, usando el variograma indicador para cada categoría.</p></li>
+</ol>
+<p>Comentario general,</p>
+<ul class="simple">
+<li><p>se necesita un modelo de variograma para cada categoría; por lo tanto, es un problema de inferencia difícil.</p></li>
+</ul>
+</section>
+<section id="Cargar-las-bibliotecas-requeridas">
+<h4><span class="section-number">1.2.1.3. </span>Cargar las bibliotecas requeridas<a class="headerlink" href="#Cargar-las-bibliotecas-requeridas" title="Link to this heading"></a></h4>
+<p>El siguiente código carga las bibliotecas requeridas.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Instalar libreria de geoestadistica Geostatspy</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>geostatspy
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Collecting geostatspy
+  Downloading geostatspy-0.0.78-py3-none-any.whl.metadata (25 kB)
+Downloading geostatspy-0.0.78-py3-none-any.whl (78 kB)
+Installing collected packages: geostatspy
+Successfully installed geostatspy-0.0.78
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">geostatspy.GSLIB</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">GSLIB</span>                              <span class="c1"># GSLIB utilities, visualization and wrapper</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geostatspy.geostats</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">geostats</span>                        <span class="c1"># GSLIB methods convert to Python</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geostatspy</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GeostatsPy version: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">geostatspy</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>                                                     <span class="c1"># set working directory, run executables</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>                                         <span class="c1"># suppress the status bar</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">partialmethod</span>
+<span class="n">tqdm</span><span class="o">.</span><span class="fm">__init__</span> <span class="o">=</span> <span class="n">partialmethod</span><span class="p">(</span><span class="n">tqdm</span><span class="o">.</span><span class="fm">__init__</span><span class="p">,</span> <span class="n">disable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">ignore_warnings</span> <span class="o">=</span> <span class="kc">True</span>                                        <span class="c1"># ignore warnings?</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>                                            <span class="c1"># ndarrays for gridded data</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>                                           <span class="c1"># DataFrames for tabular data</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>                               <span class="c1"># for plotting</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>                                      <span class="c1"># custom colorbar</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.ticker</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mticker</span>                           <span class="c1"># custom colorpar ticks</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.ticker</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">MultipleLocator</span><span class="p">,</span> <span class="n">AutoMinorLocator</span><span class="p">)</span> <span class="c1"># control of axes ticks</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;axes&#39;</span><span class="p">,</span> <span class="n">axisbelow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>                                <span class="c1"># plot all grids below the plot elements</span>
+<span class="k">if</span> <span class="n">ignore_warnings</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">inferno</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+GeostatsPy version: 0.0.78
+</pre></div></div>
+</div>
+</section>
+</section>
+</section>
+<section id="Proporciones-de-cada-UG-en-nuestra-base-de-datos">
+<h2><span class="section-number">1.3. </span>Proporciones de cada UG en nuestra base de datos<a class="headerlink" href="#Proporciones-de-cada-UG-en-nuestra-base-de-datos" title="Link to this heading"></a></h2>
+<p>Verificamos la proporción de cada UG en nuestra base de datos. (Para este ejemplo solo consideramos las UGs 2, 3 y 4.)</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">250</span> <span class="c1"># Setear resolución de la figura</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;font.family&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Times New Roman&quot;</span>
+
+<span class="c1"># Proporciones de cada UG en nuestra base de datos</span>
+<span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="s1">&#39;purple&#39;</span><span class="p">]</span>
+
+<span class="n">proportions</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;UG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">proportions</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="n">bars</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">proportions</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">proportions</span><span class="p">)])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Proporción de cada UG en la base de datos&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;UGs&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Proporción&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mticker</span><span class="o">.</span><span class="n">PercentFormatter</span><span class="p">(</span><span class="mf">1.0</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">bar</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">bars</span><span class="p">,</span> <span class="n">proportions</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">bar</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">p</span><span class="p">),</span>
+                <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s2">&quot;offset points&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/lessons_04_02_Def_UG_Vol_9_0.png" src="../../_images/lessons_04_02_Def_UG_Vol_9_0.png" />
+</div>
+</div>
+</section>
+<section id="Variograma-de-indicadores">
+<h2><span class="section-number">1.4. </span>Variograma de indicadores<a class="headerlink" href="#Variograma-de-indicadores" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="index.html" class="btn btn-neutral float-left" title="Capítulo 4. Estimación de Recursos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2025, Alvaro I. Riquelme.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

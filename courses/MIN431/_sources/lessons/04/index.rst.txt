@@ -9,10 +9,10 @@ Capítulo 4. Estimación de Recursos
    :numbered:
 
    Determinación de grilla de estimación <01_Limites>
-   Generación de volúmenes de estimación <01_VolEst>
-   Análisis variográfico de leyes <02_AnVar>
-   Selección de planes de estimación <03_SelPlan>
-   Estimación por Kriging <04_Kriging>
-   Validación de la estimación <05_ValEst>
-   Categorización de recursos <06_CatRec>
-   Inventario de recursos <07_InvRec>
+   Generación de volúmenes de estimación <02_Def_UG_Vol>
+   Análisis variográfico de leyes <03_AnVar>
+   Selección de planes de estimación <04_SelPlan>
+   Estimación por Kriging <05_Kriging>
+   Validación de la estimación <06_ValEst>
+   Categorización de recursos <07_CatRec>
+   Inventario de recursos <08_InvRec>

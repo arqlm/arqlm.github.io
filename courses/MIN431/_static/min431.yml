@@ -46,6 +46,7 @@ dependencies:
   - xarray
   - xlrd
   - zarr
+  - geostatspy
   - pip:
     - altair
     - arviz>=0.17.0
