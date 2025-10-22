@@ -8,7 +8,7 @@ Capítulo 4. Estimación de Recursos
    :maxdepth: 2
    :numbered:
 
-   Determinación de grilla de estimación <01_Limites>
+   Determinación de grilla de estimación <01_GrillaEst>
    Generación de volúmenes de estimación <02_Def_UG_Vol>
    Análisis variográfico de leyes <03_AnVar>
    Selección de planes de estimación <04_SelPlan>
