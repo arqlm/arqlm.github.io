@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2. Determinación de Volúmenes de estimación &mdash; documentación de MIN 431 - Evaluacion de Yacimientos - </title>
+  <title>3. Determinación de Volúmenes de estimación &mdash; documentación de MIN 431 - Evaluacion de Yacimientos - </title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -31,7 +31,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Índice" href="../../genindex.html" />
     <link rel="search" title="Búsqueda" href="../../search.html" />
-    <link rel="prev" title="1. Grilla de estimación" href="01_GrillaEst.html" /> 
+    <link rel="prev" title="2. Grilla de estimación" href="01_GrillaEst.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -61,16 +61,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../02/index.html">Capítulo 2. Análisis Espacial de Datos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03/index.html">Capítulo 3. Compositación</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Capítulo 4. Estimación de Recursos</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="01_GrillaEst.html">1. Determinación de grilla de estimación</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2. Generación de volúmenes de estimación</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Kriging-de-indicadores">2.1. Kriging de indicadores</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#Formalismo-de-indicadores">2.1.1. Formalismo de indicadores</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Proporciones-de-cada-UG-en-nuestra-base-de-datos">2.1.2. Proporciones de cada UG en nuestra base de datos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Codificar-base-de-datos-en-funcion-de-indicadores">2.1.3. Codificar base de datos en funcion de indicadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_GSLIB.html">1. Instalación de GSLIB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_GrillaEst.html">2. .. Determinación de grilla de estimación</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. Generación de volúmenes de estimación</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Un-poco-de-teoría-acerca-del-Kriging-de-indicadores">3.1. Un poco de teoría acerca del Kriging de indicadores</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Formalismo-de-indicadores">3.1.1. Formalismo de indicadores</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Proporciones-de-cada-UG-en-nuestra-base-de-datos">3.1.2. Proporciones de cada UG en nuestra base de datos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Codificar-base-de-datos-en-funcion-de-indicadores">3.1.3. Codificar base de datos en funcion de indicadores</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Variograma-experimental-de-indicadores">2.2. Variograma experimental de indicadores</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Modelado-del-variograma">2.3. Modelado del variograma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Variograma-experimental-de-indicadores">3.2. Variograma experimental de indicadores</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Modelado-del-variograma">3.3. Modelado del variograma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Kriging-de-Indicadores">3.4. Kriging de Indicadores</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Especificar-la-grilla">3.4.1. Especificar la grilla</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -92,7 +97,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Capítulo 4. Estimación de Recursos</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">2. </span>Determinación de Volúmenes de estimación</li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>Determinación de Volúmenes de estimación</li>
       <li class="wy-breadcrumbs-aside">
               <!-- User defined GitHub URL -->
               <a href="https://github.com/arqlm/arqlm.github.io/blob/main/courses/MIN431/lessons/04/02_Def_UG_Vol.ipynb" class="fa fa-github"> Editar en GitHub</a>
@@ -112,11 +117,11 @@
     <a href="02_Def_UG_Vol.ipynb" class="reference download internal" download>Descargar notebook</a>.
   </span>
 </div><section id="Determinación-de-Volúmenes-de-estimación">
-<h1><span class="section-number">2. </span>Determinación de Volúmenes de estimación<a class="headerlink" href="#Determinación-de-Volúmenes-de-estimación" title="Link to this heading"></a></h1>
+<h1><span class="section-number">3. </span>Determinación de Volúmenes de estimación<a class="headerlink" href="#Determinación-de-Volúmenes-de-estimación" title="Link to this heading"></a></h1>
 <p>Nuestro <strong>objetivo</strong> es determinar el volumen espacial que sera el limite de estimación para cada una de las Unidades Geológicas. Es decir, la estimación realizada con la información perteneciente a cada unidad geológica definida no rebasara mas allá de los limites representados por este volumen .</p>
 <p>Nuestro punto de partida sera la base de datos simplificada de la sección anterior.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Cargar data simplificada de la sección anterior</span>
@@ -131,7 +136,7 @@
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -254,11 +259,11 @@
 <p>16882 rows × 5 columns</p>
 </div></div>
 </div>
-<section id="Kriging-de-indicadores">
-<h2><span class="section-number">2.1. </span>Kriging de indicadores<a class="headerlink" href="#Kriging-de-indicadores" title="Link to this heading"></a></h2>
+<section id="Un-poco-de-teoría-acerca-del-Kriging-de-indicadores">
+<h2><span class="section-number">3.1. </span>Un poco de teoría acerca del Kriging de indicadores<a class="headerlink" href="#Un-poco-de-teoría-acerca-del-Kriging-de-indicadores" title="Link to this heading"></a></h2>
 <p>Para la determinación de cada volumen de estimación, emplearemos la técnica llamada Kriging de Indicadores.</p>
 <section id="Formalismo-de-indicadores">
-<h3><span class="section-number">2.1.1. </span>Formalismo de indicadores<a class="headerlink" href="#Formalismo-de-indicadores" title="Link to this heading"></a></h3>
+<h3><span class="section-number">3.1.1. </span>Formalismo de indicadores<a class="headerlink" href="#Formalismo-de-indicadores" title="Link to this heading"></a></h3>
 <p>A continuación, usamos métodos indicadores para estimar una variable categórica en el espacio.</p>
 <p>Si <span class="math notranslate nohighlight">\(i(\bf{u}; z_k)\)</span> es un indicador para una variable categórica <span class="math notranslate nohighlight">\(z\)</span> (como es el caso de la variable UG), definida como</p>
 <div class="math notranslate nohighlight">
@@ -275,7 +280,7 @@
 <li><p>dado la categoria, <span class="math notranslate nohighlight">\(z_1 = 1\)</span>, con una proporción en nuestra base de datos de 33.33%, y una variable aleatorea (VA) categorica lejos de los datos, <span class="math notranslate nohighlight">\(Z(\bf{u})\)</span>, entonces la probabilidad de que la VA tome el valor <span class="math notranslate nohighlight">\(z_1\)</span> es igual a <span class="math notranslate nohighlight">\(0.333\)</span>.</p></li>
 </ul>
 <section id="Variograma-indicador">
-<h4><span class="section-number">2.1.1.1. </span>Variograma indicador<a class="headerlink" href="#Variograma-indicador" title="Link to this heading"></a></h4>
+<h4><span class="section-number">3.1.1.1. </span>Variograma indicador<a class="headerlink" href="#Variograma-indicador" title="Link to this heading"></a></h4>
 <p>Los variogramas se calculan y modelan a partir de la transformación indicadora de los datos espaciales y se usan para el kriging de indicadores. El variograma indicador es,</p>
 <div class="math notranslate nohighlight">
 \[\gamma_i(\mathbf{h}; z_k) = \frac{1}{2N(\mathbf{h})}
@@ -290,8 +295,8 @@
 \[\sigma_i^2 = p \cdot (1 - p)\]</div>
 <p>donde <span class="math notranslate nohighlight">\(p\)</span> es la proporción de 1’s (o de ceros, ya que la función es simétrica respecto a la proporción)</p>
 </section>
-<section id="kriging-de-indicadores-1">
-<span id="id1"></span><h4><span class="section-number">2.1.1.2. </span>Kriging de indicadores<a class="headerlink" href="#kriging-de-indicadores-1" title="Link to this heading"></a></h4>
+<section id="Kriging-de-indicadores">
+<h4><span class="section-number">3.1.1.2. </span>Kriging de indicadores<a class="headerlink" href="#Kriging-de-indicadores" title="Link to this heading"></a></h4>
 <p>La aplicación de kriging simple a un conjunto indicadores, una por cada categoría para características categóricas, define directamente un modelo de probabilidad local de una cierta categoría en una ubicación desconocida, <span class="math notranslate nohighlight">\(\bf{u}\)</span>, a partir de nuestros datos.</p>
 <p>El estimador de kriging de indicadores se define como,</p>
 <div class="math notranslate nohighlight">
@@ -312,7 +317,7 @@
 </ul>
 </section>
 <section id="Cargar-las-bibliotecas-requeridas">
-<h4><span class="section-number">2.1.1.3. </span>Cargar las bibliotecas requeridas<a class="headerlink" href="#Cargar-las-bibliotecas-requeridas" title="Link to this heading"></a></h4>
+<h4><span class="section-number">3.1.1.3. </span>Cargar las bibliotecas requeridas<a class="headerlink" href="#Cargar-las-bibliotecas-requeridas" title="Link to this heading"></a></h4>
 <p>El siguiente código carga las bibliotecas requeridas.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -328,15 +333,11 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Collecting geostatspy
-  Downloading geostatspy-0.0.78-py3-none-any.whl.metadata (25 kB)
-Downloading geostatspy-0.0.78-py3-none-any.whl (78 kB)
-Installing collected packages: geostatspy
-Successfully installed geostatspy-0.0.78
+Requirement already satisfied: geostatspy in c:\users\alvaro\anaconda3\lib\site-packages (0.0.78)
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">geostatspy.GSLIB</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">GSLIB</span>                              <span class="c1"># GSLIB utilities, visualization and wrapper</span>
@@ -376,10 +377,10 @@ GeostatsPy version: 0.0.78
 </section>
 </section>
 <section id="Proporciones-de-cada-UG-en-nuestra-base-de-datos">
-<h3><span class="section-number">2.1.2. </span>Proporciones de cada UG en nuestra base de datos<a class="headerlink" href="#Proporciones-de-cada-UG-en-nuestra-base-de-datos" title="Link to this heading"></a></h3>
+<h3><span class="section-number">3.1.2. </span>Proporciones de cada UG en nuestra base de datos<a class="headerlink" href="#Proporciones-de-cada-UG-en-nuestra-base-de-datos" title="Link to this heading"></a></h3>
 <p>Verificamos la proporción de cada UG en nuestra base de datos. (Para este ejemplo solo consideramos las UGs 2, 3 y 4.)</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[59]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -418,10 +419,10 @@ GeostatsPy version: 0.0.78
 </div>
 </section>
 <section id="Codificar-base-de-datos-en-funcion-de-indicadores">
-<h3><span class="section-number">2.1.3. </span>Codificar base de datos en funcion de indicadores<a class="headerlink" href="#Codificar-base-de-datos-en-funcion-de-indicadores" title="Link to this heading"></a></h3>
+<h3><span class="section-number">3.1.3. </span>Codificar base de datos en funcion de indicadores<a class="headerlink" href="#Codificar-base-de-datos-en-funcion-de-indicadores" title="Link to this heading"></a></h3>
 <p>Convendrá agregar a nuestra base de datos 3 columnas nuevas que codifiquen la variable indicador para cada UG</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Agregar columnas de indicadores para cada UG</span>
@@ -435,7 +436,7 @@ GeostatsPy version: 0.0.78
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -462,7 +463,6 @@ GeostatsPy version: 0.0.78
       <th>Z</th>
       <th>cu_pct</th>
       <th>UG</th>
-      <th>UGs</th>
       <th>indicador UG_2</th>
       <th>indicador UG_3</th>
       <th>indicador UG_4</th>
@@ -476,7 +476,6 @@ GeostatsPy version: 0.0.78
       <td>4211.772172</td>
       <td>0.020300</td>
       <td>2.0</td>
-      <td>4</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
@@ -488,7 +487,6 @@ GeostatsPy version: 0.0.78
       <td>4205.844155</td>
       <td>0.009500</td>
       <td>2.0</td>
-      <td>4</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
@@ -500,7 +498,6 @@ GeostatsPy version: 0.0.78
       <td>4199.915106</td>
       <td>0.006767</td>
       <td>2.0</td>
-      <td>4</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
@@ -512,7 +509,6 @@ GeostatsPy version: 0.0.78
       <td>4193.995578</td>
       <td>0.010433</td>
       <td>2.0</td>
-      <td>4</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
@@ -524,14 +520,12 @@ GeostatsPy version: 0.0.78
       <td>4188.084383</td>
       <td>0.011133</td>
       <td>2.0</td>
-      <td>4</td>
       <td>1</td>
       <td>0</td>
       <td>0</td>
     </tr>
     <tr>
       <th>...</th>
-      <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -548,7 +542,6 @@ GeostatsPy version: 0.0.78
       <td>4022.517796</td>
       <td>0.095000</td>
       <td>4.0</td>
-      <td>4</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
@@ -560,7 +553,6 @@ GeostatsPy version: 0.0.78
       <td>4017.651413</td>
       <td>0.109000</td>
       <td>4.0</td>
-      <td>4</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
@@ -572,7 +564,6 @@ GeostatsPy version: 0.0.78
       <td>4012.784519</td>
       <td>0.179667</td>
       <td>4.0</td>
-      <td>4</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
@@ -584,7 +575,6 @@ GeostatsPy version: 0.0.78
       <td>4007.918137</td>
       <td>0.148333</td>
       <td>4.0</td>
-      <td>4</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
@@ -596,19 +586,18 @@ GeostatsPy version: 0.0.78
       <td>4003.054819</td>
       <td>0.206000</td>
       <td>4.0</td>
-      <td>4</td>
       <td>0</td>
       <td>0</td>
       <td>1</td>
     </tr>
   </tbody>
 </table>
-<p>16882 rows × 9 columns</p>
+<p>16882 rows × 8 columns</p>
 </div></div>
 </div>
 <p>Podemos, en base a esta información, calcular la media de los indicadores (igual a la proporción) y la varianza.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[83]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#   calcular la media de los indicadores (igual a la proporcion) y la varianza.</span>
@@ -638,32 +627,34 @@ UG4 - Media: 0.51, Varianza: 0.25
 </section>
 </section>
 <section id="Variograma-experimental-de-indicadores">
-<h2><span class="section-number">2.2. </span>Variograma experimental de indicadores<a class="headerlink" href="#Variograma-experimental-de-indicadores" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.2. </span>Variograma experimental de indicadores<a class="headerlink" href="#Variograma-experimental-de-indicadores" title="Link to this heading"></a></h2>
 <p>Veamos los parámetros de la función <strong>gamv</strong> para datos irregulares, la función experimental de GeostatsPy para el cálculo de variogramas.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[86]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geostats</span><span class="o">.</span><span class="n">gamv</span>  <span class="c1"># ver parametros de la función gamv</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geostats</span><span class="o">.</span><span class="n">gamv_3D</span>  <span class="c1"># ver parametros de la función gamv</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[86]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;function geostatspy.geostats.gamv(df, xcol, ycol, vcol, tmin, tmax, xlag, xltol, nlag, azm, atol, bandwh, isill)&gt;
+&lt;function geostatspy.geostats.gamv_3D(df, xcol, ycol, zcol, vcol, tmin, tmax, xlag, xltol, nlag, azm, dip, atol, dtol, bandwh, isill)&gt;
 </pre></div></div>
 </div>
 <p>Estamos listos para calcular los variogramas. Vamos a calcular variogramas isótropos para todas las UGs. Algunas notas sobre los parámetros que elegí:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[84]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmin</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9999.</span><span class="p">;</span> <span class="n">tmax</span> <span class="o">=</span> <span class="mf">9999.</span><span class="p">;</span>
-<span class="n">lag_dist</span> <span class="o">=</span> <span class="mf">50.0</span><span class="p">;</span> <span class="n">lag_tol</span> <span class="o">=</span> <span class="mf">25.0</span><span class="p">;</span> <span class="n">nlag</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">bandh</span> <span class="o">=</span> <span class="mf">9999.9</span><span class="p">;</span> <span class="n">azi</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">atol</span> <span class="o">=</span> <span class="mf">90.0</span><span class="p">;</span> <span class="n">isill</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">xlag</span> <span class="o">=</span> <span class="mf">50.0</span><span class="p">;</span> <span class="n">xltol</span> <span class="o">=</span> <span class="mf">25.0</span><span class="p">;</span> <span class="n">nlag</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">bandwh</span> <span class="o">=</span> <span class="mf">9999.9</span><span class="p">;</span>
+<span class="n">azm</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">atol</span> <span class="o">=</span> <span class="mf">90.0</span><span class="p">;</span> <span class="n">isill</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">bandwh</span> <span class="o">=</span> <span class="mf">9999.9</span><span class="p">;</span>
+<span class="n">dip</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">dtol</span> <span class="o">=</span> <span class="mf">9999.9</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -672,12 +663,14 @@ UG4 - Media: 0.51, Varianza: 0.25
 <li><p>lag_dist, lag_tol son la distancia de lag y la tolerancia de lag — definidos según el espaciado común de los datos (50 m) y con una tolerancia del 50% de la distancia de lag para un mayor suavizado.</p></li>
 <li><p>nlag es el número de lags — definido para extenderse un poco más allá del 50% del rango de los datos.</p></li>
 <li><p>bandh es el ancho de banda horizontal — configurado para no tener efecto.</p></li>
+<li><p>bandv es el ancho de banda vertical — configurado para no tener efecto.</p></li>
 <li><p>azi es el acimut — no tiene efecto porque hemos fijado atol (tolerancia de acimut) en 90.0.</p></li>
 <li><p>isill es un indicador para estandarizar la distribución a varianza 1 — no será usado durante este curso.</p></li>
+<li><p>isillh es un indicador para estandarizar la distribución a varianza 1 — no será usado durante este curso.</p></li>
 </ul>
 <p>Probemos estos parámetros y visualicemos los resultados.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[143]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lag</span><span class="p">,</span> <span class="n">UG2_gamma</span><span class="p">,</span> <span class="n">UG2_npair</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">gamv</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s2">&quot;X&quot;</span><span class="p">,</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span><span class="s2">&quot;indicador UG_2&quot;</span><span class="p">,</span><span class="n">tmin</span><span class="p">,</span><span class="n">tmax</span><span class="p">,</span><span class="n">lag_dist</span><span class="p">,</span><span class="n">lag_tol</span><span class="p">,</span><span class="n">nlag</span><span class="p">,</span><span class="n">azi</span><span class="p">,</span><span class="n">atol</span><span class="p">,</span>
@@ -686,6 +679,11 @@ UG4 - Media: 0.51, Varianza: 0.25
             <span class="n">bandh</span><span class="p">,</span><span class="n">isill</span><span class="p">)</span>
 <span class="n">lag</span><span class="p">,</span> <span class="n">UG4_gamma</span><span class="p">,</span> <span class="n">UG4_npair</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">gamv</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s2">&quot;X&quot;</span><span class="p">,</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span><span class="s2">&quot;indicador UG_4&quot;</span><span class="p">,</span><span class="n">tmin</span><span class="p">,</span><span class="n">tmax</span><span class="p">,</span><span class="n">lag_dist</span><span class="p">,</span><span class="n">lag_tol</span><span class="p">,</span><span class="n">nlag</span><span class="p">,</span><span class="n">azi</span><span class="p">,</span><span class="n">atol</span><span class="p">,</span>
             <span class="n">bandh</span><span class="p">,</span><span class="n">isill</span><span class="p">)</span>
+
+<span class="c1"># lag, UG2_gamma, UG2_npair = geostats.gamv_3D(df,&quot;X&quot;,&quot;Y&quot;,&quot;Z&quot;,&quot;indicador UG_2&quot;, tmin, tmax, xlag, xltol, nlag, azm, dip, atol, dtol, bandwh, isill)</span>
+<span class="c1"># lag, UG3_gamma, UG3_npair = geostats.gamv_3D(df,&quot;X&quot;,&quot;Y&quot;,&quot;Z&quot;,&quot;indicador UG_3&quot;, tmin, tmax, xlag, xltol, nlag, azm, dip, atol, dtol, bandwh, isill)</span>
+<span class="c1"># lag, UG4_gamma, UG4_npair = geostats.gamv_3D(df,&quot;X&quot;,&quot;Y&quot;,&quot;Z&quot;,&quot;indicador UG_4&quot;, tmin, tmax, xlag, xltol, nlag, azm, dip, atol, dtol, bandwh, isill)</span>
+
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
@@ -726,7 +724,7 @@ UG4 - Media: 0.51, Varianza: 0.25
 <p>Construyamos un modelo razonable hasta la meseta (sill).</p>
 </section>
 <section id="Modelado-del-variograma">
-<h2><span class="section-number">2.3. </span>Modelado del variograma<a class="headerlink" href="#Modelado-del-variograma" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.3. </span>Modelado del variograma<a class="headerlink" href="#Modelado-del-variograma" title="Link to this heading"></a></h2>
 <p>Usamos la función make_variogram de GeostatsPy para construir un objeto modelo de variograma.</p>
 <ul class="simple">
 <li><p>Es un diccionario para almacenar de forma compacta los parámetros del modelo de variograma que se usan en la visualización, kriging y simulación.</p></li>
@@ -747,14 +745,14 @@ UG4 - Media: 0.51, Varianza: 0.25
 </ul>
 <p>Tomemos como ejemplo la UG 2. Aquí está mi modelo:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[154]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nug</span> <span class="o">=</span> <span class="mf">0.12</span><span class="p">;</span> <span class="n">nst</span> <span class="o">=</span> <span class="mi">1</span>     <span class="c1"># definimos el efecto pepa (0.12) y el número de estructuras anidadas (1)</span>
-<span class="n">it1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">cc1</span> <span class="o">=</span> <span class="p">(</span><span class="n">var_UG2</span> <span class="o">-</span> <span class="n">nug</span><span class="p">);</span> <span class="n">azi1</span> <span class="o">=</span> <span class="mi">45</span><span class="p">;</span> <span class="n">hmaj1</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span> <span class="n">hmin1</span> <span class="o">=</span> <span class="n">hmaj1</span>   <span class="c1"># 1 estructura anidada (exponencial)</span>
+<span class="n">it1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">cc1</span> <span class="o">=</span> <span class="p">(</span><span class="n">var_UG2</span> <span class="o">-</span> <span class="n">nug</span><span class="p">);</span> <span class="n">azi1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">dip1</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">hmaj1</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span> <span class="n">hmin1</span> <span class="o">=</span> <span class="n">hmaj1</span><span class="p">;</span> <span class="n">hvert1</span> <span class="o">=</span> <span class="n">hmaj1</span><span class="p">;</span>  <span class="c1"># 1 estructura anidada (exponencial)</span>
 
-<span class="n">vario_UG2</span> <span class="o">=</span> <span class="n">GSLIB</span><span class="o">.</span><span class="n">make_variogram</span><span class="p">(</span><span class="n">nug</span><span class="p">,</span><span class="n">nst</span><span class="p">,</span><span class="n">it1</span><span class="p">,</span><span class="n">cc1</span><span class="p">,</span><span class="n">azi1</span><span class="p">,</span><span class="n">hmaj1</span><span class="p">,</span><span class="n">hmin1</span><span class="p">)</span> <span class="c1"># crear el objeto del modelo de variograma</span>
-</pre></div>
+<span class="n">vario_UG2</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">make_variogram3D</span><span class="p">(</span><span class="n">nug</span><span class="p">,</span><span class="n">nst</span><span class="p">,</span><span class="n">it1</span><span class="p">,</span><span class="n">cc1</span><span class="p">,</span><span class="n">azi1</span><span class="p">,</span><span class="n">dip1</span><span class="p">,</span><span class="n">hmaj1</span><span class="p">,</span><span class="n">hmin1</span><span class="p">,</span><span class="n">hvert1</span><span class="p">)</span>  <span class="c1"># crear el objeto del modelo de variograma</span>
+<br/></pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -785,11 +783,11 @@ UG4 - Media: 0.51, Varianza: 0.25
 </ul>
 <p>Tenemos 1 estructura y con efecto pepa como ejemplo para el caso de la UG 2.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[155]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlag</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">xlag</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">azm</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># project the model in 0 azimuth</span>
-<span class="n">index</span><span class="p">,</span><span class="n">h_UG2</span><span class="p">,</span><span class="n">gam_UG2</span><span class="p">,</span><span class="n">cov</span><span class="p">,</span><span class="n">ro</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">vmodel</span><span class="p">(</span><span class="n">nlag</span><span class="p">,</span><span class="n">xlag</span><span class="p">,</span><span class="n">azm</span><span class="p">,</span><span class="n">vario_UG2</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nlag</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">xlag</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">azm</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">dip</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1"># project the model in 0 azimuth</span>
+<span class="n">index</span><span class="p">,</span><span class="n">h_UG2</span><span class="p">,</span><span class="n">gam_UG2</span><span class="p">,</span><span class="n">cov</span><span class="p">,</span><span class="n">ro</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">vmodel_3D</span><span class="p">(</span><span class="n">nlag</span><span class="p">,</span><span class="n">xlag</span><span class="p">,</span><span class="n">azm</span><span class="p">,</span><span class="n">dip</span><span class="p">,</span><span class="n">vario_UG2</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
@@ -820,7 +818,7 @@ UG4 - Media: 0.51, Varianza: 0.25
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
- x,y,z offsets = 0.0,10.0
+ x,y,z offsets = 0.0,10.0,0.0
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -833,22 +831,22 @@ UG4 - Media: 0.51, Varianza: 0.25
 <p>Se ve bastante bien; recuerde que solo modelamos hasta la meseta (sill) y no por encima de ella.</p>
 <p>Ahora modelamos los variogramas para el resto de las categorías.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[156]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nug</span> <span class="o">=</span> <span class="mf">0.06</span><span class="p">;</span> <span class="n">nst</span> <span class="o">=</span> <span class="mi">1</span>                                             <span class="c1"># Variograma para UG 3 (verde)</span>
-<span class="n">it1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">cc1</span> <span class="o">=</span> <span class="p">(</span><span class="n">var_UG3</span> <span class="o">-</span> <span class="n">nug</span><span class="p">);</span> <span class="n">azi1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">hmaj1</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">hmin1</span> <span class="o">=</span> <span class="n">hmaj1</span>
+<span class="n">it1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">cc1</span> <span class="o">=</span> <span class="p">(</span><span class="n">var_UG3</span> <span class="o">-</span> <span class="n">nug</span><span class="p">);</span> <span class="n">azi1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">dip</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">hmaj1</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="n">hmin1</span> <span class="o">=</span> <span class="n">hmaj1</span><span class="p">;</span> <span class="n">hvert1</span> <span class="o">=</span> <span class="n">hmaj1</span><span class="p">;</span>
 
-<span class="n">vario_UG3</span> <span class="o">=</span> <span class="n">GSLIB</span><span class="o">.</span><span class="n">make_variogram</span><span class="p">(</span><span class="n">nug</span><span class="p">,</span><span class="n">nst</span><span class="p">,</span><span class="n">it1</span><span class="p">,</span><span class="n">cc1</span><span class="p">,</span><span class="n">azi1</span><span class="p">,</span><span class="n">hmaj1</span><span class="p">,</span><span class="n">hmin1</span><span class="p">)</span> <span class="c1"># crear objeto variograma modelado</span>
+<span class="n">vario_UG3</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">make_variogram3D</span><span class="p">(</span><span class="n">nug</span><span class="p">,</span><span class="n">nst</span><span class="p">,</span><span class="n">it1</span><span class="p">,</span><span class="n">cc1</span><span class="p">,</span><span class="n">azi1</span><span class="p">,</span><span class="n">dip1</span><span class="p">,</span><span class="n">hmaj1</span><span class="p">,</span><span class="n">hmin1</span><span class="p">,</span><span class="n">hvert1</span><span class="p">)</span> <span class="c1"># crear objeto variograma modelado</span>
 
-<span class="n">index</span><span class="p">,</span><span class="n">h_UG3</span><span class="p">,</span><span class="n">gam_UG3</span><span class="p">,</span><span class="n">cov</span><span class="p">,</span><span class="n">ro</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">vmodel</span><span class="p">(</span><span class="n">nlag</span><span class="p">,</span><span class="n">xlag</span><span class="p">,</span><span class="n">azm</span><span class="p">,</span><span class="n">vario_UG3</span><span class="p">)</span>
+<span class="n">index</span><span class="p">,</span><span class="n">h_UG3</span><span class="p">,</span><span class="n">gam_UG3</span><span class="p">,</span><span class="n">cov</span><span class="p">,</span><span class="n">ro</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">vmodel_3D</span><span class="p">(</span><span class="n">nlag</span><span class="p">,</span><span class="n">xlag</span><span class="p">,</span><span class="n">azm</span><span class="p">,</span><span class="n">dip1</span><span class="p">,</span><span class="n">vario_UG3</span><span class="p">)</span>
 
 <span class="n">nug</span> <span class="o">=</span> <span class="mf">0.16</span><span class="p">;</span> <span class="n">nst</span> <span class="o">=</span> <span class="mi">1</span>                                             <span class="c1"># Variograma para UG 4 (morado)</span>
-<span class="n">it1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">cc1</span> <span class="o">=</span> <span class="p">(</span><span class="n">var_UG4</span> <span class="o">-</span> <span class="n">nug</span><span class="p">);</span> <span class="n">azi1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">hmaj1</span> <span class="o">=</span> <span class="mi">150</span><span class="p">;</span> <span class="n">hmin1</span> <span class="o">=</span> <span class="n">hmaj1</span>
+<span class="n">it1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">cc1</span> <span class="o">=</span> <span class="p">(</span><span class="n">var_UG4</span> <span class="o">-</span> <span class="n">nug</span><span class="p">);</span> <span class="n">azi1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">dip</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">hmaj1</span> <span class="o">=</span> <span class="mi">150</span><span class="p">;</span> <span class="n">hmin1</span> <span class="o">=</span> <span class="n">hmaj1</span><span class="p">;</span> <span class="n">hvert1</span> <span class="o">=</span> <span class="n">hmaj1</span><span class="p">;</span>
 
-<span class="n">vario_UG4</span> <span class="o">=</span> <span class="n">GSLIB</span><span class="o">.</span><span class="n">make_variogram</span><span class="p">(</span><span class="n">nug</span><span class="p">,</span><span class="n">nst</span><span class="p">,</span><span class="n">it1</span><span class="p">,</span><span class="n">cc1</span><span class="p">,</span><span class="n">azi1</span><span class="p">,</span><span class="n">hmaj1</span><span class="p">,</span><span class="n">hmin1</span><span class="p">)</span> <span class="c1"># crear objeto variograma modelado</span>
+<span class="n">vario_UG4</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">make_variogram3D</span><span class="p">(</span><span class="n">nug</span><span class="p">,</span><span class="n">nst</span><span class="p">,</span><span class="n">it1</span><span class="p">,</span><span class="n">cc1</span><span class="p">,</span><span class="n">azi1</span><span class="p">,</span><span class="n">dip1</span><span class="p">,</span><span class="n">hmaj1</span><span class="p">,</span><span class="n">hmin1</span><span class="p">,</span><span class="n">hvert1</span><span class="p">)</span> <span class="c1"># crear objeto variograma modelado</span>
 
-<span class="n">index45</span><span class="p">,</span><span class="n">h_UG4</span><span class="p">,</span><span class="n">gam_UG4</span><span class="p">,</span><span class="n">cov</span><span class="p">,</span><span class="n">ro</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">vmodel</span><span class="p">(</span><span class="n">nlag</span><span class="p">,</span><span class="n">xlag</span><span class="p">,</span><span class="n">azm</span><span class="p">,</span><span class="n">vario_UG4</span><span class="p">)</span>
+<span class="n">index45</span><span class="p">,</span><span class="n">h_UG4</span><span class="p">,</span><span class="n">gam_UG4</span><span class="p">,</span><span class="n">cov</span><span class="p">,</span><span class="n">ro</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">vmodel_3D</span><span class="p">(</span><span class="n">nlag</span><span class="p">,</span><span class="n">xlag</span><span class="p">,</span><span class="n">azm</span><span class="p">,</span><span class="n">dip</span><span class="p">,</span><span class="n">vario_UG4</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">))</span>     <span class="c1"># Plotear todos los variogramas juntos</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
@@ -887,9 +885,9 @@ UG4 - Media: 0.51, Varianza: 0.25
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 <span class="ansi-black-fg ansi-red-bg"> make_variogram Warning: sill does not sum to 1.0, do not use in simulation </span>
- x,y,z offsets = 0.0,10.0
+ x,y,z offsets = 0.0,10.0,0.0
 <span class="ansi-black-fg ansi-red-bg"> make_variogram Warning: sill does not sum to 1.0, do not use in simulation </span>
- x,y,z offsets = 0.0,10.0
+ x,y,z offsets = 0.0,10.0,0.0
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -900,13 +898,274 @@ UG4 - Media: 0.51, Varianza: 0.25
 </div>
 </div>
 </section>
+<section id="Kriging-de-Indicadores">
+<h2><span class="section-number">3.4. </span>Kriging de Indicadores<a class="headerlink" href="#Kriging-de-Indicadores" title="Link to this heading"></a></h2>
+<section id="Especificar-la-grilla">
+<h3><span class="section-number">3.4.1. </span>Especificar la grilla<a class="headerlink" href="#Especificar-la-grilla" title="Link to this heading"></a></h3>
+<p>Ya conocemos los parámetros de nuestra grilla, definidos en la primera sección de este capitulo.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xmin</span> <span class="o">=</span> <span class="mf">471116.24</span><span class="p">;</span> <span class="n">xmax</span> <span class="o">=</span> <span class="mf">473023.89</span>                  <span class="c1"># rango de valores x</span>
+<span class="n">ymin</span> <span class="o">=</span> <span class="mf">6924721.57</span><span class="p">;</span> <span class="n">ymax</span> <span class="o">=</span> <span class="mf">6926164.63</span>                        <span class="c1"># rango de valores y</span>
+<span class="n">zmin</span> <span class="o">=</span> <span class="mf">2950.02</span><span class="p">;</span> <span class="n">zmax</span> <span class="o">=</span> <span class="mf">4445.78</span>                              <span class="c1"># rango de valores z</span>
+
+<span class="n">xsiz</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span> <span class="n">ysiz</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span> <span class="n">zsiz</span> <span class="o">=</span> <span class="mi">15</span>                             <span class="c1"># tamaño de celda</span>
+<span class="n">nx</span> <span class="o">=</span> <span class="mi">128</span><span class="p">;</span> <span class="n">ny</span> <span class="o">=</span> <span class="mi">97</span><span class="p">;</span> <span class="n">nz</span> <span class="o">=</span> <span class="mi">100</span>                         <span class="c1"># número de celdas</span>
+<span class="n">xmn</span> <span class="o">=</span> <span class="mf">471108.74</span><span class="p">;</span> <span class="n">ymn</span> <span class="o">=</span> <span class="mf">6924714.07</span><span class="p">;</span> <span class="n">zmn</span> <span class="o">=</span> <span class="mf">2942.52</span>    <span class="c1"># origen de la cuadrícula, ubicación del centro de la celda inferior izquierda</span>
+
+<span class="n">tmin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">999</span><span class="p">;</span> <span class="n">tmax</span> <span class="o">=</span> <span class="mi">999</span><span class="p">;</span>                                      <span class="c1"># límites de recorte de datos</span>
+
+<span class="n">ugmin</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">ugmax</span> <span class="o">=</span> <span class="mi">4</span>                                  <span class="c1"># establecer min y max de características para las barras de color</span>
+
+<span class="n">icx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">nx</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span> <span class="n">cx</span> <span class="o">=</span> <span class="n">xmn</span> <span class="o">+</span> <span class="n">icx</span><span class="o">*</span><span class="n">xsiz</span> <span class="c1"># center layers and slices for plotting</span>
+<span class="n">icy</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ny</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span> <span class="n">cy</span> <span class="o">=</span> <span class="n">ymn</span> <span class="o">+</span> <span class="n">icy</span><span class="o">*</span><span class="n">ysiz</span>
+<span class="n">icz</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">nz</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span> <span class="n">cz</span> <span class="o">=</span> <span class="n">zmn</span> <span class="o">+</span> <span class="n">icz</span><span class="o">*</span><span class="n">zsiz</span>
+<br/><br/></pre></div>
+</div>
+</div>
+<section id="Kriging-de-indicadores-para-categorías">
+<h4><span class="section-number">3.4.1.1. </span>Kriging de indicadores para categorías<a class="headerlink" href="#Kriging-de-indicadores-para-categorías" title="Link to this heading"></a></h4>
+<p>Definamos los siguientes parámetros para el Kriging:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nxdis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">nydis</span> <span class="o">=</span> <span class="mi">1</span>                                          <span class="c1"># discretización para kriging, 1 para kriging puntual</span>
+<span class="n">ndmin</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">ndmax</span> <span class="o">=</span> <span class="mi">10</span>                                         <span class="c1"># mínimo y máximo de datos para kriging</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">500</span>                                                  <span class="c1"># distancia máxima de búsqueda</span>
+<span class="n">ktype</span> <span class="o">=</span> <span class="mi">0</span>                                                     <span class="c1"># tipo de kriging, 0 - simple, 1 - ordinario</span>
+<span class="n">ivtype</span> <span class="o">=</span> <span class="mi">1</span>                                                    <span class="c1"># tipo de variable, 0 - categórica, 1 - continua</span>
+
+<span class="n">tmin</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9999.</span><span class="p">;</span> <span class="n">tmax</span> <span class="o">=</span> <span class="mf">9999.</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<p>Ahora, definamos las categorías de facies, proporciones globales junto con los modelos de continuidad espacial para nuestras tres categorías.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gcdf</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_UG2</span><span class="p">,</span> <span class="n">mean_UG3</span><span class="p">,</span> <span class="n">mean_UG4</span><span class="p">]</span>                <span class="c1"># las proporciones globales de las categorías</span>
+
+<span class="n">varios</span> <span class="o">=</span> <span class="p">[]</span>                                          <span class="c1"># la lista de variogramas</span>
+<span class="n">varios</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vario_UG2</span><span class="p">)</span> <span class="c1"># variograma de indicadores UG2</span>
+<span class="n">varios</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vario_UG3</span><span class="p">)</span> <span class="c1"># variograma de indicadores UG3</span>
+<span class="n">varios</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vario_UG4</span><span class="p">)</span> <span class="c1"># variograma de indicadores UG4</span>
+</pre></div>
+</div>
+</div>
+<p>Estamos listos para ejecutar el Kriging de indicadores con las 3 categorías y calcular la probabilidad de cada UG en todas las ubicaciones.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geostats</span><span class="o">.</span><span class="n">kb3d</span>  <span class="c1"># ver parametros de la función kb3d</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&lt;function geostatspy.geostats.kb3d(df, xcol, ycol, zcol, vcol, tmin, tmax, nx, xmn, xsiz, ny, ymn, ysiz, nz, zmn, zsiz, nxdis, nydis, nzdis, ndmin, ndmax, radius_hori, radius_vert, ktype, skmean, vario3D)&gt;
+</pre></div></div>
+</div>
+</section>
+<section id="Krigind-de-Indicadores-para-primera-UG-(UG-2)">
+<h4><span class="section-number">3.4.1.2. </span>Krigind de Indicadores para primera UG (UG 2)<a class="headerlink" href="#Krigind-de-Indicadores-para-primera-UG-(UG-2)" title="Link to this heading"></a></h4>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span> --no-display
+
+<span class="n">no_trend</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>                                    <span class="c1"># null ndarray not of correct size so ik2d will not trend</span>
+<span class="n">ikmap</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">kb3d</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span><span class="s1">&#39;UG&#39;</span><span class="p">,</span><span class="n">ivtype</span><span class="p">,</span><span class="n">tmin</span><span class="p">,</span><span class="n">tmax</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">xmn</span><span class="p">,</span> <span class="n">xsiz</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">ymn</span><span class="p">,</span> <span class="n">ysiz</span><span class="p">,</span> <span class="n">nz</span><span class="p">,</span> <span class="n">zmn</span><span class="p">,</span> <span class="n">zsiz</span><span class="p">,</span> <span class="n">nxdis</span><span class="p">,</span> <span class="n">nydis</span><span class="p">,</span> <span class="n">nzdis</span><span class="p">,</span> <span class="n">ndmin</span><span class="p">,</span> <span class="n">ndmax</span><span class="p">,</span> <span class="n">radius_hori</span><span class="p">,</span> <span class="n">radius_vert</span><span class="p">,</span> <span class="n">ktype</span><span class="p">,</span> <span class="n">skmean</span><span class="o">=</span><span class="p">,</span> <span class="n">vario3D</span><span class="o">=</span><span class="n">varios</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span><span class="s1">&#39;Facies&#39;</span><span class="p">,</span><span class="n">ivtype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">koption</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">ncut</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">thresh</span><span class="o">=</span><span class="n">thresh</span><span class="p">,</span><span class="n">gcdf</span><span class="o">=</span><span class="n">gcdf</span><span class="p">,</span><span class="n">trend</span><span class="o">=</span><span class="n">dummy_trend</span><span class="p">,</span>
+        <span class="n">tmin</span><span class="o">=</span><span class="n">tmin</span><span class="p">,</span><span class="n">tmax</span><span class="o">=</span><span class="n">tmax</span><span class="p">,</span><span class="n">zmin</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">zmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">ltail</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">ltpar</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">middle</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">mpar</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">utail</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">utpar</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">nreal</span><span class="o">=</span><span class="n">nreal</span><span class="p">,</span>
+        <span class="n">nx</span><span class="o">=</span><span class="n">grd3D</span><span class="p">[</span><span class="s1">&#39;nx&#39;</span><span class="p">],</span><span class="n">xmn</span><span class="o">=</span><span class="n">grd3D</span><span class="p">[</span><span class="s1">&#39;xmn&#39;</span><span class="p">],</span><span class="n">xsiz</span><span class="o">=</span><span class="n">grd3D</span><span class="p">[</span><span class="s1">&#39;xsiz&#39;</span><span class="p">],</span><span class="n">ny</span><span class="o">=</span><span class="n">grd3D</span><span class="p">[</span><span class="s1">&#39;ny&#39;</span><span class="p">],</span><span class="n">ymn</span><span class="o">=</span><span class="n">grd3D</span><span class="p">[</span><span class="s1">&#39;ymn&#39;</span><span class="p">],</span><span class="n">ysiz</span><span class="o">=</span><span class="n">grd3D</span><span class="p">[</span><span class="s1">&#39;ysiz&#39;</span><span class="p">],</span>
+        <span class="n">nz</span><span class="o">=</span><span class="n">grd3D</span><span class="p">[</span><span class="s1">&#39;nz&#39;</span><span class="p">],</span><span class="n">zmn</span><span class="o">=</span><span class="n">grd3D</span><span class="p">[</span><span class="s1">&#39;zmn&#39;</span><span class="p">],</span><span class="n">zsiz</span><span class="o">=</span><span class="n">grd3D</span><span class="p">[</span><span class="s1">&#39;zsiz&#39;</span><span class="p">],</span>
+        <span class="n">seed</span> <span class="o">=</span> <span class="n">seed</span><span class="p">,</span><span class="n">ndmin</span><span class="o">=</span><span class="n">ndmin</span><span class="p">,</span><span class="n">ndmax</span><span class="o">=</span><span class="n">ndmax</span><span class="p">,</span><span class="n">nodmax</span><span class="o">=</span><span class="n">nodmax</span><span class="p">,</span><span class="n">mults</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">nmult</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">noct</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">ktype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">varios</span><span class="o">=</span><span class="n">facies_varios</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/lessons_04_02_Def_UG_Vol_38_0.png" src="../../_images/lessons_04_02_Def_UG_Vol_38_0.png" />
+</div>
+</div>
+<p>The results are quite interesting. With the use of ordinary kriging we are able to handle the nonstationarity in the sand a shale data. See how the probability remains consistent away from data in locations with consistent facies.</p>
+<ul class="simple">
+<li><p>For a surprising result, switch to simple kriging. We are actually using quite a short variogram range and we see the global proportions away from the data!</p></li>
+</ul>
+</section>
+<section id="By-facies-Kriging-for-Porosity">
+<h4><span class="section-number">3.4.1.3. </span>By-facies Kriging for Porosity<a class="headerlink" href="#By-facies-Kriging-for-Porosity" title="Link to this heading"></a></h4>
+<p>Now let’s try some kriging with the continuous properties. For this workflow we will demonstrate a cookie-cutter approach. The steps are:</p>
+<ol class="arabic simple">
+<li><p>model the facies, sand and shale, probabilities with indicator kriging</p></li>
+<li><p>model the porosity for sand and shale separately and exhaustively, i.e. at all locations in the model</p></li>
+<li><p>model the permeability for sand and shale separately and exhaustively, i.e. at all locations in the model</p></li>
+<li><p>assign sand and shale locations based on the probabilities from step 1</p></li>
+<li><p>combine the porosity and permeability from sand and shale regions together</p></li>
+</ol>
+<p>Limitations of this Workflow:</p>
+<ul class="simple">
+<li><p>kriging is too smooth, the spatial continuity is too high</p></li>
+<li><p>kriging does not reproduce the continuous property distributions</p></li>
+<li><p>we are not accounting for the correlation between porosity and permeability</p></li>
+</ul>
+<p>We will correct these issues when we perform simulation later.</p>
+<p>We need to add a couple of parameters and assume a porosity variogram model.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">no_trend</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>                                    <span class="c1"># null ndarray not of correct size so ik2d will not trend</span>
+<span class="n">skmean_por</span> <span class="o">=</span> <span class="mf">0.10</span><span class="p">;</span> <span class="n">skmean_perm</span> <span class="o">=</span> <span class="mf">65.0</span>                         <span class="c1"># simple kriging mean (if simple kriging is selected below)</span>
+<span class="n">ktype</span> <span class="o">=</span> <span class="mi">0</span>                                                     <span class="c1"># kriging type, 0 - simple, 1 - ordinary</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="mi">300</span>                                                  <span class="c1"># search radius for neighbouring data</span>
+<span class="n">nxdis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">nydis</span> <span class="o">=</span> <span class="mi">1</span>                                          <span class="c1"># number of grid discretizations for block kriging</span>
+<span class="n">ndmin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ndmax</span> <span class="o">=</span> <span class="mi">20</span>                                         <span class="c1"># minimum and maximum data for an estimate</span>
+<span class="n">tmin</span> <span class="o">=</span> <span class="mf">0.0</span>                                                    <span class="c1"># minimum property value</span>
+<span class="n">por_vrange</span> <span class="o">=</span> <span class="mi">300</span>                                              <span class="c1"># porosity variogram range</span>
+<span class="n">por_vario</span> <span class="o">=</span> <span class="n">GSLIB</span><span class="o">.</span><span class="n">make_variogram</span><span class="p">(</span><span class="n">nug</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">nst</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">it1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">cc1</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">azi1</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span><span class="n">hmaj1</span><span class="o">=</span><span class="n">por_vrange</span><span class="p">,</span><span class="n">hmin1</span><span class="o">=</span><span class="n">por_vrange</span><span class="p">)</span> <span class="c1"># por. variogram</span>
+</pre></div>
+</div>
+</div>
+<p>Let’s start with spatial estimates of porosity and permeability with all facies combined. We will also look at the kriging estimation variance.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span> --no-display
+
+<span class="n">por_kmap</span><span class="p">,</span> <span class="n">por_vmap</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">kb2d</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Porosity&#39;</span><span class="p">,</span><span class="n">tmin</span><span class="p">,</span><span class="n">tmax</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">xmn</span><span class="p">,</span><span class="n">xsiz</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">ymn</span><span class="p">,</span><span class="n">ysiz</span><span class="p">,</span><span class="n">nxdis</span><span class="p">,</span><span class="n">nydis</span><span class="p">,</span>
+         <span class="n">ndmin</span><span class="p">,</span><span class="n">ndmax</span><span class="p">,</span><span class="n">radius</span><span class="p">,</span><span class="n">ktype</span><span class="p">,</span><span class="n">skmean_por</span><span class="p">,</span><span class="n">por_vario</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">GSLIB</span><span class="o">.</span><span class="n">locpix_st</span><span class="p">(</span><span class="n">por_kmap</span><span class="p">,</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">,</span><span class="n">xsiz</span><span class="p">,</span><span class="n">pormin</span><span class="p">,</span><span class="n">pormax</span><span class="p">,</span><span class="n">df</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Porosity&#39;</span><span class="p">,</span><span class="s1">&#39;Kriging Porosity - All Facies&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;X(m)&#39;</span><span class="p">,</span><span class="s1">&#39;Y(m)&#39;</span><span class="p">,</span><span class="s1">&#39;Porosity (%)&#39;</span><span class="p">,</span><span class="n">cmap</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">GSLIB</span><span class="o">.</span><span class="n">pixelplt_st</span><span class="p">(</span><span class="n">por_vmap</span><span class="p">,</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">,</span><span class="n">xsiz</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="s1">&#39;Kriging Variance - All Facies&#39;</span><span class="p">,</span><span class="s1">&#39;X(m)&#39;</span><span class="p">,</span><span class="s1">&#39;Y(m)&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;Porosity (%^2)&#39;</span><span class="p">,</span><span class="n">cmap</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.2</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/lessons_04_02_Def_UG_Vol_42_0.png" src="../../_images/lessons_04_02_Def_UG_Vol_42_0.png" />
+</div>
+</div>
+<p>The results look good.</p>
+<p>Now let’s build spatial estimation models for sand and shale separately. Now we need variograms for sand and shale separately, along with the declustered global means if simple kriging is used.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">skmean_por_sand</span> <span class="o">=</span> <span class="mf">0.10</span><span class="p">;</span> <span class="n">skmean_por_shale</span> <span class="o">=</span> <span class="mf">0.08</span>
+<span class="n">skmean_perm_sand</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">;</span> <span class="n">skmean_perm_shale</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="n">por_sand_vario</span> <span class="o">=</span> <span class="n">GSLIB</span><span class="o">.</span><span class="n">make_variogram</span><span class="p">(</span><span class="n">nug</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">nst</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">it1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">cc1</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">azi1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">hmaj1</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span><span class="n">hmin1</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span> <span class="c1"># porosity sand variogram</span>
+<span class="n">por_shale_vario</span> <span class="o">=</span> <span class="n">GSLIB</span><span class="o">.</span><span class="n">make_variogram</span><span class="p">(</span><span class="n">nug</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="n">nst</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">it1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">cc1</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span><span class="n">azi1</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">hmaj1</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span><span class="n">hmin1</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span> <span class="c1"># porosity shale variogram</span>
+
+<span class="n">facies_kmap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ny</span><span class="p">,</span><span class="n">nx</span><span class="p">));</span> <span class="n">por_kmap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ny</span><span class="p">,</span><span class="n">nx</span><span class="p">));</span> <span class="n">perm_kmap</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ny</span><span class="p">,</span><span class="n">nx</span><span class="p">))</span> <span class="c1"># declare arrays for results</span>
+</pre></div>
+</div>
+</div>
+<p>We are now ready to run these models, by-facies and visualize the results.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span> --no-display
+
+<span class="n">por_sand_kmap</span><span class="p">,</span> <span class="n">por_sand_vmap</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">kb2d</span><span class="p">(</span><span class="n">df_sand</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Porosity&#39;</span><span class="p">,</span><span class="n">tmin</span><span class="p">,</span><span class="n">tmax</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">xmn</span><span class="p">,</span><span class="n">xsiz</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">ymn</span><span class="p">,</span><span class="n">ysiz</span><span class="p">,</span><span class="n">nxdis</span><span class="p">,</span><span class="n">nydis</span><span class="p">,</span>
+         <span class="n">ndmin</span><span class="p">,</span><span class="n">ndmax</span><span class="p">,</span><span class="n">radius</span><span class="p">,</span><span class="n">ktype</span><span class="p">,</span><span class="n">skmean_por_sand</span><span class="p">,</span><span class="n">por_sand_vario</span><span class="p">)</span> <span class="c1"># sand porosity kriging</span>
+<span class="n">por_shale_kmap</span><span class="p">,</span> <span class="n">por_shale_vmap</span> <span class="o">=</span> <span class="n">geostats</span><span class="o">.</span><span class="n">kb2d</span><span class="p">(</span><span class="n">df_shale</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Porosity&#39;</span><span class="p">,</span><span class="n">tmin</span><span class="p">,</span><span class="n">tmax</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">xmn</span><span class="p">,</span><span class="n">xsiz</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">ymn</span><span class="p">,</span><span class="n">ysiz</span><span class="p">,</span><span class="n">nxdis</span><span class="p">,</span><span class="n">nydis</span><span class="p">,</span>
+         <span class="n">ndmin</span><span class="p">,</span><span class="n">ndmax</span><span class="p">,</span><span class="n">radius</span><span class="p">,</span><span class="n">ktype</span><span class="p">,</span><span class="n">skmean_por_shale</span><span class="p">,</span><span class="n">por_shale_vario</span><span class="p">)</span> <span class="c1"># shale porosity kriging</span>
+
+<span class="k">for</span> <span class="n">iy</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">ny</span><span class="p">):</span>                                        <span class="c1"># cookie cutter approach, assume most likely facies</span>
+    <span class="k">for</span> <span class="n">ix</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nx</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">ikmap</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span><span class="n">ix</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span>   <span class="c1"># current location is assumed to be sand</span>
+            <span class="n">facies_kmap</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">por_kmap</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">por_sand_kmap</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span><span class="n">ix</span><span class="p">];</span>
+            <span class="n">por_shale_kmap</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>                      <span class="c1"># current location is assumed to be shale</span>
+            <span class="n">facies_kmap</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">por_kmap</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="n">por_shale_kmap</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span><span class="n">ix</span><span class="p">];</span>
+            <span class="n">por_sand_kmap</span><span class="p">[</span><span class="n">iy</span><span class="p">,</span><span class="n">ix</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>                                              <span class="c1"># plot porosity estimates in sand</span>
+<span class="n">GSLIB</span><span class="o">.</span><span class="n">locpix_st</span><span class="p">(</span><span class="n">por_sand_kmap</span><span class="p">,</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">,</span><span class="n">xsiz</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="n">df_sand</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Porosity&#39;</span><span class="p">,</span><span class="s1">&#39;Kriging Porosity Sand&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;X(m)&#39;</span><span class="p">,</span><span class="s1">&#39;Y(m)&#39;</span><span class="p">,</span><span class="s1">&#39;Porosity (%)&#39;</span><span class="p">,</span><span class="n">cmap</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>                                              <span class="c1"># plot porosity estimates in shale</span>
+<span class="n">GSLIB</span><span class="o">.</span><span class="n">locpix_st</span><span class="p">(</span><span class="n">por_shale_kmap</span><span class="p">,</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">,</span><span class="n">xsiz</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="n">df_shale</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Porosity&#39;</span><span class="p">,</span><span class="s1">&#39;Kriging Porosity Shale&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;X(m)&#39;</span><span class="p">,</span><span class="s1">&#39;Y(m)&#39;</span><span class="p">,</span><span class="s1">&#39;Porosity (%)&#39;</span><span class="p">,</span><span class="n">cmap</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.2</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/lessons_04_02_Def_UG_Vol_46_0.png" src="../../_images/lessons_04_02_Def_UG_Vol_46_0.png" />
+</div>
+</div>
+<p>Now let’s visualize the estimation models for porosity and permeability by-facies put together as a single map for each property.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>                                              <span class="c1"># plot facies estimates</span>
+<span class="n">GSLIB</span><span class="o">.</span><span class="n">locpix_st</span><span class="p">(</span><span class="n">facies_kmap</span><span class="p">,</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">,</span><span class="n">xsiz</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="n">df</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Facies&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Well Data and Indicator Kriged Most Likely Facies&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;X(m)&#39;</span><span class="p">,</span><span class="s1">&#39;Y(m)&#39;</span><span class="p">,</span><span class="s1">&#39;Facies&#39;</span><span class="p">,</span><span class="n">cmap_facies</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>                                              <span class="c1"># plot porosity estimates</span>
+<span class="n">GSLIB</span><span class="o">.</span><span class="n">locpix_st</span><span class="p">(</span><span class="n">por_kmap</span><span class="p">,</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">ymin</span><span class="p">,</span><span class="n">ymax</span><span class="p">,</span><span class="n">xsiz</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="n">df</span><span class="p">,</span><span class="s1">&#39;X&#39;</span><span class="p">,</span><span class="s1">&#39;Y&#39;</span><span class="p">,</span><span class="s1">&#39;Porosity&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Kriging Porosity All Facies&#39;</span><span class="p">,</span><span class="s1">&#39;X(m)&#39;</span><span class="p">,</span><span class="s1">&#39;Y(m)&#39;</span><span class="p">,</span><span class="s1">&#39;Porosity (%)&#39;</span><span class="p">,</span><span class="n">cmap</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.2</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/lessons_04_02_Def_UG_Vol_48_0.png" src="../../_images/lessons_04_02_Def_UG_Vol_48_0.png" />
+</div>
+</div>
+</section>
+<section id="Comments">
+<h4><span class="section-number">3.4.1.4. </span>Comments<a class="headerlink" href="#Comments" title="Link to this heading"></a></h4>
+<p>This was a basic demonstration of indicator kriging for categorical spatial estimation with GeostatsPy but enough for the purposes of this course.</p>
+</section>
+</section>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
-        <a href="01_GrillaEst.html" class="btn btn-neutral float-left" title="1. Grilla de estimación" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="01_GrillaEst.html" class="btn btn-neutral float-left" title="2. Grilla de estimación" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
     </div>
 
   <hr/>
