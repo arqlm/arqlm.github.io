@@ -9,3 +9,5 @@ Capítulo 4. Estimación de Recursos
    :numbered:
 
    Instalación de GSLIB <00_GSLIB>
+   Determinación de grilla de estimación <01_GrillaEst>
+
