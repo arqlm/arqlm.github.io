@@ -1,0 +1,19 @@
+***********************************************
+Capítulo 4. Estimación de Recursos
+***********************************************
+
+.. rubric:: Contenidos
+
+.. toctree::
+   :maxdepth: 2
+   :numbered:
+
+   Instalación de GSLIB <00_GSLIB>
+   Determinación de grilla de estimación <01_GrillaEst>
+   Generación de volúmenes de estimación <02_Def_UG_Vol>
+   Estimación por Kriging <03_Estimacion_leyes>
+   .. Análisis variográfico de leyes <03_AnVar>
+   .. Selección de planes de estimación <04_SelPlan>
+   .. Validación de la estimación <04_ValEst>
+   .. Categorización de recursos <05_CatRec>
+   .. Inventario de recursos <06_InvRec>

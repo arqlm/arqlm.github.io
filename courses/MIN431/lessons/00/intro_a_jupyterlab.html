@@ -1,0 +1,833 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. Introducción a JupyterLab &mdash; documentación de MIN 431 - Evaluacion de Yacimientos - </title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=720011df" />
+      <link rel="stylesheet" type="text/css" href="../../_static/./custom.css?v=905461ed" />
+
+  
+    <link rel="shortcut icon" href="../../_static/logoEvYac2.png"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/translations.js?v=f85f4cfb"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../../_static/require.min.js?v=8a87acde"></script>
+      <script src="../../_static/hide_code_cells.js?v=51dbf054"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" />
+    <link rel="next" title="3. Introducción a LaTeX" href="intro_a_latex.html" />
+    <link rel="prev" title="1. Configuración de recursos computacionales" href="preparando_tu_computador.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            MIN 431 - Evaluacion de Yacimientos
+              <img src="../../_static/logoEvYac2.png" class="logo" alt="Logotipo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Apuntes</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Capítulo 0. Preparando tu computador para este curso</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="preparando_tu_computador.html">1. Configurando tu computador</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2. Introducción a Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#El-intérprete-de-Python">2.1. El intérprete de Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#%22Hola,-mundo.%22-y-la-función-print()">2.2. «Hola, mundo.» y la función print()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Archivos-.py">2.3. Archivos .py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Jupyter">2.4. Jupyter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#¿Qué-es-Jupyter?">2.4.1. ¿Qué es Jupyter?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#¿Por-qué-notebooks-de-Jupyter?">2.4.2. ¿Por qué notebooks de Jupyter?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Iniciar-un-notebook-de-Jupyter">2.4.3. Iniciar un notebook de Jupyter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Celdas">2.4.4. Celdas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Celdas-de-código">2.4.5. Celdas de código</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Visualización-de-gráficos">2.4.6. Visualización de gráficos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Formato-adecuado-de-las-celdas">2.4.7. Formato adecuado de las celdas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Buenas-prácticas-para-celdas-de-código">2.4.8. Buenas prácticas para celdas de código</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Celdas-de-markdown">2.4.9. Celdas de markdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Atajos-de-teclado">2.4.10. Atajos de teclado</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Renderizado-de-notebooks-como-HTML">2.5. Renderizado de notebooks como HTML</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="intro_a_latex.html">3. Introducción a LaTeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../01/index.html">Capítulo 1. Estudio Exploratorio de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/index.html">Capítulo 2. Análisis Espacial de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/index.html">Capítulo 3. Compositación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/index.html">Capítulo 4. Estimación de Recursos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MIN 431 - Evaluacion de Yacimientos</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Capítulo 0. Preparando tu computador para este curso</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Introducción a JupyterLab</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/arqlm/arqlm.github.io/blob/main/courses/MIN431/lessons/00/intro_a_jupyterlab.ipynb" class="fa fa-github"> Editar en GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+  <span style="white-space: nowrap;">
+    <a href="https://colab.research.google.com/github/arqlm/arqlm.github.io/blob/main/courses/MIN431/lessons/00/intro_a_jupyterlab.ipynb">
+      <img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"
+        style="vertical-align:text-bottom">
+    |</a>
+    <a href="intro_a_jupyterlab.ipynb" class="reference download internal" download>Descargar notebook</a>.
+  </span>
+</div><section id="Introducción-a-JupyterLab">
+<h1><span class="section-number">2. </span>Introducción a JupyterLab<a class="headerlink" href="#Introducción-a-JupyterLab" title="Link to this heading"></a></h1>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.integrate</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">bokeh.io</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">bokeh.plotting</span>
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">output_notebook</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<style>
+    .bk-notebook-logo {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAOkSURBVDiNjZRtaJVlGMd/1/08zzln5zjP1LWcU9N0NkN8m2CYjpgQYQXqSs0I84OLIC0hkEKoPtiH3gmKoiJDU7QpLgoLjLIQCpEsNJ1vqUOdO7ppbuec5+V+rj4ctwzd8IIbbi6u+8f1539dt3A78eXC7QizUF7gyV1fD1Yqg4JWz84yffhm0qkFqBogB9rM8tZdtwVsPUhWhGcFJngGeWrPzHm5oaMmkfEg1usvLFyc8jLRqDOMru7AyC8saQr7GG7f5fvDeH7Ej8CM66nIF+8yngt6HWaKh7k49Soy9nXurCi1o3qUbS3zWfrYeQDTB/Qj6kX6Ybhw4B+bOYoLKCC9H3Nu/leUTZ1JdRWkkn2ldcCamzrcf47KKXdAJllSlxAOkRgyHsGC/zRday5Qld9DyoM4/q/rUoy/CXh3jzOu3bHUVZeU+DEn8FInkPBFlu3+nW3Nw0mk6vCDiWg8CeJaxEwuHS3+z5RgY+YBR6V1Z1nxSOfoaPa4LASWxxdNp+VWTk7+4vzaou8v8PN+xo+KY2xsw6une2frhw05CTYOmQvsEhjhWjn0bmXPjpE1+kplmmkP3suftwTubK9Vq22qKmrBhpY4jvd5afdRA3wGjFAgcnTK2s4hY0/GPNIb0nErGMCRxWOOX64Z8RAC4oCXdklmEvcL8o0BfkNK4lUg9HTl+oPlQxdNo3Mg4Nv175e/1LDGzZen30MEjRUtmXSfiTVu1kK8W4txyV6BMKlbgk3lMwYCiusNy9fVfvvwMxv8Ynl6vxoByANLTWplvuj/nF9m2+PDtt1eiHPBr1oIfhCChQMBw6Aw0UulqTKZdfVvfG7VcfIqLG9bcldL/+pdWTLxLUy8Qq38heUIjh4XlzZxzQm19lLFlr8vdQ97rjZVOLf8nclzckbcD4wxXMidpX30sFd37Fv/GtwwhzhxGVAprjbg0gCAEeIgwCZyTV2Z1REEW8O4py0wsjeloKoMr6iCY6dP92H6Vw/oTyICIthibxjm/DfN9lVz8IqtqKYLUXfoKVMVQVVJOElGjrnnUt9T9wbgp8AyYKaGlqingHZU/uG2NTZSVqwHQTWkx9hxjkpWDaCg6Ckj5qebgBVbT3V3NNXMSiWSDdGV3hrtzla7J+duwPOToIg42ChPQOQjspnSlp1V+Gjdged7+8UN5CRAV7a5EdFNwCjEaBR27b3W890TE7g24NAP/mMDXRWrGoFPQI9ls/MWO2dWFAar/xcOIImbbpA3zgAAAABJRU5ErkJggg==);
+    }
+</style>
+<div>
+    <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
+    <span id="f6315755-1c79-4317-abcd-2737eff03bf3">Loading BokehJS ...</span>
+</div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="output_javascript"></div>
+<script type="text/javascript">
+var element = document.currentScript.previousSibling.previousSibling;
+'use strict';
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  const force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+const JS_MIME_TYPE = 'application/javascript';
+  const HTML_MIME_TYPE = 'text/html';
+  const EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
+  const CLASS_NAME = 'output_bokeh rendered_html';
+
+  /**
+   * Render data to the DOM node
+   */
+  function render(props, node) {
+    const script = document.createElement("script");
+    node.appendChild(script);
+  }
+
+  /**
+   * Handle when an output is cleared or removed
+   */
+  function handleClearOutput(event, handle) {
+    function drop(id) {
+      const view = Bokeh.index.get_by_id(id)
+      if (view != null) {
+        view.model.document.clear()
+        Bokeh.index.delete(view)
+      }
+    }
+
+    const cell = handle.cell;
+
+    const id = cell.output_area._bokeh_element_id;
+    const server_id = cell.output_area._bokeh_server_id;
+
+    // Clean up Bokeh references
+    if (id != null) {
+      drop(id)
+    }
+
+    if (server_id !== undefined) {
+      // Clean up Bokeh references
+      const cmd_clean = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
+      cell.notebook.kernel.execute(cmd_clean, {
+        iopub: {
+          output: function(msg) {
+            const id = msg.content.text.trim()
+            drop(id)
+          }
+        }
+      });
+      // Destroy server and session
+      const cmd_destroy = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
+      cell.notebook.kernel.execute(cmd_destroy);
+    }
+  }
+
+  /**
+   * Handle when a new output is added
+   */
+  function handleAddOutput(event, handle) {
+    const output_area = handle.output_area;
+    const output = handle.output;
+
+    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
+    if ((output.output_type != "display_data") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {
+      return
+    }
+
+    const toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+
+    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
+      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
+      // store reference to embed id on output_area
+      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
+    }
+    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+      const bk_div = document.createElement("div");
+      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+      const script_attrs = bk_div.children[0].attributes;
+      for (let i = 0; i < script_attrs.length; i++) {
+        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
+        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
+      }
+      // store reference to server id on output_area
+      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+    }
+  }
+
+  function register_renderer(events, OutputArea) {
+
+    function append_mime(data, metadata, element) {
+      // create a DOM node to render to
+      const toinsert = this.create_output_subarea(
+        metadata,
+        CLASS_NAME,
+        EXEC_MIME_TYPE
+      );
+      this.keyboard_manager.register_events(toinsert);
+      // Render to node
+      const props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+      render(props, toinsert[toinsert.length - 1]);
+      element.append(toinsert);
+      return toinsert
+    }
+
+    /* Handle when an output is cleared or removed */
+    events.on('clear_output.CodeCell', handleClearOutput);
+    events.on('delete.Cell', handleClearOutput);
+
+    /* Handle when a new output is added */
+    events.on('output_added.OutputArea', handleAddOutput);
+
+    /**
+     * Register the mime type and append_mime function with output_area
+     */
+    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+      /* Is output safe? */
+      safe: true,
+      /* Index of renderer in `output_area.display_order` */
+      index: 0
+    });
+  }
+
+  // register the mime type if in Jupyter Notebook environment and previously unregistered
+  if (root.Jupyter !== undefined) {
+    const events = require('base/js/events');
+    const OutputArea = require('notebook/js/outputarea').OutputArea;
+
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  }
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  const NB_LOAD_WARNING = {'data': {'text/html':
+     "<div style='background-color: #fdd'>\n"+
+     "<p>\n"+
+     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+     "may be due to a slow or bad network connection. Possible fixes:\n"+
+     "</p>\n"+
+     "<ul>\n"+
+     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+     "<li>use INLINE resources instead, as so:</li>\n"+
+     "</ul>\n"+
+     "<code>\n"+
+     "from bokeh.resources import INLINE\n"+
+     "output_notebook(resources=INLINE)\n"+
+     "</code>\n"+
+     "</div>"}};
+
+  function display_loaded(error = null) {
+    const el = document.getElementById("f6315755-1c79-4317-abcd-2737eff03bf3");
+    if (el != null) {
+      const html = (() => {
+        if (typeof root.Bokeh === "undefined") {
+          if (error == null) {
+            return "BokehJS is loading ...";
+          } else {
+            return "BokehJS failed to load.";
+          }
+        } else {
+          const prefix = `BokehJS ${root.Bokeh.version}`;
+          if (error == null) {
+            return `${prefix} successfully loaded.`;
+          } else {
+            return `${prefix} <b>encountered errors</b> while loading and may not function as expected.`;
+          }
+        }
+      })();
+      el.innerHTML = html;
+
+      if (error != null) {
+        const wrapper = document.createElement("div");
+        wrapper.style.overflow = "auto";
+        wrapper.style.height = "5em";
+        wrapper.style.resize = "vertical";
+        const content = document.createElement("div");
+        content.style.fontFamily = "monospace";
+        content.style.whiteSpace = "pre-wrap";
+        content.style.backgroundColor = "rgb(255, 221, 221)";
+        content.textContent = error.stack ?? error.toString();
+        wrapper.append(content);
+        el.append(wrapper);
+      }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(() => display_loaded(error), 100);
+    }
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls == null || js_urls.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error(url) {
+      console.error("failed to load " + url);
+    }
+
+    for (let i = 0; i < css_urls.length; i++) {
+      const url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    for (let i = 0; i < js_urls.length; i++) {
+      const url = js_urls[i];
+      const element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.6.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.6.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.6.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.6.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.6.2.min.js"];
+  const css_urls = [];
+
+  const inline_js = [    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+function(Bokeh) {
+    }
+  ];
+
+  function run_inline_js() {
+    if (root.Bokeh !== undefined || force === true) {
+      try {
+            for (let i = 0; i < inline_js.length; i++) {
+      inline_js[i].call(root, root.Bokeh);
+    }
+
+      } catch (error) {display_loaded(error);throw error;
+      }if (force === true) {
+        display_loaded();
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    } else if (force !== true) {
+      const cell = $(document.getElementById("f6315755-1c79-4317-abcd-2737eff03bf3")).parents('.cell').data().cell;
+      cell.output_area.append_execute_result(NB_LOAD_WARNING)
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));
+</script></div>
+</div>
+<p>En esta lección, aprenderás sobre diferentes formas de interactuar con el intérprete de Python y, lo más importante, lo básico sobre cómo usar JupyterLab. Todas tus tareas se entregarán como notebooks de Jupyter, así que esto es algo que necesitarás dominar. Te será útil revisar <a class="reference internal" href="intro_to_latex.html"><span class="doc">la introducción a LaTeX</span></a> para aprender cómo usar <span class="math notranslate nohighlight">\(\LaTeX\)</span> en tus notebooks de Jupyter.</p>
+<p>Por supuesto, también deberías leer <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/">la documentación oficial de JupyterLab</a>.</p>
+<p>Comenzaremos presentando el intérprete de Python.</p>
+<section id="El-intérprete-de-Python">
+<h2><span class="section-number">2.1. </span>El intérprete de Python<a class="headerlink" href="#El-intérprete-de-Python" title="Link to this heading"></a></h2>
+<p>Antes de profundizar en el intérprete de Python, quiero recordarte que este curso no está diseñado para enseñarte la sintaxis de Python (aunque la aprenderás). Lo que aprendas aquí te ayudará a entender cómo usar tu computadora para el análisis de datos en general. Piensa en esto así: parte de la misión de este curso es ayudarte a liberar el poder de tu computadora para resolver problemas biológicos. Python es solo el lenguaje de instrucción. Dicho esto, comencemos a hablar de cómo funciona
+Python.</p>
+<p>Python es un <strong>lenguaje interpretado</strong>, lo que significa que cada línea de código que escribes se traduce, o <em>interpreta</em>, en un conjunto de instrucciones que tu máquina puede entender mediante el <strong>intérprete de Python</strong>. Esto contrasta con los <strong>lenguajes compilados</strong>. Para estos lenguajes (los más dominantes son Fortran, C y C++), todo tu código se traduce a lenguaje de máquina antes de ejecutarlo. Cuando ejecutas tu programa, ya está en lenguaje de máquina.</p>
+<p>Así que, cada vez que quieras ejecutar tu código Python, se lo das al intérprete de Python.</p>
+<p>Hay muchas formas de iniciar el intérprete de Python. Una forma es escribir</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python
+</pre></div>
+</div>
+<p>en la línea de comandos. Esto inicia el intérprete de Python estándar. Realmente no usaremos esto en la clase. Más bien, tendremos una experiencia de Python <em>mucho</em> mejorada, ya sea usando <strong>IPython</strong>, una versión interactiva y mejorada de Python disponible a través de la consola de JupyterLab, o usando un <strong>notebook</strong>, también disponible en JupyterLab.</p>
+</section>
+<section id="%22Hola,-mundo.%22-y-la-función-print()">
+<h2><span class="section-number">2.2. </span>«Hola, mundo.» y la función print()<a class="headerlink" href="#%22Hola,-mundo.%22-y-la-función-print()" title="Link to this heading"></a></h2>
+<p>Tradicionalmente, el primer programa que alguien escribe al aprender un nuevo lenguaje se llama «<code class="docutils literal notranslate"><span class="pre">Hola,</span> <span class="pre">mundo.</span></code>» En este programa, las palabras «<code class="docutils literal notranslate"><span class="pre">Hola,</span> <span class="pre">mundo.</span></code>» se imprimen en la pantalla. El original fue probablemente escrito por <a class="reference external" href="https://es.wikipedia.org/wiki/Brian_Kernighan">Brian Kernighan</a>, uno de los inventores de Unix y autor del clásico <a class="reference external" href="https://es.wikipedia.org/wiki/The_C_Programming_Language">libro</a> sobre el lenguaje C. En su versión original, el texto impreso era «hello,
+world» (sin punto ni H mayúscula), pero existen muchas variantes.</p>
+<p>Primero escribiremos y ejecutaremos este pequeño programa usando una consola de JupyterLab. Después de iniciar JupyterLab, probablemente ya tengas el Launcher en tu ventana de JupyterLab. Si no es así, puedes expandir la pestaña <code class="docutils literal notranslate"><span class="pre">Files</span></code> a la izquierda de la ventana de JupyterLab (si no está ya expandida) haciendo clic en esa pestaña, o alternativamente presionando <code class="docutils literal notranslate"><span class="pre">ctrl+b</span></code> (o <code class="docutils literal notranslate"><span class="pre">cmd+b</span></code> en macOS). En la parte superior de la pestaña <code class="docutils literal notranslate"><span class="pre">Files</span></code> hay un signo <code class="docutils literal notranslate"><span class="pre">+</span></code>, que te da acceso al Launcher de
+Jupyter.</p>
+<p>En el Launcher de Jupyter, haz clic en el ícono <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3</span></code> bajo <code class="docutils literal notranslate"><span class="pre">Console</span></code>. Esto abrirá una consola, que tiene un gran espacio en blanco sobre un prompt que dice <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[]:</span></code>. Puedes ingresar código Python en este prompt y se ejecutará.</p>
+<p>Para imprimir <code class="docutils literal notranslate"><span class="pre">Hola,</span> <span class="pre">mundo.</span></code>, ingresa el siguiente código. Para ejecutarlo, presiona <code class="docutils literal notranslate"><span class="pre">shift+enter</span></code>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hola, mundo.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Archivos-.py">
+<h2><span class="section-number">2.3. </span>Archivos .py<a class="headerlink" href="#Archivos-.py" title="Link to this heading"></a></h2>
+<p>Ahora usemos nuestro nuevo conocimiento de la función <code class="docutils literal notranslate"><span class="pre">print()</span></code> para que la computadora diga algo más que solo <code class="docutils literal notranslate"><span class="pre">Hola,</span> <span class="pre">mundo.</span></code> Escribe estas líneas en el prompt, presionando <code class="docutils literal notranslate"><span class="pre">enter</span></code> cada vez que necesites una nueva línea. Después de escribirlas todas, presiona <code class="docutils literal notranslate"><span class="pre">shift+enter</span></code> para ejecutarlas.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Las primeras líneas del Zen de Python por Tim Peters</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hermoso es mejor que feo.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Explícito es mejor que implícito.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Simple es mejor que complejo.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Complejo es mejor que complicado.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Nota que la primera línea está precedida por un signo <code class="docutils literal notranslate"><span class="pre">#</span></code>, y el intérprete de Python la ignora. El signo <code class="docutils literal notranslate"><span class="pre">#</span></code> denota un <strong>comentario</strong>, que es ignorado por el intérprete, <em>¡pero muy importante para los humanos!</em></p>
+<p>Aunque el prompt de la consola fue útil para ingresar todo esto, una mejor opción es guardarlas en un archivo y luego hacer que el intérprete de Python ejecute las líneas del archivo. Así es como normalmente se almacena el código Python, y la extensión de estos archivos es <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</p>
+<p>Así que, creemos un archivo <code class="docutils literal notranslate"><span class="pre">.py</span></code>. Para hacerlo, usa el Launcher de JupyterLab para abrir un editor de texto. Una vez abierto, puedes hacer clic derecho en la pestaña de la ventana del editor de texto para cambiar el nombre. Llamaremos a este archivo <code class="docutils literal notranslate"><span class="pre">zen.py</span></code>. Dentro de este archivo, ingresa las cuatro líneas de código que escribiste antes en la consola. Asegúrate de guardarlo.</p>
+<p>Para ejecutar el código de este archivo, puedes invocar el intérprete de Python en la línea de comandos, seguido del nombre del archivo. Es decir, escribe</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python zen.py
+</pre></div>
+</div>
+<p>en la línea de comandos. Nota que cuando ejecutas código de esta manera, el intérprete termina después de ejecutar el código y no obtienes un prompt.</p>
+<p>Para ejecutar el código de este archivo usando la consola de Jupyter, puedes usar la <strong>función mágica</strong> <code class="docutils literal notranslate"><span class="pre">%run</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>%run zen.py
+</pre></div>
+</div>
+<p>Para cerrar la consola, puedes hacer clic en la pestaña <code class="docutils literal notranslate"><span class="pre">Running</span></code> a la izquierda de la ventana de JupyterLab y hacer clic en <code class="docutils literal notranslate"><span class="pre">SHUTDOWN</span></code> junto a la consola.</p>
+</section>
+<section id="Jupyter">
+<h2><span class="section-number">2.4. </span>Jupyter<a class="headerlink" href="#Jupyter" title="Link to this heading"></a></h2>
+<p>Hasta este punto, hemos presentado JupyterLab, su editor de texto y la consola, así como el propio intérprete de Python. Quizás te estés preguntando…</p>
+<section id="¿Qué-es-Jupyter?">
+<h3><span class="section-number">2.4.1. </span>¿Qué es Jupyter?<a class="headerlink" href="#¿Qué-es-Jupyter?" title="Link to this heading"></a></h3>
+<p>De la <a class="reference external" href="http://jupyter.org">página oficial de Project Jupyter</a>: &gt;Project Jupyter es un proyecto de código abierto que nació del Proyecto IPython en 2014, evolucionando para soportar la ciencia de datos interactiva y la computación científica en todos los lenguajes de programación.</p>
+<p>Así que, Jupyter es una extensión de IPython que lleva la computación interactiva más allá. Es independiente del lenguaje, como sugiere su nombre. El nombre «Jupyter» es una combinación de <a class="reference external" href="http://julialang.org/">Julia</a> (un lenguaje excelente y reciente para computación científica), <a class="reference external" href="http://python.org/">Python</a> (que ya conoces y amas), y <a class="reference external" href="https://www.r-project.org">R</a> (la herramienta dominante para computación estadística). Sin embargo, puedes ejecutar más de 40 lenguajes diferentes en
+JupyterLab, no solo Julia, Python y R.</p>
+<p>Centrales en Jupyter/JupyterLab son los <strong>notebooks de Jupyter</strong>. De hecho, el documento que estás leyendo ahora fue generado desde un notebook de Jupyter. Usaremos notebooks de Jupyter extensamente en el curso, junto con archivos <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</p>
+</section>
+<section id="¿Por-qué-notebooks-de-Jupyter?">
+<h3><span class="section-number">2.4.2. </span>¿Por qué notebooks de Jupyter?<a class="headerlink" href="#¿Por-qué-notebooks-de-Jupyter?" title="Link to this heading"></a></h3>
+<p>Cuando escribas código que reutilizarás, deberías desarrollar módulos completamente probados usando archivos <code class="docutils literal notranslate"><span class="pre">.py</span></code>. Siempre puedes importar esos módulos cuando uses un notebook de Jupyter. Así que, un notebook de Jupyter no es bueno para aplicaciones donde construyes código o scripts reutilizables. Sin embargo, los notebooks de Jupyter son <strong>muy</strong> útiles en las siguientes aplicaciones.</p>
+<ol class="arabic simple">
+<li><p><em>Exploración de datos/análisis.</em> Los notebooks de Jupyter son excelentes para probar cosas con código o explorar un conjunto de datos. Esto es una parte importante del proceso de investigación. El formato de los notebooks es ideal para organizar tus ideas mientras las sintetizas.</p></li>
+<li><p><em>Desarrollo de pipelines de procesamiento de imágenes.</em> Esto es realmente un caso especial del punto anterior, pero vale la pena mencionarlo porque los notebooks de Jupyter son especialmente útiles para descubrir qué pasos son mejores para extraer datos útiles de imágenes, algo muy común en biología. Usando el notebook, puedes escribir lo que esperas lograr en cada paso y mostrar gráficamente los resultados como imágenes a medida que avanzas.</p></li>
+<li><p><em>Compartir tu razonamiento en el análisis.</em> Como puedes combinar texto bien formateado y código ejecutable, los notebooks de Jupyter son ideales para compartir cómo realizas tus cálculos con colaboradores y lectores de tus publicaciones. Famosamente, LIGO usó <a class="reference external" href="https://losc.ligo.org/s/events/GW150914/GW150914_tutorial.html">un notebook de Jupyter</a> para explicar el procesamiento de señales en su primer descubrimiento de una onda gravitacional.</p></li>
+<li><p><em>Pedagogía.</em> Todo el contenido de esta clase, incluida esta lección, fue desarrollado usando notebooks de Jupyter.</p></li>
+</ol>
+<p>Ahora que sabemos qué son los notebooks de Jupyter y la motivación para usarlos, ¡comencemos!</p>
+</section>
+<section id="Iniciar-un-notebook-de-Jupyter">
+<h3><span class="section-number">2.4.3. </span>Iniciar un notebook de Jupyter<a class="headerlink" href="#Iniciar-un-notebook-de-Jupyter" title="Link to this heading"></a></h3>
+<p>Para iniciar un notebook de Jupyter, haz clic en el ícono <code class="docutils literal notranslate"><span class="pre">Notebook</span></code> del Launcher de JupyterLab. Si quieres abrir un notebook existente, haz clic en él en la pestaña <code class="docutils literal notranslate"><span class="pre">Files</span></code> de la ventana de JupyterLab y ábrelo.</p>
+</section>
+<section id="Celdas">
+<h3><span class="section-number">2.4.4. </span>Celdas<a class="headerlink" href="#Celdas" title="Link to this heading"></a></h3>
+<p>Un notebook de Jupyter consiste en <strong>celdas</strong>. Los dos tipos principales de celdas que usarás son <strong>celdas de código</strong> y <strong>celdas de markdown</strong>, y profundizaremos en sus propiedades en breve. Primero, una visión general.</p>
+<p>Una celda de código contiene código real que quieres ejecutar. Puedes especificar una celda como celda de código usando el menú desplegable en la barra de herramientas de tu notebook. También puedes presionar <code class="docutils literal notranslate"><span class="pre">esc</span></code> y luego <code class="docutils literal notranslate"><span class="pre">y</span></code> (denotado como «<code class="docutils literal notranslate"><span class="pre">esc,</span> <span class="pre">y</span></code>») mientras una celda está seleccionada para especificar que es una celda de código. Debes presionar enter después de hacer esto para comenzar a editarla.</p>
+<p>Si quieres ejecutar el código en una celda de código, presiona «<code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">enter</span></code>». Nota que las celdas de código se ejecutan en el orden en que presionas «<code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">enter</span></code>». Es decir, el orden de las celdas que ejecutas es el orden en que el código se ejecuta. Si no ejecutaste explícitamente una celda al principio del documento, sus resultados no son conocidos por el intérprete de Python. <strong>Este es un punto muy importante y a menudo es fuente de confusión y frustración para los estudiantes.</strong></p>
+<p>Las celdas de markdown contienen texto. El texto se escribe en <strong>markdown</strong>, un lenguaje de marcado ligero. Puedes leer sobre su sintaxis <a class="reference external" href="http://daringfireball.net/projects/markdown/syntax">aquí</a>. También puedes insertar HTML en las celdas de markdown, y esto se mostrará correctamente. Mientras escribes el contenido de estas celdas, los resultados aparecen como texto. Al presionar «<code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">enter</span></code>» el texto se muestra con el formato que especificaste.</p>
+<p>Puedes especificar una celda como celda de markdown en la barra de herramientas de Jupyter, o presionando «<code class="docutils literal notranslate"><span class="pre">esc,</span> <span class="pre">m</span></code>» en la celda. Nuevamente, debes presionar enter después de usar las teclas rápidas para entrar en modo de edición.</p>
+<p>En general, cuando quieras agregar una nueva celda, puedes hacer clic en el ícono <code class="docutils literal notranslate"><span class="pre">+</span></code> en la barra de herramientas del notebook. El atajo para insertar una celda debajo es «<code class="docutils literal notranslate"><span class="pre">esc,</span> <span class="pre">b</span></code>» y para insertar una celda arriba es «<code class="docutils literal notranslate"><span class="pre">esc,</span> <span class="pre">a</span></code>». Alternativamente, puedes ejecutar una celda y agregar automáticamente una nueva debajo presionando «<code class="docutils literal notranslate"><span class="pre">alt</span> <span class="pre">+</span> <span class="pre">enter</span></code>».</p>
+</section>
+<section id="Celdas-de-código">
+<h3><span class="section-number">2.4.5. </span>Celdas de código<a class="headerlink" href="#Celdas-de-código" title="Link to this heading"></a></h3>
+<p>A continuación se muestra un ejemplo de una celda de código que imprime <code class="docutils literal notranslate"><span class="pre">hola,</span> <span class="pre">mundo.</span></code> Observa que la salida de la instrucción print aparece en la misma celda, aunque separada del bloque de código.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Saluda al mundo.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hola, mundo.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Si evalúas una expresión de Python que devuelve un valor, ese valor se muestra como salida de la celda de código. Sin embargo, esto solo ocurre para la última línea de la celda de código.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mostrará 9 si esta fuera la última línea, pero no lo es, así que no muestra nada</span>
+<span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span>
+
+<span class="c1"># Espero que veamos 11.</span>
+<span class="mi">5</span> <span class="o">+</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<p>Nota que si la última línea no devuelve un valor, como si asignamos una variable, no hay salida visible de la celda de código.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Asignación de variable, así que no hay salida visible.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sin embargo, ahora si pedimos a, su valor se mostrará</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Visualización-de-gráficos">
+<h3><span class="section-number">2.4.6. </span>Visualización de gráficos<a class="headerlink" href="#Visualización-de-gráficos" title="Link to this heading"></a></h3>
+<p>Usaremos <a class="reference external" href="http://bokeh.pydata.org/">Bokeh</a> para comprobar que tu computador esta listo para trabajar, a pesar que utilizaremos exclusivamente <a class="reference external" href="https://plotly.com/">Plotly</a> durante el curso. Para asegurarte de que los gráficos de Bokeh se muestren en el notebook, debes ejecutar</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bokeh.io.output_notebook()
+</pre></div>
+</div>
+<p>en tu notebook. Es buena práctica ejecutar esto en la primera celda del notebook. Ahora hagamos un gráfico usando Bokeh.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generar datos para graficar</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+
+<span class="c1"># Configurar gráfico</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
+    <span class="n">frame_height</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">frame_width</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span>
+    <span class="n">x_axis_label</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
+    <span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
+    <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="c1"># Dibujar línea</span>
+<span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Formato-adecuado-de-las-celdas">
+<h3><span class="section-number">2.4.7. </span>Formato adecuado de las celdas<a class="headerlink" href="#Formato-adecuado-de-las-celdas" title="Link to this heading"></a></h3>
+<p>En general, es buena idea mantener las celdas simples. Puedes definir una función, o tal vez dos o tres funciones estrechamente relacionadas, en una sola celda, y eso es suficiente. Cuando definas una función, asegúrate de que esté debidamente comentada con un docstring descriptivo. A continuación se muestra un ejemplo de cómo podría generar un gráfico del atractor de Lorenz (que elijo solo porque es divertido) con celdas de código y celdas de markdown explicando lo que hago. (El docstring en
+esta función es extenso, pero para las tareas basta con algo similar a la primera línea del docstring.)</p>
+<p>Entre celdas, deberías explicar con texto lo que estás haciendo. Veamos un ejemplo divertido.</p>
+<p>Usaremos <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code> para integrar numéricamente el atractor de Lorenz. Por lo tanto, primero definimos una función que devuelve el lado derecho del sistema de EDOs que define el atractor de Lorenz.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">atractor_lorenz</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calcula el lado derecho del sistema de EDOs para el atractor de Lorenz.</span>
+
+<span class="sd">    Parámetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    r : array_like, shape (3,)</span>
+<span class="sd">        Posición (x, y, z) de la trayectoria.</span>
+<span class="sd">    t : argumento_dummy</span>
+<span class="sd">        Argumento dummy, necesario para pasar la función a</span>
+<span class="sd">        scipy.integrate.odeint</span>
+<span class="sd">    p : array_like, shape (3,)</span>
+<span class="sd">        Parámetros (s, k, b) para el atractor.</span>
+
+<span class="sd">    Retorna</span>
+<span class="sd">    -------</span>
+<span class="sd">    output : ndarray, shape (3,)</span>
+<span class="sd">        Derivadas temporales del atractor de Lorenz.</span>
+
+<span class="sd">    Notas</span>
+<span class="sd">    -----</span>
+<span class="sd">    .. Retorna el lado derecho del sistema de EDOs que describe</span>
+<span class="sd">       el atractor de Lorenz.</span>
+<span class="sd">        x&#39; = s * (y - x)</span>
+<span class="sd">        y&#39; = x * (k - z) - y</span>
+<span class="sd">        z&#39; = x * y - b * z</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Desempaquetar variables y parámetros</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">p</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">s</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span>
+                     <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">,</span>
+                     <span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">-</span> <span class="n">b</span> <span class="o">*</span> <span class="n">z</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<p>Con esta función, solo tenemos que elegir nuestras condiciones iniciales y puntos de tiempo y ejecutar la integración numérica.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parámetros a usar</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">28.0</span><span class="p">,</span> <span class="mf">8.0</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">])</span>
+
+<span class="c1"># Condición inicial</span>
+<span class="n">r0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">])</span>
+
+<span class="c1"># Puntos de tiempo a muestrear</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">30.0</span><span class="p">,</span> <span class="mi">4000</span><span class="p">)</span>
+
+<span class="c1"># Usar scipy.integrate.odeint para integrar el atractor de Lorenz</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">odeint</span><span class="p">(</span><span class="n">atractor_lorenz</span><span class="p">,</span> <span class="n">r0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">p</span><span class="p">,))</span>
+
+<span class="c1"># Desempaquetar resultados en x, y, z.</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Ahora, construiremos un gráfico de la trayectoria usando Bokeh.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configurar gráfico</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
+    <span class="n">frame_height</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">frame_width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">x_axis_label</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
+    <span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;z&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Dibujar línea</span>
+<span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Buenas-prácticas-para-celdas-de-código">
+<h3><span class="section-number">2.4.8. </span>Buenas prácticas para celdas de código<a class="headerlink" href="#Buenas-prácticas-para-celdas-de-código" title="Link to this heading"></a></h3>
+<p>Aquí tienes un resumen de algunas reglas generales para componer y formatear tus celdas de código.</p>
+<ol class="arabic simple">
+<li><p>Mantén el ancho del código en las celdas por debajo de 80 caracteres. No es un límite estricto, pero deberías intentarlo y considerar 88 caracteres como un límite duro.</p></li>
+<li><p>Mantén tus celdas de código cortas. Si tienes una celda de código muy grande, divídela.</p></li>
+<li><p>Proporciona docstrings completos para cualquier función que definas. Puedes y debes tener comentarios en tu código, pero realmente no deberías necesitar muchos porque tus celdas de markdown alrededor del código deberían describir claramente lo que intentas hacer.</p></li>
+<li><p>Haz todos tus imports en la primera celda de código al principio del notebook. Excepto por los imports del tipo «<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">...</span> <span class="pre">import</span> <span class="pre">...</span></code>», importa un módulo por línea. También debes incluir <code class="docutils literal notranslate"><span class="pre">bokeh.io.output_notebook()</span></code> en la celda superior cuando uses Bokeh.</p></li>
+<li><p>Para entregar tareas, <strong>siempre</strong> muestra tus gráficos en el notebook.</p></li>
+</ol>
+</section>
+<section id="Celdas-de-markdown">
+<h3><span class="section-number">2.4.9. </span>Celdas de markdown<a class="headerlink" href="#Celdas-de-markdown" title="Link to this heading"></a></h3>
+<p>Las celdas de markdown contienen texto. El texto se escribe en <strong>markdown</strong>, un lenguaje de marcado ligero. La lista de construcciones sintácticas en <a class="reference external" href="http://daringfireball.net/projects/markdown/syntax">este enlace</a> es prácticamente todo lo que necesitas saber para markdown estándar. También puedes insertar HTML en las celdas de markdown, y esto se mostrará correctamente. Mientras escribes el contenido de estas celdas, los resultados aparecen como texto. Al presionar «<code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">+</span> <span class="pre">enter</span></code>» el
+texto se muestra con el formato que especificaste.</p>
+<p>Puedes especificar una celda como celda de markdown en la barra de herramientas de Jupyter, o presionando «<code class="docutils literal notranslate"><span class="pre">esc,</span> <span class="pre">m</span></code>» en la celda. Nuevamente, debes presionar enter después de usar las teclas rápidas para entrar en modo de edición.</p>
+<p>Además de HTML, puedes insertar algunas expresiones <span class="math notranslate nohighlight">\(\LaTeX\)</span> en las celdas de markdown. <span class="math notranslate nohighlight">\(\LaTeX\)</span> (pronunciado «lay-tech») es un lenguaje de marcado de documentos que usa el software de tipografía <span class="math notranslate nohighlight">\(\TeX\)</span>. Es especialmente adecuado para la tipografía de expresiones matemáticas. En los notebooks de Jupyter, la entrada matemática de <span class="math notranslate nohighlight">\(\LaTeX\)</span> se muestra usando MathJax. Esto normalmente se ejecuta desde un servidor remoto, así que si no tienes conexión a internet, tus
+ecuaciones pueden no mostrarse. Usarás <span class="math notranslate nohighlight">\(\LaTeX\)</span> extensamente en la preparación de tus tareas. Hay muchos recursos en internet para comenzar con <span class="math notranslate nohighlight">\(\LaTeX\)</span>, pero solo necesitarás una pequeña parte de su funcionalidad en tus tareas, y <a class="reference internal" href="intro_a_latex.html"><span class="doc">la siguiente parte de esta lección</span></a>, además de hojas de referencia que puedes encontrar en Google (como <a class="reference external" href="https://www.ucm.es/data/cont/docs/1346-2020-01-07-LaTeX-OTEA-CheatSheet.pdf">esta</a>), son útiles.</p>
+</section>
+<section id="Atajos-de-teclado">
+<h3><span class="section-number">2.4.10. </span>Atajos de teclado<a class="headerlink" href="#Atajos-de-teclado" title="Link to this heading"></a></h3>
+<p>Hay algunos atajos de teclado que son convenientes de usar en JupyterLab. (No todos funcionan en Colab.) Ya vimos <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> para ejecutar una celda de código. Importante: presionar <code class="docutils literal notranslate"><span class="pre">Esc</span></code> te lleva al modo comando, en el que no editas el contenido de una celda, sino que haces cosas como agregar celdas. A continuación algunos atajos útiles. Si dos teclas están separadas por un signo <code class="docutils literal notranslate"><span class="pre">+</span></code>, se presionan simultáneamente, y si están separadas por un <code class="docutils literal notranslate"><span class="pre">-</span></code>, se presionan en sucesión.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Atajo</p></th>
+<th class="head"><p>modo</p></th>
+<th class="head"><p>acción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span> <span class="pre">-</span> <span class="pre">m</span></code></p></td>
+<td><p>comando</p></td>
+<td><p>cambiar celda a markdown</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span> <span class="pre">-</span> <span class="pre">y</span></code></p></td>
+<td><p>comando</p></td>
+<td><p>cambiar celda a código</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span> <span class="pre">-</span> <span class="pre">a</span></code></p></td>
+<td><p>comando</p></td>
+<td><p>insertar celda arriba</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span> <span class="pre">-</span> <span class="pre">b</span></code></p></td>
+<td><p>comando</p></td>
+<td><p>insertar celda abajo</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span> <span class="pre">-</span> <span class="pre">d</span> <span class="pre">-</span> <span class="pre">d</span></code></p></td>
+<td><p>comando</p></td>
+<td><p>borrar celda</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">Enter</span></code></p></td>
+<td><p>edición</p></td>
+<td><p>ejecutar celda e insertar una debajo</p></td>
+</tr>
+</tbody>
+</table>
+<p>Hay muchos otros (y se muestran en los menús desplegables dentro de JupyterLab), pero estos son los que más uso.</p>
+</section>
+</section>
+<section id="Renderizado-de-notebooks-como-HTML">
+<h2><span class="section-number">2.5. </span>Renderizado de notebooks como HTML<a class="headerlink" href="#Renderizado-de-notebooks-como-HTML" title="Link to this heading"></a></h2>
+<p>Cuando entregues tareas, también deberás entregar una versión HTML de tus notebooks. Para guardar un notebook como HTML, haz clic en <code class="docutils literal notranslate"><span class="pre">File</span></code> → <code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">Notebook</span> <span class="pre">As...</span></code> → <code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">Notebook</span> <span class="pre">to</span> <span class="pre">HTML</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="preparando_tu_computador.html" class="btn btn-neutral float-left" title="1. Configuración de recursos computacionales" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="intro_a_latex.html" class="btn btn-neutral float-right" title="3. Introducción a LaTeX" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2025, Alvaro I. Riquelme.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

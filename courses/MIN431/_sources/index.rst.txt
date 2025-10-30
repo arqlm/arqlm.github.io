@@ -1,0 +1,41 @@
+MIN 431: Evaluación de Yacimientos
+=====================================================================
+
+La evaluación de los recursos y reservas de un yacimiento es una disciplina altamente cuantitativa,
+y los profesionales dedicados a ésta deben contar con las competencias necesarias para analizar
+cuantitativamente la información disponible. Este curso toma una enfoque práctico para desarrollar
+estas competencias. Juntos, analizaremos información real tomada de yacimientos. Aprenderemos a
+cómo organizar, analizar y generar nueva información gráfica e interactiva a partir de los
+datos geológicos recibidos, útil para la toma de decisiones sobre inversion y planificación.
+
+Cuerpo docente
+------
+
+- Instructor
+
+   + `Álvaro Riquelme <https://arqlm.github.io/>`_ (alvaro.riquelme@uai.cl)
+
+- Ayudante
+
+   + Fernanda Torres (fernantorres@alumnos.uai.cl)
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Apuntes
+
+   lessons/00/index
+   lessons/01/index
+   lessons/02/index
+   lessons/03/index
+   lessons/04/index
+
+
+Recursos
+------
+
+- Estas notas se construyeron en base a los siguientes recursos:
+   + `Notas online del Profesor Julian M. Ortiz <https://julianmortiz.com/articles?blogcategory=Lectures>`_
+   + `Apuntes del Profesor Xavier Emery <https://www.u-cursos.cl/ingenieria/2007/2/MI75D/1/material_docente/bajar?bajar=1&id=138609>`_
+   + `Material online del Profesor Michael Pyrcz <https://geostatsguy.github.io/GeostatsPyDemos_Book/>`_
+   + `Módulos correspondientes al curso de Introducción a Data Analytics en Geociencias con Python <https://www.youtube.com/playlist?list=PLmlIjcqay_fw0Km6chOslDtVrX9PYAuEn>`_
+   + `github copilot <https://github.com/features/copilot>`_

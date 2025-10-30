@@ -1,0 +1,158 @@
+About
+=====================================================================
+
+I'm an Assistant Professor at the `Faculty of Engineering and Sciences <https://www.uai.cl/ingenieria-y-ciencias/>`_ at `Universidad Adolfo Ibáñez <https://www.uai.cl/>`_.
+I completed my Ph.D. in 2022 at the `The Robert M. Buchan Department of Mining <https://smithengineering.queensu.ca/mining/index.html/>`_, `Queen's University <https://www.queensu.ca/>`_, advised by `Julian M. Ortiz <https://experts.exeter.ac.uk/43202-julian-ortiz>`_.
+I'm currently working on projects related to mineral resource estimation, predictive geometallurgy, mineral exploration and predictive geomechanics. 
+
+
+Education
+=====================================================================
+
+.. raw:: html
+
+    <div class="education-item">
+        <div class="education-degree">
+            <h3>PhD in Mining Engineering</h3>
+        </div>
+        <div class="education-details">
+            <div class="education-year">2022</div>
+            <div class="education-institution">Queen's University</div>
+        </div>
+    </div>
+
+    <div class="education-item">
+        <div class="education-degree">
+            <h3>BSc in Engineering with Major in Mining and Extractive Metallurgy</h3>
+        </div>
+        <div class="education-details">
+            <div class="education-year">2015</div>
+            <div class="education-institution">Universidad de Chile</div>
+        </div>
+    </div>
+
+Selected Publications
+=====================================================================
+
+.. raw:: html
+
+    <div class="publications-section">
+        
+        <div class="publication-item">
+            <h3 class="publication-title">
+                <a href="https://link.springer.com/article/10.1007/s11004-025-10195-4" target="_blank">Dual Random Fields and Their Application to Mineral Potential Mapping</a>
+            </h3>
+            <div class="publication-authors">
+
+            </div>
+            <div class="publication-details">
+                <em>Mathematical Geosciences</em><br>
+                2025<br>
+                <strong>doi.org/10.1007/s11004-025-10195-4</strong>
+            </div>
+            <div class="abstract-toggle" onclick="toggleAbstract('abstract1')">+ Abstract</div>
+            <div id="abstract1" class="abstract-content" style="display: none;">
+                This paper introduces the concept of dual random fields and explores their application in mineral potential mapping. We develop a novel statistical framework that leverages dual random fields to improve the accuracy and reliability of mineral resource predictions.
+            </div>
+        </div>
+
+        <div class="publication-item">
+            <h3 class="publication-title">
+                <a href="https://link.springer.com/article/10.1007/s11004-023-10085-7" target="_blank">A Riemannian Tool for Clustering of Geo-Spatial Multivariate Data</a>
+            </h3>
+            <div class="publication-authors">
+                with Julian M Ortiz
+            </div>
+            <div class="publication-details">
+                <em>Mathematical Geosciences</em><br>
+                2024<br>
+                <strong>/doi.org/10.1007/s11004-023-10085-7      </strong>
+            </div>
+            <div class="abstract-toggle" onclick="toggleAbstract('abstract2')">+ Abstract</div>
+            <div id="abstract2" class="abstract-content" style="display: none;">
+                This paper introduces a Riemannian tool for clustering geo-spatial multivariate data. By leveraging Riemannian geometry, we propose a novel approach to enhance the clustering of complex geological datasets.
+            </div>
+        </div>
+
+        <div class="publication-item">
+            <h3 class="publication-title">
+                <a href="https://www.sciencedirect.com/science/article/pii/S0098300424002644" target="_blank">Multivariate simulation using a locally varying coregionalization model</a>
+            </h3>
+            <div class="publication-authors">
+                with Julian M Ortiz
+            </div>
+            <div class="publication-details">
+                <em>Computers & Geosciences</em><br>
+                2024<br>
+                <strong>doi.org/10.1016/j.cageo.2024.105781</strong>
+            </div>
+            <div class="abstract-toggle" onclick="toggleAbstract('abstract3')">+ Abstract</div>
+            <div id="abstract3" class="abstract-content" style="display: none;">
+                This paper presents a novel approach to multivariate simulation using a locally varying coregionalization model, which allows for more accurate and flexible modeling of complex geological phenomena.
+            </div>
+        </div>
+
+        <div class="publication-item">
+            <h3 class="publication-title">
+                <a href="https://pubs.geoscienceworld.org/msa/elements/article/19/6/377/632494/Uncertainty-and-Value-Optimising-Geometallurgical" target="_blank">Uncertainty and value: Optimising geometallurgical performance along the mining value chain</a>
+            </h3>
+            <div class="publication-authors">
+                with Julian M Ortiz, Sebastian Avalos, Oy Leuangthong, Nasser Madani, Max Frenzel
+            </div>
+            <div class="publication-details">
+                <em>Elements</em><br>
+                2023<br>
+                <strong>doi.org/10.2138/gselements.19.6.377</strong>
+            </div>
+            <div class="abstract-toggle" onclick="toggleAbstract('abstract4')">+ Abstract</div>
+            <div id="abstract4" class="abstract-content" style="display: none;">
+                This paper presents a comprehensive framework for optimizing geometallurgical performance across the mining value chain. By integrating uncertainty quantification and value optimization techniques, we demonstrate how to enhance decision-making processes in mining operations.
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleAbstract(id) {
+            const abstract = document.getElementById(id);
+            const toggle = abstract.previousElementSibling;
+            
+            if (abstract.style.display === 'none' || abstract.style.display === '') {
+                abstract.style.display = 'block';
+                toggle.innerHTML = '− Abstract';
+                toggle.classList.add('expanded');
+            } else {
+                abstract.style.display = 'none';
+                toggle.innerHTML = '+ Abstract';
+                toggle.classList.remove('expanded');
+            }
+        }
+    </script>
+
+My courses
+=====================================================================
+
+.. raw:: html
+
+    <div class="courses-section">
+        
+        <div class="course-item">
+            <h3 class="course-title">
+                <a href="courses/MIN431/index.html" target="_blank">Orebody Modeling and Resource Estimation</a>
+            </h3>
+            <div class="course-description">
+                A comprehensive course covering resource estimation, geostatistics, sampling preparation theory and quality assurance techniques, and categorizing mineral resources according to their uncertainty. Includes hands-on exercises with Python and real-world case studies.
+            </div>
+            <div class="course-details">
+                <strong>Duration:</strong> 16 weeks | <strong>Credits:</strong> 3 | <strong>Level:</strong> Undergraduate | <strong>Term:</strong> Winter 2025
+            </div>
+            <div class="course-topics">
+                <span class="topic-tag">Resource Estimation</span>
+                <span class="topic-tag">Geostatistics</span>
+                <span class="topic-tag">Sampling Preparation</span>
+                <span class="topic-tag">Quality Assurance</span>
+                <span class="topic-tag">Uncertainty Analysis</span>
+            </div>
+        </div>
+
+    </div>

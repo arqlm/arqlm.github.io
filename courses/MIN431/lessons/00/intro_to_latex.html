@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction to LaTeX &mdash; documentación de MIN 431 - Evaluacion de Yacimientos - </title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/./custom.css?v=905461ed" />
+
+  
+    <link rel="shortcut icon" href="../../_static/logoEvYac2.png"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../_static/translations.js?v=f85f4cfb"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="../../_static/require.min.js?v=8a87acde"></script>
+      <script src="../../_static/hide_code_cells.js?v=51dbf054"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            MIN 431 - Evaluacion de Yacimientos
+              <img src="../../_static/logoEvYac2.png" class="logo" alt="Logotipo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Apuntes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Capítulo 0. Preparando tu computador para este curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/index.html">Capítulo 1. Estudio Exploratorio de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/index.html">Capítulo 2. Análisis Espacial de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/index.html">Capítulo 3. Compositación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/index.html">Capítulo 4. Estimación de Recursos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MIN 431 - Evaluacion de Yacimientos</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Introduction to LaTeX</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/arqlm/arqlm.github.io/blob/main/courses/MIN431/lessons/00/intro_to_latex.ipynb" class="fa fa-github"> Editar en GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+  <span style="white-space: nowrap;">
+    <a href="https://colab.research.google.com/github/arqlm/arqlm.github.io/blob/main/courses/MIN431/lessons/00/intro_to_latex.ipynb">
+      <img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"
+        style="vertical-align:text-bottom">
+    |</a>
+    <a href="intro_to_latex.ipynb" class="reference download internal" download>Descargar notebook</a>.
+  </span>
+</div><section id="Introduction-to-LaTeX">
+<h1>Introduction to LaTeX<a class="headerlink" href="#Introduction-to-LaTeX" title="Link to this heading"></a></h1>
+<p>In this tutorial, you will learn some of the basics on how to use <span class="math notranslate nohighlight">\(\LaTeX\)</span> to display equations in Jupyter notebooks. For looking up symbols you may need, you can use any of the many <a class="reference external" href="http://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf">cheat sheets</a> you can find by asking Google. I have provided a few that will come up often in this course at the <a class="reference internal" href="#Useful-LaTeX-symbols-for-BE/Bi-103"><span class="std std-ref">end of this lesson</span></a>.</p>
+<p>In this lesson, whenever a LaTeX expression is shown, the raw Markdown/LaTeX is shown beneath it. (The word LaTeX is generally stylized as <span class="math notranslate nohighlight">\(\LaTeX\)</span>, but I get tired of reading that, so going forward, I will just write «LaTeX.»)</p>
+<section id="Basic-inline-LaTeX">
+<h2>Basic inline LaTeX<a class="headerlink" href="#Basic-inline-LaTeX" title="Link to this heading"></a></h2>
+<p>To embed LaTeX within text, simply encapsulate the LaTeX portions in dollar signs (<code class="docutils literal notranslate"><span class="pre">$</span></code>). MathJax takes care of the rest. As an example, consider the sentence below and the markdown/LaTeX code to render it.</p>
+<p>Einstein told us that <span class="math notranslate nohighlight">\(E = mc^2\)</span>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Einstein told us that $E = mc^2$.
+</pre></div>
+</div>
+<p>Notice how the equation is properly rendered, with mathematical variables in italics. Note also how <code class="docutils literal notranslate"><span class="pre">^2</span></code> was used to raise to a power. If the power has more than one character in it, it should be enclosed in braces (<code class="docutils literal notranslate"><span class="pre">{}</span></code>). In fact, braces are used to generally group symbols in LaTeX.</p>
+<p>Euler told us that <span class="math notranslate nohighlight">\(\mathrm{e}^{i \pi} - 1 = 0\)</span>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Euler told us that $\mathrm{e}^{i \pi} - 1 = 0$.
+</pre></div>
+</div>
+<p>Aside from the grouping braces, there are several other syntactical items of note. First, notice that I made the special character <span class="math notranslate nohighlight">\(\pi\)</span> with <code class="docutils literal notranslate"><span class="pre">\pi</span></code>. In general, a backward slash precedes special symbols or commands in LaTeX. If we want another Greek letter, like <span class="math notranslate nohighlight">\(\theta\)</span>, we use <code class="docutils literal notranslate"><span class="pre">\theta</span></code>. Now, also note that I used «<code class="docutils literal notranslate"><span class="pre">\mathrm{e}</span></code>» for the base of the natural logarithm. I was signaling to LaTeX that I wanted the character written in Roman font, and not italics, so I used
+<code class="docutils literal notranslate"><span class="pre">\mathrm</span></code>. Anything in the braces following the function <code class="docutils literal notranslate"><span class="pre">\mathrm</span></code> is rendered in Roman font. Note the difference.</p>
+<p>This is <span class="math notranslate nohighlight">\(e\)</span>. This is <span class="math notranslate nohighlight">\(\mathrm{e}\)</span></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>This is $e$. This is $\mathrm{e}$.
+</pre></div>
+</div>
+<p>Now, back to grouping things in braces. We can do similar groupings using braces with with subscripts.</p>
+<p>The dot product of two <span class="math notranslate nohighlight">\(n\)</span>-vectors is <span class="math notranslate nohighlight">\(\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i b_i\)</span>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The dot product of two $n$-vectors is $\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i b_i$.
+</pre></div>
+</div>
+<p>Here, I have used <code class="docutils literal notranslate"><span class="pre">$\mathbf{a}$</span></code> to make the character <code class="docutils literal notranslate"><span class="pre">a</span></code> boldface, denoting a vector. Note that we denote subscripts with an underscore. Notice also that the bounds of the sum use the same underscore and caret notation as for subscripts and superscripts.</p>
+</section>
+<section id="Displaying-equations-on-separate-lines">
+<h2>Displaying equations on separate lines<a class="headerlink" href="#Displaying-equations-on-separate-lines" title="Link to this heading"></a></h2>
+<p>The bounds on the summation in the above example may look a little funny to you because they are not above and below the summation symbol. This is because this particular equation is written inline. If we had separated it from the text, it renders differently.</p>
+<p>We can make an equation appear centered on a new line, like</p>
+<p><span class="math">\begin{align}
+\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i b_i.
+\end{align}</span></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>We can make an equation appear centered on a new line, like
+
+\begin{align}
+    \mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i b_i.
+\end{align}
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">align</span></code> environment in LaTeX specifies that you want centered equations, separated from the text. It is called <code class="docutils literal notranslate"><span class="pre">align</span></code> because it allows you to align the equations. You separate lines in the equations with a double backslash (<code class="docutils literal notranslate"><span class="pre">//</span></code>). Insert an ampersand (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) in each line at the alignment point. All equations will be aligned at the location of the ampersand symbols (and, of course, the ampersands will not appear in the rendered equations).</p>
+<p>For a three-vector consisting of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span> components,</p>
+<p><span class="math">\begin{align}
+\mathbf{a} \cdot \mathbf{b} &= \sum_{i=1}^n a_i b_i \\
+&= a_x b_x + a_y b_y + a_z b_z.
+\end{align}</span></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>For a three-vector consisting of $x$, $y$, and $z$ components,
+
+\begin{align}
+    \mathbf{a} \cdot \mathbf{b} &amp;= \sum_{i=1}^n a_i b_i \\
+    &amp;= a_x b_x + a_y b_y + a_z b_z.
+\end{align}
+</pre></div>
+</div>
+<p>Note that I always put an extra blank line before the <code class="docutils literal notranslate"><span class="pre">\begin{align}</span></code> statement. This is not necessary, but I think things look better with the extra space.</p>
+</section>
+<section id="Fractions-(and-an-example-of-fine-tuning)">
+<h2>Fractions (and an example of fine-tuning)<a class="headerlink" href="#Fractions-(and-an-example-of-fine-tuning)" title="Link to this heading"></a></h2>
+<p>To display fractional quantities, we use the <code class="docutils literal notranslate"><span class="pre">\frac{}{}</span></code> command. <code class="docutils literal notranslate"><span class="pre">\frac</span></code> is always followed by two sets of braces; the numerator is contained in the first, and the denominator is contained in the second. As an example, we can write an equation you will become intimately familiar with if you take the second term of this course,</p>
+<p><span class="math">\begin{align}
+P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)}
+\end{align}</span></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\begin{align}
+    P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)}
+\end{align}
+</pre></div>
+</div>
+<p>The right hand side has a nicely-formatted fraction. I did a little extra fine-tuning in this equation. I’ll show the equation again without the fine-tuning, which used the <code class="docutils literal notranslate"><span class="pre">\mid</span></code> and <code class="docutils literal notranslate"><span class="pre">\,</span></code> commands.</p>
+<p><span class="math">\begin{align}
+P(A | B) = \frac{P(B | A) P(A)}{P(B)}.
+\end{align}</span></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\begin{align}
+    P(A | B) = \frac{P(B | A) P(A)}{P(B)}.
+\end{align}
+</pre></div>
+</div>
+<p>First, the <code class="docutils literal notranslate"><span class="pre">\mid</span></code> command should be used in conditional probabilities. Just using a vertical bar (<code class="docutils literal notranslate"><span class="pre">|</span></code>) results in crowding. Similarly, I used the <code class="docutils literal notranslate"><span class="pre">\,</span></code> command to insert a little extra space between the two probabilities in the numerator. This makes the equation a bit easier to read. This <code class="docutils literal notranslate"><span class="pre">\,</span></code> operator is especially important when defining integrals. We can put a little space between the <span class="math notranslate nohighlight">\(\mathrm{d}x\)</span> and the integrand.</p>
+<p><span class="math">\begin{align}
+\text{good: } &\int_0^{2\pi} \mathrm{d}x \, \sin x. \\[1em]
+\text{bad: } &\int_0^{2\pi} \mathrm{d}x \sin x.
+\end{align}</span></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\begin{align}
+    \text{good: } &amp;\int_0^{2\pi} \mathrm{d}x \, \sin x. \\[1em]
+    \text{bad: } &amp;\int_0^{2\pi} \mathrm{d}x \sin x.
+\end{align}
+</pre></div>
+</div>
+<p>Note that I inserted extra space after the new line. Specifically, <code class="docutils literal notranslate"><span class="pre">\\[1em]</span></code> instructs LaTeX to insert a space equation to the width of an M character between the equations. I often do this to keep things clear.</p>
+<p>It is also very important to note that I used <span class="math notranslate nohighlight">\(\sin\)</span> and not <span class="math notranslate nohighlight">\(sin\)</span>. Mathematical functions should be in Roman font and are invoked with a backslash. Otherwise, the characters are interpreted as separate variables. To be clear:</p>
+<p><span class="math">\begin{align}
+\text{good: } &\sin x. \\[1em]
+\text{bad: } & sin x.
+\end{align}</span></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\begin{align}
+    \text{good: } &amp;\sin x. \\[1em]
+    \text{bad: } &amp; sin x.
+\end{align}
+</pre></div>
+</div>
+<p>Finally, notice that I was able to put text in the equation like this: <code class="docutils literal notranslate"><span class="pre">\text{good:</span> <span class="pre">}</span></code>.</p>
+</section>
+<section id="Grouping-operators-(and-more-fine-tuning)">
+<h2>Grouping operators (and more fine-tuning)<a class="headerlink" href="#Grouping-operators-(and-more-fine-tuning)" title="Link to this heading"></a></h2>
+<p>Compare the following equations.</p>
+<p><span class="math">\begin{align}
+\text{good: } &\sum_{i=1}^n i^3 = \left(\sum_{i=1}^n i\right)^2. \\[1em]
+\text{bad: }  &\sum_{i=1}^n i^3 = (\sum_{i=1}^n i)^2.
+\end{align}</span></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\begin{align}
+    \text{good: } &amp;\sum_{i=1}^n i^3 = \left(\sum_{i=1}^n i\right)^2. \\[1em]
+    \text{bad: }  &amp;\sum_{i=1}^n i^3 = (\sum_{i=1}^n i)^2.
+\end{align}
+</pre></div>
+</div>
+<p>In the second equation, I did not use the <code class="docutils literal notranslate"><span class="pre">\left(</span></code> and <code class="docutils literal notranslate"><span class="pre">\right)</span></code> construction for parentheses and the result looks pretty awful. In LaTeX, the height of anything that is encapsulated by <code class="docutils literal notranslate"><span class="pre">\left(</span></code> and <code class="docutils literal notranslate"><span class="pre">\right)</span></code> scales the parentheses appropriately. You can use <code class="docutils literal notranslate"><span class="pre">\left</span></code> and <code class="docutils literal notranslate"><span class="pre">\right</span></code> with many symbols. An important example is <code class="docutils literal notranslate"><span class="pre">\left\{</span></code>. Note that to display braces in an equation, you have to use <code class="docutils literal notranslate"><span class="pre">\{</span></code> because just a plain brace (<code class="docutils literal notranslate"><span class="pre">{</span></code>) has a different meaning.</p>
+<p>(By the way, that equation is true, and pretty amazing. It says that the sum of the first <span class="math notranslate nohighlight">\(n\)</span> <em>cubes</em> of integers is equal to the sum of the first <span class="math notranslate nohighlight">\(n\)</span> integers <em>squared</em>!)</p>
+<p>Finally, if you use <code class="docutils literal notranslate"><span class="pre">\left.</span></code> or <code class="docutils literal notranslate"><span class="pre">\right.</span></code>, LaTeX will simply scale the opposite symbol to match the height of the text, but will suppress printing the other. For example,</p>
+<p><span class="math">\begin{align}
+\left. \frac{1}{x + 2} \right|_0^2 = -\frac{1}{4}.
+\end{align}</span></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\begin{align}
+    \left. \frac{1}{x + 2} \right|_0^2 = -\frac{1}{4}.
+\end{align}
+</pre></div>
+</div>
+<p>This is also useful if you are going to use <code class="docutils literal notranslate"><span class="pre">/</span></code> for a division operation. Compare the following.</p>
+<p><span class="math">\begin{align}
+\text{good: } & \left. x^2 \middle/ y^2 \right. \\[1em]
+\text{bad: } & x^2 / y^2
+\end{align}</span></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\begin{align}
+    \text{good: } &amp; \left. x^2 \middle/ y^2 \right. \\[1em]
+    \text{bad: } &amp; x^2 / y^2
+\end{align}
+</pre></div>
+</div>
+<p>Here, we used the <code class="docutils literal notranslate"><span class="pre">\middle</span></code> operator to scale the length of the division sign.</p>
+</section>
+<section id="Matrices-and-arrays">
+<h2>Matrices and arrays<a class="headerlink" href="#Matrices-and-arrays" title="Link to this heading"></a></h2>
+<p>On occasion, you’ll need to express matrices. This is most easily done using the <code class="docutils literal notranslate"><span class="pre">pmatrix</span></code> environment. For example, a covariance matrix for two variables might be written as</p>
+<p><span class="math">\begin{align}
+\sigma^2 = \begin{pmatrix}
+\sigma_1^2 & \sigma_{12} \\
+\sigma_{12} & \sigma_2^2
+\end{pmatrix}.
+\end{align}</span></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\begin{align}
+    \sigma^2 = \begin{pmatrix}
+    \sigma_1^2 &amp; \sigma_{12} \\
+    \sigma_{12} &amp; \sigma_2^2
+    \end{pmatrix}.
+\end{align}
+</pre></div>
+</div>
+<p>Once in the <code class="docutils literal notranslate"><span class="pre">pmatrix</span></code> environment, each row has entries separated by an ampersand. The row ends with a <code class="docutils literal notranslate"><span class="pre">\\</span></code>. Each row must have the same number of entries.</p>
+<p>You may also need to represent an values stacked on top of each other. For example, we might specify a piecewise linear function like this.</p>
+<p><span class="math">\begin{align}
+\text{rectifier}(x) = \left\{
+\begin{array}{cl}
+0 & x \le 0 \\
+x & x > 0.
+\end{array}
+\right.
+\end{align}</span></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>\begin{align}
+    \text{rectifier}(x) = \left\{
+    \begin{array}{cl}
+    0 &amp; x \le 0 \\
+    x &amp; x &gt; 0.
+    \end{array}
+    \right.
+\end{align}
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">array</span></code> environment allows arrays of text. The <code class="docutils literal notranslate"><span class="pre">{cl}</span></code> after <code class="docutils literal notranslate"><span class="pre">\begin{array}</span></code> indicates that two columns are wanted, with the first column being centered and the second being left-aligned. If we chose instead <code class="docutils literal notranslate"><span class="pre">{lr}</span></code>, the first column is left-aligned and the second column is right-aligned.</p>
+</section>
+<section id="Useful-LaTeX-symbols-for-BE/Bi-103">
+<h2>Useful LaTeX symbols for BE/Bi 103<a class="headerlink" href="#Useful-LaTeX-symbols-for-BE/Bi-103" title="Link to this heading"></a></h2>
+<p>Following is a list of some symbols you may find useful in this class.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>LaTeX</p></th>
+<th class="head"><p>symbol</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\approx</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\approx\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\sim</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sim\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\propto</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\propto\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\le</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\le\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ge</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\ge\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\pm</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\pm\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\in</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\in\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\ln</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\ln\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\exp</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\exp\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\prod_{i\in</span> <span class="pre">D}</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\({\displaystyle \prod_{i\in D}}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\sum_{i\in</span> <span class="pre">D}</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\({\displaystyle \sum_{i\in D}}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\frac{\partial</span> <span class="pre">f}{\partial</span> <span class="pre">x}</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\({\displaystyle \frac{\partial f}{\partial x}}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\sqrt{x}</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sqrt{x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\bar{x}</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\bar{x}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\langle</span> <span class="pre">x</span> <span class="pre">\rangle</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\langle x \rangle\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\left\langle</span> <span class="pre">\frac{x}{y}</span> <span class="pre">\right\rangle</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\left\langle \frac{x}{y} \right\rangle\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Derechos de autor 2025, Alvaro I. Riquelme.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
