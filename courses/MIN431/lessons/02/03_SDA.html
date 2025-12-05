@@ -64,7 +64,12 @@
 <li class="toctree-l2"><a class="reference internal" href="01_SDA_p3.html">4. Búsqueda de controles geológicos (continuación, por Litología)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_SDA.html">5. Definición de unidades o dominios de estimación</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02_SDA.html#Creación-de-Unidades-Geológicas">6. Creación de Unidades Geológicas</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7. Verificación de tendencias y análisis de contacto</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7. Verificación de tendencias (derivas)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Cargar-las-bibliotecas-requeridas">8. Cargar las bibliotecas requeridas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Codificar-base-de-datos-en-funcion-de-indicadores">9. Codificar base de datos en funcion de indicadores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Análisis-de-contacto">9.1. Análisis de contacto</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../03/index.html">Capítulo 3. Compositación</a></li>
@@ -158,22 +163,679 @@
 <h1><span class="section-number">7. </span>Verificación de tendencias (derivas)<a class="headerlink" href="#Verificación-de-tendencias-(derivas)" title="Link to this heading"></a></h1>
 <p>A veces existen tendencias sistemáticas en el valor de la variable. Por ejemplo, la concentración de un elemento puede cambiar sistemáticamente con la profundidad. En estos casos, podemos dejar de lado la idea de un dominio estrictamente estacionario utilizando la noción de cuasi-estacionariedad de segundo orden; es decir, podemos asumir que para cada ubicación, las propiedades estadísticas (y geológicas) permanecen homogéneas dentro de un vecindario.</p>
 <p>Este vecindario puede definirse para que la suposición funcione; es decir, si existe una tendencia fuerte en los datos, se puede usar un vecindario lo suficientemente pequeño para asumir estacionariedad dentro de él.</p>
-<div style="background-color:#d4edda; border:1px solid #c3e6cb; color:#155724; padding:15px; border-radius:6px; margin-bottom:10px;"><p><strong>En presencia de tendencias sistemáticas en el atributo:</strong>:</p>
-<ul style="margin-top:10px;"><ol style="margin-top:10px;"><li><p>Graficar medias y varianzas locales en diferentes direcciones.</p>
+<div style="background-color:#e3f2fd; border:1px solid #c3e6cb; color:#155724; padding:15px; border-radius:6px; margin-bottom:10px;"><p>En presencia de tendencias sistemáticas en el atributo:</p>
+<ul style="margin-top:10px;"><ol><li><p>Graficar medias y varianzas locales en diferentes direcciones.</p>
 </li><li><p>Determinar si el cambio en la media o varianza es significativo en relación con la escala del modelo:</p>
 <ul style="margin-top:10px;"><li><p>Si la tendencia no es significativa: usar los vecindarios locales para estimación y simulación, y asegurarse de revisar el modelo al final para ver qué tan bien sigue las tendencias.</p>
 </li><li><p>Si la tendencia sigue siendo significativa dentro del vecindario, modelar la tendencia con una interpolación suave y calcular los residuales en las ubicaciones de las muestras.</p>
-</li></ul><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  &lt;/li&gt;
-  &lt;li&gt;Determinar si dentro de un vecindario local, de tamaño suficiente para encontrar muestras para interpolar, la tendencia sigue siendo significativa:&lt;/li&gt;
-  &lt;li&gt;Actualizar las estadísticas y revisar.&lt;/li&gt;
-&lt;/ol&gt;
+</li></ul><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;li&gt;Determinar si dentro de un vecindario local, de tamaño suficiente para encontrar muestras para interpolar, la tendencia sigue siendo significativa:&lt;/li&gt;
+&lt;li&gt;Actualizar las estadísticas y revisar.&lt;/li&gt;
 </pre></div>
 </div>
-</ul></div><p>Es claro que existe una relación entre la escala de la posible tendencia y el tamaño del vecindario. Además, la disponibilidad de datos de muestra es importante, ya que se necesita encontrar suficientes muestras dentro de cada pequeño vecindario para permitir la inferencia.</p>
+</ol></ul></div><p>Es claro que existe una relación entre la escala de la posible tendencia y el tamaño del vecindario. Además, la disponibilidad de datos de muestra es importante, ya que se necesita encontrar suficientes muestras dentro de cada pequeño vecindario para permitir la inferencia.</p>
 <p>Como regla general, si hay abundantes muestras, el efecto de la tendencia será despreciable, ya que existirá suficiente información para informar las estadísticas locales dentro de un vecindario pequeño. Las tendencias se vuelven (muy) problemáticas cuando existen pocos datos, por ejemplo, en etapas tempranas de exploración, donde los sondajes están muy separados.</p>
 <p>Definir dominios estacionarios es una decisión, y una muy importante, ya que determina qué datos se utilizan para inferir sobre ubicaciones no muestreadas dentro de esa región. Además, definir los vecindarios locales cuasi-estacionarios es tan importante como la definición de los dominios.</p>
 <p>En la práctica, los dominios son dictados por el entendimiento geológico. Se realizan análisis estadísticos y espaciales para evaluar cuán apropiado es un modelo estacionario para los datos. Para este propósito se utilizan herramientas de análisis exploratorio de datos. Si los dominios son homogéneos desde el punto de vista geológico, pero muestran tendencias, esto puede manejarse definiendo el vecindario local apropiado al hacer inferencias sobre cada ubicación.</p>
 <p>En algunos casos, esto no es suficiente y puede ser necesario modelar y remover la tendencia, con la esperanza de que los residuales obtenidos a través de este proceso sean estacionarios y capturen parte de la estructura espacial. Sin embargo, este es un equilibrio delicado y no se dará una regla general en esta etapa.</p>
+</section>
+<section id="Cargar-las-bibliotecas-requeridas">
+<h1><span class="section-number">8. </span>Cargar las bibliotecas requeridas<a class="headerlink" href="#Cargar-las-bibliotecas-requeridas" title="Link to this heading"></a></h1>
+<p>El siguiente código carga las bibliotecas requeridas.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Instalar libreria de geoestadistica Geostatspy</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>geostatspy
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Requirement already satisfied: geostatspy in c:\users\alvaro\anaconda3\envs\min431\lib\site-packages (0.0.78)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>                                            <span class="c1"># ndarrays for gridded data</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>                                           <span class="c1"># DataFrames for tabular data</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">geostatspy.GSLIB</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">GSLIB</span>                              <span class="c1"># GSLIB utilities, visualization and wrapper</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geostatspy.geostats</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">geostats</span>                        <span class="c1"># GSLIB methods convert to Python</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geostatspy</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;GeostatsPy version: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">geostatspy</span><span class="o">.</span><span class="n">__version__</span><span class="p">))</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>                                                     <span class="c1"># set working directory, run executables</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>                                         <span class="c1"># suppress the status bar</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">partialmethod</span>
+<span class="n">tqdm</span><span class="o">.</span><span class="fm">__init__</span> <span class="o">=</span> <span class="n">partialmethod</span><span class="p">(</span><span class="n">tqdm</span><span class="o">.</span><span class="fm">__init__</span><span class="p">,</span> <span class="n">disable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">ignore_warnings</span> <span class="o">=</span> <span class="kc">True</span>                                        <span class="c1"># ignore warnings?</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>                               <span class="c1"># for plotting</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>                                      <span class="c1"># custom colorbar</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.ticker</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mticker</span>                           <span class="c1"># custom colorpar ticks</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.ticker</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">MultipleLocator</span><span class="p">,</span> <span class="n">AutoMinorLocator</span><span class="p">)</span> <span class="c1"># control of axes ticks</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;axes&#39;</span><span class="p">,</span> <span class="n">axisbelow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>                                <span class="c1"># plot all grids below the plot elements</span>
+<span class="k">if</span> <span class="n">ignore_warnings</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.image</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpimg</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.offsetbox</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnchoredText</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.gridspec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gridspec</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.offline</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">py</span>
+
+<span class="c1"># trimmed inverted rainbow colormap hsv removing magenta tones</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">hsv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.70</span><span class="p">,</span> <span class="mi">256</span><span class="p">)))</span><span class="o">.</span><span class="n">reversed</span><span class="p">()</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+GeostatsPy version: 0.0.79
+</pre></div></div>
+</div>
+<p>Nuestro punto de partida sera la base de datos simplificada de la sección anterior.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Cargar data simplificada de la sección anterior</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Cargar base de datos en pandas y aproximar a dos decimales</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Data_sin_compositar_con_UGs.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;UG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;UG&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># Asegurarse de que la columna &#39;UG&#39; sea de tipo entero</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># mostrar las primeras filas de la data</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Este</th>
+      <th>Norte</th>
+      <th>Elevación</th>
+      <th>au_ppm</th>
+      <th>ag_ppm</th>
+      <th>cu_pct</th>
+      <th>aucn_ppm</th>
+      <th>cucn_ppm</th>
+      <th>Zmin</th>
+      <th>Alte</th>
+      <th>Lito</th>
+      <th>UG</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>472187.20</td>
+      <td>6925805.49</td>
+      <td>4213.86</td>
+      <td>0.30</td>
+      <td>2.3</td>
+      <td>0.01</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+      <td>OXI</td>
+      <td>ILL_CLO</td>
+      <td>IBX_MM</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>472187.34</td>
+      <td>6925805.77</td>
+      <td>4211.99</td>
+      <td>0.47</td>
+      <td>16.2</td>
+      <td>0.03</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+      <td>OXI</td>
+      <td>ILL_CLO</td>
+      <td>IBX_MM</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>472187.49</td>
+      <td>6925806.06</td>
+      <td>4210.01</td>
+      <td>0.31</td>
+      <td>2.3</td>
+      <td>0.02</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+      <td>OXI</td>
+      <td>ILL_CLO</td>
+      <td>IBX_MM</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>472187.64</td>
+      <td>6925806.35</td>
+      <td>4208.04</td>
+      <td>0.29</td>
+      <td>2.1</td>
+      <td>0.01</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+      <td>OXI</td>
+      <td>ILL_CLO</td>
+      <td>IBX_MM</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>472187.78</td>
+      <td>6925806.64</td>
+      <td>4206.07</td>
+      <td>0.40</td>
+      <td>2.1</td>
+      <td>0.01</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+      <td>OXI</td>
+      <td>ILL_CLO</td>
+      <td>IBX_MM</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="Codificar-base-de-datos-en-funcion-de-indicadores">
+<h1><span class="section-number">9. </span>Codificar base de datos en funcion de indicadores<a class="headerlink" href="#Codificar-base-de-datos-en-funcion-de-indicadores" title="Link to this heading"></a></h1>
+<p>Convendrá agregar a nuestra base de datos 3 columnas nuevas que codifiquen la variable indicador para cada UG</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Agregar columnas de leyes para cada UG</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;ley Cu UG_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;UG&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cu_pct&#39;</span><span class="p">],</span> <span class="o">-</span><span class="mi">99</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;ley Cu UG_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;UG&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cu_pct&#39;</span><span class="p">],</span> <span class="o">-</span><span class="mi">99</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;ley Cu UG_3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;UG&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;cu_pct&#39;</span><span class="p">],</span> <span class="o">-</span><span class="mi">99</span><span class="p">)</span>
+
+<span class="c1"># Guardar data con leyes en formato GSLIB</span>
+<span class="n">GSLIB</span><span class="o">.</span><span class="n">Dataframe2GSLIB</span><span class="p">(</span><span class="s1">&#39;./01_data/data_contacto.dat&#39;</span><span class="p">,</span><span class="n">df</span><span class="p">)</span>  <span class="c1"># guardar data con leyes por UG en formato GSLIB</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># mostrar las primeras filas de la data</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Este</th>
+      <th>Norte</th>
+      <th>Elevación</th>
+      <th>au_ppm</th>
+      <th>ag_ppm</th>
+      <th>cu_pct</th>
+      <th>aucn_ppm</th>
+      <th>cucn_ppm</th>
+      <th>Zmin</th>
+      <th>Alte</th>
+      <th>Lito</th>
+      <th>UG</th>
+      <th>ley Cu UG_1</th>
+      <th>ley Cu UG_2</th>
+      <th>ley Cu UG_3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>472187.20</td>
+      <td>6925805.49</td>
+      <td>4213.86</td>
+      <td>0.30</td>
+      <td>2.3</td>
+      <td>0.01</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+      <td>OXI</td>
+      <td>ILL_CLO</td>
+      <td>IBX_MM</td>
+      <td>1</td>
+      <td>0.01</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>472187.34</td>
+      <td>6925805.77</td>
+      <td>4211.99</td>
+      <td>0.47</td>
+      <td>16.2</td>
+      <td>0.03</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+      <td>OXI</td>
+      <td>ILL_CLO</td>
+      <td>IBX_MM</td>
+      <td>1</td>
+      <td>0.03</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>472187.49</td>
+      <td>6925806.06</td>
+      <td>4210.01</td>
+      <td>0.31</td>
+      <td>2.3</td>
+      <td>0.02</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+      <td>OXI</td>
+      <td>ILL_CLO</td>
+      <td>IBX_MM</td>
+      <td>1</td>
+      <td>0.02</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>472187.64</td>
+      <td>6925806.35</td>
+      <td>4208.04</td>
+      <td>0.29</td>
+      <td>2.1</td>
+      <td>0.01</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+      <td>OXI</td>
+      <td>ILL_CLO</td>
+      <td>IBX_MM</td>
+      <td>1</td>
+      <td>0.01</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>472187.78</td>
+      <td>6925806.64</td>
+      <td>4206.07</td>
+      <td>0.40</td>
+      <td>2.1</td>
+      <td>0.01</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+      <td>OXI</td>
+      <td>ILL_CLO</td>
+      <td>IBX_MM</td>
+      <td>1</td>
+      <td>0.01</td>
+      <td>-99.0</td>
+      <td>-99.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<section id="Análisis-de-contacto">
+<h2><span class="section-number">9.1. </span>Análisis de contacto<a class="headerlink" href="#Análisis-de-contacto" title="Link to this heading"></a></h2>
+<p>Definimos la siguiente función, que nos permitirá optimizar la ejecución del calculo de variogramas.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">contacto</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">xcol</span><span class="p">,</span> <span class="n">ycol</span><span class="p">,</span> <span class="n">zcol</span><span class="p">,</span> <span class="n">vcol1</span><span class="p">,</span><span class="n">vcol2</span><span class="p">,</span> <span class="n">nlag</span><span class="p">,</span> <span class="n">lagdist</span><span class="p">,</span> <span class="n">lag_tol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Analisis de contacto en 3D usando GSLIB GAMV.&quot;&quot;&quot;</span>
+    <span class="n">lag</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">npair</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">head</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">tail</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">df_ext</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">xcol</span><span class="p">],</span> <span class="s2">&quot;Y&quot;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">ycol</span><span class="p">],</span> <span class="s2">&quot;Z&quot;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">zcol</span><span class="p">],</span><span class="s2">&quot;Variable1&quot;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">vcol1</span><span class="p">],</span> <span class="s2">&quot;Variable2&quot;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">vcol2</span><span class="p">]})</span>
+    <span class="n">GSLIB</span><span class="o">.</span><span class="n">Dataframe2GSLIB</span><span class="p">(</span><span class="s2">&quot;01_data/contacto_out.dat&quot;</span><span class="p">,</span> <span class="n">df_ext</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;02_parametros/contacto.par&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;                  Parameters for GAMV                                      </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;                  *******************                                      </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;                                                                           </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;START OF PARAMETERS:                                                       </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;01_data/contacto_out.dat                    -file with data                            </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;1   2   3                         -   columns for X, Y, Z coordinates      </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;2   4   5                         -   number of variables,col numbers      </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;0 999999  -   trimming limits                      </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;03_resultados/contacto.out                          -file for variogram output               </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nlag</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;                      -number of lags                          </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">lagdist</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;                       -lag separation distance                 </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">lag_tol</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;                   -lag tolerance                           </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;1                                 -number of directions                    </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;0  90 99999 0 90 99999  -azm,atol,bandh,dip,dtol,bandv </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;0                   -standardize sills? (0=no, 1=yes)        </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;1                                 -number of variograms                    </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;1   2   1                         -tail var., head var., variogram type    </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Ejecutar gamv de GSLIB</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;./Gslib90/gamv&quot;</span><span class="p">,</span> <span class="s2">&quot;./02_parametros/contacto.par&quot;</span><span class="p">],</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;03_resultados/contacto.out&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">next</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>  <span class="c1"># skip the first line</span>
+        <span class="nb">next</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>  <span class="c1"># skip the second line</span>
+
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span><span class="n">t</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+            <span class="n">lag</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+            <span class="n">head</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+            <span class="n">tail</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+            <span class="c1">## append only if n is defined</span>
+            <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+                <span class="n">npair</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">npair</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">lag</span><span class="p">,</span> <span class="n">npair</span><span class="p">,</span> <span class="n">head</span><span class="p">,</span> <span class="n">tail</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lag_UG1_2</span><span class="p">,</span> <span class="n">UG1_2_npair</span><span class="p">,</span> <span class="n">UG1_2_head</span><span class="p">,</span> <span class="n">UG1_2_tail</span> <span class="o">=</span> <span class="n">contacto</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s2">&quot;Este&quot;</span><span class="p">,</span><span class="s2">&quot;Norte&quot;</span><span class="p">,</span><span class="s2">&quot;Elevación&quot;</span><span class="p">,</span><span class="s2">&quot;ley Cu UG_1&quot;</span><span class="p">,</span><span class="s2">&quot;ley Cu UG_2&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">plotly.subplots</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_subplots</span>
+
+
+<span class="c1">## Plot truncated z values against filtered average cut &gt; 0 percentage with a line plot and marginal counter histogram</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+
+
+<span class="c1"># create subplot: top = line, bottom = marginal histogram (shared x)</span>
+<span class="c1"># enable a secondary y-axis for the bottom subplot so we can plot the bar on the right</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shared_xaxes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">vertical_spacing</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+                    <span class="n">row_heights</span><span class="o">=</span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+                    <span class="n">specs</span><span class="o">=</span><span class="p">[[{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;xy&quot;</span><span class="p">}],</span>
+                           <span class="p">[{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;xy&quot;</span><span class="p">,</span> <span class="s2">&quot;secondary_y&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}]])</span>
+
+<span class="c1"># line trace (top)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span>
+    <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lag_UG1_2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">UG1_2_head</span><span class="p">,</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ley Promedio Cu [%] en UG 1&#39;</span><span class="p">,</span>
+        <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">),</span>
+        <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="c1">## add z vs filtered line</span>
+<span class="c1"># line trace (top)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span>
+    <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lag_UG1_2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">UG1_2_tail</span><span class="p">,</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ley Promedio Cu (%) en UG 2&#39;</span><span class="p">,</span>
+        <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">),</span>
+        <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+
+<span class="n">bar</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lag_UG1_2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">UG1_2_npair</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;N° celdas válidas (modelo)&#39;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">),</span>
+    <span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span>
+<span class="p">)</span>
+<span class="n">bar2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lag_UG1_2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">UG1_2_npair</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;N° muestras&#39;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">),</span>
+    <span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span>
+<span class="p">)</span>
+<span class="c1">## add bar y-axis on the right, row=2, col=1.</span>
+
+<span class="c1"># add the bar to the bottom subplot using the secondary y-axis</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Update 2nd y-axis properties for the bar chart</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span>
+    <span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Celdas válidas (modelo)&#39;</span><span class="p">,</span>
+    <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">bar2</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Update 2nd y-axis properties for the bar chart</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span>
+    <span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Celdas válidas (modelo)&#39;</span><span class="p">,</span>
+    <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="c1"># layout and axis labels</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Distancia al contacto (m)&#39;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Ley Promedio Cu (%)&#39;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Conteo muestras&#39;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Análisis de contacto entre UG 1 y UG 2, ley de Cu (%)&#39;</span><span class="p">,</span>
+    <span class="n">font_family</span><span class="o">=</span><span class="s2">&quot;Times New Roman&quot;</span><span class="p">,</span>
+    <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">font_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+    <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+    <span class="n">hovermode</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">bargap</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">900</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="admonition warning">
+<p>Data type cannot be displayed: application/vnd.plotly.v1+json</p>
+</div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lag_UG2_3</span><span class="p">,</span> <span class="n">UGG2_3_npair</span><span class="p">,</span> <span class="n">UGG2_3_head</span><span class="p">,</span> <span class="n">UGG2_3_tail</span> <span class="o">=</span> <span class="n">contacto</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="s2">&quot;Este&quot;</span><span class="p">,</span><span class="s2">&quot;Norte&quot;</span><span class="p">,</span><span class="s2">&quot;Elevación&quot;</span><span class="p">,</span><span class="s2">&quot;ley Cu UG_2&quot;</span><span class="p">,</span><span class="s2">&quot;ley Cu UG_3&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[72]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">plotly.subplots</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_subplots</span>
+
+
+<span class="c1">## Plot truncated z values against filtered average cut &gt; 0 percentage with a line plot and marginal counter histogram</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.express</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+
+
+<span class="c1"># create subplot: top = line, bottom = marginal histogram (shared x)</span>
+<span class="c1"># enable a secondary y-axis for the bottom subplot so we can plot the bar on the right</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shared_xaxes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">vertical_spacing</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+                    <span class="n">row_heights</span><span class="o">=</span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+                    <span class="n">specs</span><span class="o">=</span><span class="p">[[{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;xy&quot;</span><span class="p">}],</span>
+                           <span class="p">[{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;xy&quot;</span><span class="p">,</span> <span class="s2">&quot;secondary_y&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}]])</span>
+
+<span class="c1"># line trace (top)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span>
+    <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lag_UG2_3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">UGG2_3_head</span><span class="p">,</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ley Promedio Cu [%] en UG 2&#39;</span><span class="p">,</span>
+        <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">),</span>
+        <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="c1">## add z vs filtered line</span>
+<span class="c1"># line trace (top)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span>
+    <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lag_UG2_3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">UGG2_3_tail</span><span class="p">,</span>
+        <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Ley Promedio Cu (%) en UG 3&#39;</span><span class="p">,</span>
+        <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">),</span>
+        <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+
+<span class="n">bar</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lag_UG2_3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">UGG2_3_npair</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;N° muestras&#39;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">),</span>
+    <span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span>
+<span class="p">)</span>
+<span class="n">bar2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lag_UG2_3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">UGG2_3_npair</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;N° muestras&#39;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">),</span>
+    <span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span>
+<span class="p">)</span>
+<span class="c1">## add bar y-axis on the right, row=2, col=1.</span>
+
+<span class="c1"># add the bar to the bottom subplot using the secondary y-axis</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Update 2nd y-axis properties for the bar chart</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span>
+    <span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Celdas válidas (modelo)&#39;</span><span class="p">,</span>
+    <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">bar2</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Update 2nd y-axis properties for the bar chart</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span>
+    <span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Celdas válidas (modelo)&#39;</span><span class="p">,</span>
+    <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="c1"># layout and axis labels</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_xaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Distancia al contacto (m)&#39;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Ley Promedio Cu (%)&#39;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">gridcolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s1">&#39;Conteo muestras&#39;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Análisis de contacto entre UG 2 y UG 3, ley de Cu (%)&#39;</span><span class="p">,</span>
+    <span class="n">font_family</span><span class="o">=</span><span class="s2">&quot;Times New Roman&quot;</span><span class="p">,</span>
+    <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">font_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+    <span class="n">plot_bgcolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+    <span class="n">hovermode</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">bargap</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">900</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<br/></pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="admonition warning">
+<p>Data type cannot be displayed: application/vnd.plotly.v1+json</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 
 
