@@ -1,0 +1,22 @@
+***********************************************
+Capítulo 3. Algoritmos de simulación
+***********************************************
+
+Difícilmente lograra comprender bien los conceptos de probabilidad y estadística, al nivel de los requeridos para este curso, quien no es capaz 
+de producir algunos procesos aleatorios básicos.
+
+En este capítulo, introduciremos algunos algoritmos básicos que nos
+permitirán entender los límites de las herramientas que se históricamente
+se utilizan en el análisis estadístico y geoestadístico de la información
+proveniente de la naturaleza.
+
+
+.. rubric:: Contenidos
+
+.. toctree::
+   :maxdepth: 2
+   :numbered:
+
+   Simulación de variables aleatorias reales <01_SVA>
+   Simulación de Monte-Carlo <02_SMC>
+   Simulación de campos aleatorios <03_SRF>

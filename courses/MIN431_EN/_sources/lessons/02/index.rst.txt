@@ -1,0 +1,38 @@
+***********************************************
+Capítulo 2. Análisis Espacial de Datos
+***********************************************
+
+El análisis exploratorio estadístico de los datos debe completarse
+explorando la distribución espacial de los mismos. En el espacio,
+es necesario asumir estacionariedad para permitir la inferencia estadística.
+El comportamiento de las variables en el espacio debe entenderse
+para tomar la decisión de estacionariedad y comprender sus posibles desventajas.
+Por otro lado, también necesitamos definir dominios que se utilizarán para
+estimación o simulación. Estos dominios definen el conjunto de datos
+utilizados para inferir la variable en ubicaciones no muestreadas dentro de ese
+mismo volumen. Por lo tanto, debe haber una distribución representativa dentro
+de cada dominio para condicionar el proceso de inferencia. La distribución
+estadística de las variables debe caracterizarse dentro de cada dominio, pero a menudo,
+las muestras no son espacialmente representativas, sesgando las estadísticas
+que se pueden inferir de ellas.
+
+En este capítulo, se introduce la noción formal de estacionariedad
+y se discuten temas relacionados con la inferencia de la distribución representativa
+cuando se enfrenta a datos agrupados o muestreados preferencialmente.
+También se aborda brevemente el caso de datos censurados intencionalmente.
+
+.. rubric:: Contenidos
+
+.. toctree::
+   :maxdepth: 2
+   :numbered:
+
+   Búsqueda de controles geológicos (por Zona Mineral) <01_SDA_p1>
+   Búsqueda de controles geológicos (continuación, por Alteración) <01_SDA_p2>
+   Búsqueda de controles geológicos (continuación, por Litología) <01_SDA_p3>
+   Definición de unidades o dominios de estimación <02_SDA>
+   Verificación de tendencias y análisis de contacto <03_SDA>
+   Modelamiento implícito de unidades geológicas <04_SDA>
+   Desagrupamiento <05_SDA>
+
+

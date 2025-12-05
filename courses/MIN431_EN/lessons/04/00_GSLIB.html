@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Instalando la GSLIB &mdash; Ore Body Modeling  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=720011df" />
+      <link rel="stylesheet" type="text/css" href="../../_static/./custom.css?v=410b8f1b" />
+
+  
+    <link rel="shortcut icon" href="../../_static/logoEvYac2.png"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/require.min.js?v=8a87acde"></script>
+      <script src="../../_static/hide_code_cells.js?v=51dbf054"></script>
+      <script src="../../_static/custom.js?v=033d039c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2. Grilla de estimación" href="01_GrillaEst.html" />
+    <link rel="prev" title="Capítulo 4. Estimación de Recursos" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ore Body Modeling
+              <img src="../../_static/logoEvYac2.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00/index.html">Chapter 0. Preparing your computer for this course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/index.html">Capítulo 1. Estudio Exploratorio de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/index.html">Capítulo 2. Análisis Espacial de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/index.html">Capítulo 3. Compositación</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Capítulo 4. Estimación de Recursos</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. Instalación de GSLIB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Instalacion-en-Colab">1.1. Instalacion en Colab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Descargar-Programas">1.1.1. Descargar Programas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Probar-correcta-instalación">1.1.2. Probar correcta instalación</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Instalacion-en-Jupyter-(Windows)">1.2. Instalacion en Jupyter (Windows)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">1.2.1. Descargar Programas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">1.2.2. Probar correcta instalación</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Instalacion-en-Jupyter-(Mac)">1.3. Instalacion en Jupyter (Mac)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Instalar-el-compilador-Fortran">1.3.1. Instalar el compilador Fortran</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Verificar-la-instalación">1.3.2. Verificar la instalación</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">1.3.3. Descargar Programas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Compilar-programas">1.3.4. Compilar programas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Remover-Carpeta-temporal-a-mano">1.3.5. Remover Carpeta temporal a mano</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">1.3.6. Probar correcta instalación</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="01_GrillaEst.html">2. Determinación de grilla de estimación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Def_UG_Vol.html">3. Generación de volúmenes de estimación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Estimacion_leyes.html">4. Estimación por Kriging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_Validacion.html">5. Compilación de Resultados y Validación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_Validacion.html#Apéndice:-Demarcación-de-topografía">6. Apéndice: Demarcación de topografía</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ore Body Modeling</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Capítulo 4. Estimación de Recursos</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Instalando la GSLIB</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/arqlm/arqlm.github.io/blob/main/courses/MIN431_EN/lessons/04/00_GSLIB.ipynb" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+  <span style="white-space: nowrap;">
+    <a href="https://colab.research.google.com/github/arqlm/arqlm.github.io/blob/main/courses/MIN431_EN/lessons/04/00_GSLIB.ipynb">
+      <img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"
+        style="vertical-align:text-bottom">
+    |</a>
+    <a href="00_GSLIB.ipynb" class="reference download internal" download>Download notebook</a>.
+  </span>
+</div><section id="Instalando-la-GSLIB">
+<h1><span class="section-number">1. </span>Instalando la GSLIB<a class="headerlink" href="#Instalando-la-GSLIB" title="Link to this heading"></a></h1>
+<p>GSLIB (Geostatistical Software Library) es una de las primeras colecciones de software geoestadístico del mundo. Fue desarrollada por estudiantes y profesores de la Universidad de Stanford, con Clayton Deutsch y André Journel como autores principales.</p>
+<p><strong>Características clave</strong></p>
+<ul class="simple">
+<li><p>Finalidad: GSLIB se utiliza para una variedad de tareas geoestadísticas, como el análisis de datos, la estimación de variogramas, el kriging y las simulaciones estocásticas en 1D, 2D y 3D.</p></li>
+<li><p>Código original: El código original de la biblioteca está escrito en Fortran, pero sus algoritmos han sido ampliamente utilizados y reimplementados en otros lenguajes.</p></li>
+<li><p>Dominio público: GSLIB es de dominio público y se distribuye con el código fuente y ejecutables para PC.</p></li>
+<li><p>Reimplementación en Python: Los algoritmos de GSLIB se han reimplementado en Python en bibliotecas como GeostatPy, lo que facilita su uso en entornos de programación modernos.</p></li>
+<li><p>Aplicaciones: Es una herramienta fundamental para geólogos, ingenieros de minas y científicos de datos en el análisis de datos espaciales y la estimación de recursos.</p></li>
+</ul>
+<section id="Instalacion-en-Colab">
+<h2><span class="section-number">1.1. </span>Instalacion en Colab<a class="headerlink" href="#Instalacion-en-Colab" title="Link to this heading"></a></h2>
+<section id="Descargar-Programas">
+<h3><span class="section-number">1.1.1. </span>Descargar Programas<a class="headerlink" href="#Descargar-Programas" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-bash notranslate"><div class="highlight"><pre><span></span>%%bash
+
+<span class="nv">url</span><span class="o">=</span><span class="s2">&quot;http://www.statios.com/software/gslib90_ls.tar.gz&quot;</span>
+wget<span class="w"> </span>-O<span class="w"> </span>gslib90_ls.tar.gz<span class="w"> </span><span class="nv">$url</span>
+tar<span class="w"> </span>-xf<span class="w"> </span>gslib90_ls.tar.gz
+rm<span class="w"> </span>gslib90_ls.tar.gz
+
+mkdir<span class="w"> </span>Gslib90
+
+gfortran<span class="w"> </span>-w<span class="w"> </span>-O3<span class="w"> </span>-fallow-argument-mismatch<span class="w"> </span>-o<span class="w"> </span>./Gslib90/gamv<span class="w"> </span>./gslib90/gamv.for<span class="w"> </span>./gslib90/gslib/*.for
+gfortran<span class="w"> </span>-w<span class="w"> </span>-O3<span class="w"> </span>-fallow-argument-mismatch<span class="w"> </span>-o<span class="w"> </span>./Gslib90/vmodel<span class="w"> </span>./gslib90/vmodel.for<span class="w"> </span>./gslib90/gslib/*.for
+gfortran<span class="w"> </span>-w<span class="w"> </span>-O3<span class="w"> </span>-fallow-argument-mismatch<span class="w"> </span>-o<span class="w"> </span>./Gslib90/ik3d<span class="w"> </span>./gslib90/ik3d.for<span class="w"> </span>./gslib90/gslib/*.for
+gfortran<span class="w"> </span>-w<span class="w"> </span>-O3<span class="w"> </span>-fallow-argument-mismatch<span class="w"> </span>-o<span class="w"> </span>./Gslib90/kt3d<span class="w"> </span>./gslib90/kt3d.for<span class="w"> </span>./gslib90/gslib/*.for
+gfortran<span class="w"> </span>-w<span class="w"> </span>-O3<span class="w"> </span>-fallow-argument-mismatch<span class="w"> </span>-o<span class="w"> </span>./Gslib90/varmap<span class="w"> </span>./gslib90/varmap.for<span class="w"> </span>./gslib90/gslib/*.for
+
+rm<span class="w"> </span>-r<span class="w"> </span>gslib90
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+--2025-10-23 14:00:30--  http://www.statios.com/software/gslib90_ls.tar.gz
+Resolving www.statios.com (www.statios.com)... 184.106.55.106
+Connecting to www.statios.com (www.statios.com)|184.106.55.106|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 291768 (285K) [application/x-gzip]
+Saving to: ‘gslib90_ls.tar.gz’
+
+     0K .......... .......... .......... .......... .......... 17%  547K 0s
+    50K .......... .......... .......... .......... .......... 35% 1.03M 0s
+   100K .......... .......... .......... .......... .......... 52% 10.3M 0s
+   150K .......... .......... .......... .......... .......... 70% 1.13M 0s
+   200K .......... .......... .......... .......... .......... 87% 11.7M 0s
+   250K .......... .......... .......... ....                 100%  340M=0.2s
+
+2025-10-23 14:00:30 (1.46 MB/s) - ‘gslib90_ls.tar.gz’ saved [291768/291768]
+
+</pre></div></div>
+</div>
+</section>
+<section id="Probar-correcta-instalación">
+<h3><span class="section-number">1.1.2. </span>Probar correcta instalación<a class="headerlink" href="#Probar-correcta-instalación" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+
+<span class="c1"># Using subprocess.run() to capture output</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;./Gslib90/gamv.exe&quot;</span><span class="p">,</span> <span class="s2">&quot;holar.par&quot;</span><span class="p">],</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+ GAMV Version: 3.000
+
+ ERROR - the parameter file does not exist,
+         check for the file and try again
+
+
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Instalacion-en-Jupyter-(Windows)">
+<h2><span class="section-number">1.2. </span>Instalacion en Jupyter (Windows)<a class="headerlink" href="#Instalacion-en-Jupyter-(Windows)" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3><span class="section-number">1.2.1. </span>Descargar Programas<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Puedes descargar directamente de la pagina</p>
+<p><a class="reference external" href="http://www.statios.com/software/gslib90.zip">http://www.statios.com/software/gslib90.zip</a></p>
+<p>y descomprimir los programas.</p>
+<p>Asegúrate de que todos se puedan acceder dentro de la misma carpeta Gslib90.</p>
+<p>También puedes usar el siguiente código en Jupyter.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.request</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zipfile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.statios.com/software/gslib90.zip&quot;</span>
+<span class="n">zip_path</span> <span class="o">=</span> <span class="s2">&quot;gslib90.zip&quot;</span>
+
+<span class="c1"># Descargar el archivo zip</span>
+<span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">zip_path</span><span class="p">)</span>
+
+<span class="c1"># Descomprimir el zip en el directorio actual</span>
+<span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">zip_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">z</span><span class="p">:</span>
+    <span class="n">z</span><span class="o">.</span><span class="n">extractall</span><span class="p">()</span>
+
+<span class="c1"># Eliminar el archivo zip descargado</span>
+<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">zip_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id2">
+<h3><span class="section-number">1.2.2. </span>Probar correcta instalación<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+
+<span class="c1"># Using subprocess.run() to capture output</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;./Gslib90/gamv&quot;</span><span class="p">,</span> <span class="s2">&quot;holar.par&quot;</span><span class="p">],</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+GAMV Version: 2.905
+
+ERROR - the parameter file does not exist,
+        check for the file and try again
+
+Stop - Program terminated.
+
+
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Instalacion-en-Jupyter-(Mac)">
+<h2><span class="section-number">1.3. </span>Instalacion en Jupyter (Mac)<a class="headerlink" href="#Instalacion-en-Jupyter-(Mac)" title="Link to this heading"></a></h2>
+<section id="Instalar-el-compilador-Fortran">
+<h3><span class="section-number">1.3.1. </span>Instalar el compilador Fortran<a class="headerlink" href="#Instalar-el-compilador-Fortran" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>gfortran<span class="w"> </span>-y
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+The system cannot find the path specified.
+</pre></div></div>
+</div>
+</section>
+<section id="Verificar-la-instalación">
+<h3><span class="section-number">1.3.2. </span>Verificar la instalación<a class="headerlink" href="#Verificar-la-instalación" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>gfortran<span class="w"> </span>--version
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+GNU Fortran (conda-forge gcc 15.1.0-5) 15.1.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+</pre></div></div>
+</div>
+</section>
+<section id="id3">
+<h3><span class="section-number">1.3.3. </span>Descargar Programas<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib.request</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zipfile</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.statios.com/software/gslib90_ls.tar.gz&quot;</span>
+<span class="n">tar_path</span> <span class="o">=</span> <span class="s2">&quot;gslib90_ls.tar.gz&quot;</span>
+
+<span class="c1"># Descargar el archivo tar.gz</span>
+<span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">tar_path</span><span class="p">)</span>
+<span class="c1"># Descomprimir el tar.gz en el directorio actual</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tarfile</span>
+<span class="k">with</span> <span class="n">tarfile</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">tar_path</span><span class="p">,</span> <span class="s2">&quot;r:gz&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">tar</span><span class="p">:</span>
+    <span class="n">tar</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s2">&quot;temp_gslib90&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">tar_path</span><span class="p">)</span>
+
+<span class="c1">## Crear directorio Gslib90</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&quot;Gslib90&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+C:\Users\Alvaro\AppData\Local\Temp\ipykernel_11476\1739640109.py:13: DeprecationWarning: Python 3.14 will, by default, filter extracted tar archives and reject files or modify their metadata. Use the filter argument to control this behavior.
+  tar.extractall(&#34;temp_gslib90&#34;)
+</pre></div></div>
+</div>
+</section>
+<section id="Compilar-programas">
+<h3><span class="section-number">1.3.4. </span>Compilar programas<a class="headerlink" href="#Compilar-programas" title="Link to this heading"></a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>gfortran<span class="w"> </span>-w<span class="w"> </span>-O3<span class="w"> </span>-fallow-argument-mismatch<span class="w"> </span>-o<span class="w"> </span>./Gslib90/gamv<span class="w"> </span>./temp_gslib90/gslib90/gamv.for<span class="w"> </span>./temp_gslib90/gslib90/gslib/*.for
+<span class="o">!</span>gfortran<span class="w"> </span>-w<span class="w"> </span>-O3<span class="w"> </span>-fallow-argument-mismatch<span class="w"> </span>-o<span class="w"> </span>./Gslib90/vmodel<span class="w"> </span>./temp_gslib90/gslib90/vmodel.for<span class="w"> </span>./temp_gslib90/gslib90/gslib/*.for
+<span class="o">!</span>gfortran<span class="w"> </span>-w<span class="w"> </span>-O3<span class="w"> </span>-fallow-argument-mismatch<span class="w"> </span>-o<span class="w"> </span>./Gslib90/ik3d<span class="w"> </span>./temp_gslib90/gslib90/ik3d.for<span class="w"> </span>./temp_gslib90/gslib90/gslib/*.for
+<span class="o">!</span>gfortran<span class="w"> </span>-w<span class="w"> </span>-O3<span class="w"> </span>-fallow-argument-mismatch<span class="w"> </span>-o<span class="w"> </span>./Gslib90/kt3d<span class="w"> </span>./temp_gslib90/gslib90/kt3d.for<span class="w"> </span>./temp_gslib90/gslib90/gslib/*.for
+<span class="o">!</span>gfortran<span class="w"> </span>-w<span class="w"> </span>-O3<span class="w"> </span>-fallow-argument-mismatch<span class="w"> </span>-o<span class="w"> </span>./Gslib90/varmap<span class="w"> </span>./temp_gslib90/gslib90/varmap.for<span class="w"> </span>./temp_gslib90/gslib90/gslib/*.for
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Remover-Carpeta-temporal-a-mano">
+<h3><span class="section-number">1.3.5. </span>Remover Carpeta temporal a mano<a class="headerlink" href="#Remover-Carpeta-temporal-a-mano" title="Link to this heading"></a></h3>
+</section>
+<section id="id4">
+<h3><span class="section-number">1.3.6. </span>Probar correcta instalación<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+
+<span class="c1"># Using subprocess.run() to capture output</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;./Gslib90/gamv&quot;</span><span class="p">,</span> <span class="s2">&quot;holar.par&quot;</span><span class="p">],</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+ GAMV Version: 3.000
+
+ ERROR - the parameter file does not exist,
+         check for the file and try again
+
+
+</pre></div></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Capítulo 4. Estimación de Recursos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="01_GrillaEst.html" class="btn btn-neutral float-right" title="2. Grilla de estimación" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Alvaro I. Riquelme.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

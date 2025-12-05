@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capítulo 4. Estimación de Recursos &mdash; Ore Body Modeling  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/./custom.css?v=410b8f1b" />
+
+  
+    <link rel="shortcut icon" href="../../_static/logoEvYac2.png"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/require.min.js?v=8a87acde"></script>
+      <script src="../../_static/hide_code_cells.js?v=51dbf054"></script>
+      <script src="../../_static/custom.js?v=033d039c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1. Instalando la GSLIB" href="00_GSLIB.html" />
+    <link rel="prev" title="1. Compositacion de Sondajes" href="../03/01_Comp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ore Body Modeling
+              <img src="../../_static/logoEvYac2.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00/index.html">Chapter 0. Preparing your computer for this course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01/index.html">Capítulo 1. Estudio Exploratorio de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/index.html">Capítulo 2. Análisis Espacial de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/index.html">Capítulo 3. Compositación</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Capítulo 4. Estimación de Recursos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="00_GSLIB.html">1. Instalación de GSLIB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_GrillaEst.html">2. Determinación de grilla de estimación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Def_UG_Vol.html">3. Generación de volúmenes de estimación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Estimacion_leyes.html">4. Estimación por Kriging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_Validacion.html">5. Compilación de Resultados y Validación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_Validacion.html#Apéndice:-Demarcación-de-topografía">6. Apéndice: Demarcación de topografía</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ore Body Modeling</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Capítulo 4. Estimación de Recursos</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="capitulo-4-estimacion-de-recursos">
+<h1>Capítulo 4. Estimación de Recursos<a class="headerlink" href="#capitulo-4-estimacion-de-recursos" title="Link to this heading"></a></h1>
+<p class="rubric">Contenidos</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="00_GSLIB.html">1. Instalación de GSLIB</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="00_GSLIB.html#Instalacion-en-Colab">1.1. Instalacion en Colab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_GSLIB.html#Instalacion-en-Jupyter-(Windows)">1.2. Instalacion en Jupyter (Windows)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="00_GSLIB.html#Instalacion-en-Jupyter-(Mac)">1.3. Instalacion en Jupyter (Mac)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="01_GrillaEst.html">2. Determinación de grilla de estimación</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_GrillaEst.html#Simplificacion-de-base-de-datos-compositada">2.1. Simplificacion de base de datos compositada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_GrillaEst.html#Determinación-de-parámetros-de-la-grilla">2.2. Determinación de parámetros de la grilla</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_GrillaEst.html#Visualizacion-de-los-limites-de-la-grilla">2.3. Visualizacion de los limites de la grilla</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02_Def_UG_Vol.html">3. Generación de volúmenes de estimación</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_Def_UG_Vol.html#Un-poco-de-teoría-acerca-del-Kriging-de-indicadores">3.1. Un poco de teoría acerca del Kriging de indicadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Def_UG_Vol.html#Cargar-las-bibliotecas-requeridas">3.2. Cargar las bibliotecas requeridas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Def_UG_Vol.html#Proporciones-de-cada-UG-en-nuestra-base-de-datos">3.3. Proporciones de cada UG en nuestra base de datos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Def_UG_Vol.html#Codificar-base-de-datos-en-funcion-de-indicadores">3.4. Codificar base de datos en funcion de indicadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Def_UG_Vol.html#Variograma-experimental-de-indicadores">3.5. Variograma experimental de indicadores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Def_UG_Vol.html#Modelado-del-variograma">3.6. Modelado del variograma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Def_UG_Vol.html#Kriging-de-Indicadores">3.7. Kriging de Indicadores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_Estimacion_leyes.html">4. Estimación por Kriging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_Estimacion_leyes.html#Cargar-las-bibliotecas-requeridas">4.1. Cargar las bibliotecas requeridas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Estimacion_leyes.html#Búsqueda-de-anisotropías-y-variograma-experimental">4.2. Búsqueda de anisotropías y variograma experimental</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Estimacion_leyes.html#Selección-de-plan-de-estimación">4.3. Selección de plan de estimación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Estimacion_leyes.html#Parámetros-de-la-malla-3D-de-estimación">4.4. Parámetros de la malla 3D de estimación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Estimacion_leyes.html#Kriging-para-variables-continuas---Ley-de-Cu---UG-4">4.5. Kriging para variables continuas - Ley de Cu - UG 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Estimacion_leyes.html#Categorizacion-de-Recursos---UG-4">4.6. Categorizacion de Recursos - UG 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Estimacion_leyes.html#Exportar-modelo">4.7. Exportar modelo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="04_Validacion.html">5. Compilación de Resultados y Validación</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04_Validacion.html#Cargar-las-bibliotecas-requeridas">5.1. Cargar las bibliotecas requeridas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_Validacion.html#Cargar-modelos-de-UGs-y-Leyes">5.2. Cargar modelos de UGs y Leyes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="04_Validacion.html#Apéndice:-Demarcación-de-topografía">6. Apéndice: Demarcación de topografía</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04_Validacion.html#Instalar-librerias-de-manejo-de-CAD">6.1. Instalar librerias de manejo de CAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_Validacion.html#Flagear-topografía-en-modelo-de-bloques-vació">6.2. Flagear topografía en modelo de bloques vació</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_Validacion.html#Leer-y-demarcar-modelo-de-leyes">6.3. Leer y demarcar modelo de leyes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_Validacion.html#Validación-visual">6.4. Validación visual</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../03/01_Comp.html" class="btn btn-neutral float-left" title="1. Compositacion de Sondajes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="00_GSLIB.html" class="btn btn-neutral float-right" title="1. Instalando la GSLIB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Alvaro I. Riquelme.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

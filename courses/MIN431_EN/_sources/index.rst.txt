@@ -1,0 +1,41 @@
+Ore Body Modeling
+=====================================================================
+
+Ore body resource and reserve evaluation is a highly quantitative discipline,
+and professionals dedicated to it must have the necessary skills to analyze
+quantitatively the available information. This course takes a practical approach to developing
+these skills. Together, we will analyze real information taken from ore bodies. We will learn how to
+organize, analyze, and generate new graphical and interactive information from the
+geological data received, useful for decision-making on investment and planning.
+
+Teaching Staff
+------
+
+- Instructor
+
+   + `Álvaro Riquelme <https://arqlm.github.io/>`_ (alvaro.riquelme@uai.cl)
+
+- Teaching Assistant
+
+   + Fernanda Torres (fernantorres@alumnos.uai.cl)
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Notes
+
+   lessons/00/index
+   lessons/01/index
+   lessons/02/index
+   lessons/03/index
+   lessons/04/index
+
+
+Resources
+------
+
+- These notes were built based on the following resources:
+   + `Online notes by Professor Julian M. Ortiz <https://julianmortiz.com/articles?blogcategory=Lectures>`_
+   + `Notes by Professor Xavier Emery <https://www.u-cursos.cl/ingenieria/2007/2/MI75D/1/material_docente/bajar?bajar=1&id=138609>`_
+   + `Online material by Professor Michael Pyrcz <https://geostatsguy.github.io/GeostatsPyDemos_Book/>`_
+   + `Modules corresponding to the course Introduction to Data Analytics in Geosciences with Python <https://www.youtube.com/playlist?list=PLmlIjcqay_fw0Km6chOslDtVrX9PYAuEn>`_
+   + `github copilot <https://github.com/features/copilot>`_

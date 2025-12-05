@@ -1,0 +1,671 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Configuración de recursos computacionales &mdash; Ore Body Modeling  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css?v=720011df" />
+      <link rel="stylesheet" type="text/css" href="../../_static/./custom.css?v=410b8f1b" />
+
+  
+    <link rel="shortcut icon" href="../../_static/logoEvYac2.png"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="../../_static/require.min.js?v=8a87acde"></script>
+      <script src="../../_static/hide_code_cells.js?v=51dbf054"></script>
+      <script src="../../_static/custom.js?v=033d039c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2. Introducción a JupyterLab" href="intro_a_jupyterlab.html" />
+    <link rel="prev" title="Chapter 0. Preparing your computer for this course" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ore Body Modeling
+              <img src="../../_static/logoEvYac2.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Notes</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Chapter 0. Preparing your computer for this course</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1. Setting up your computer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Configuración-de-Google-Colab">1.1. Configuración de Google Colab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Advertencias-al-usar-Colab">1.1.1. Advertencias al usar Colab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Software-en-Colab">1.1.2. Software en Colab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Colaborando-con-Colab">1.1.3. Colaborando con Colab</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Instalación-en-tu-propio-computador">1.2. Instalación en tu propio computador</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Descargar-e-instalar-Anaconda">1.3. Descargar e instalar Anaconda</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Windows">1.3.1. Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#macOS">1.3.2. macOS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Linux">1.3.3. Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Configuración-de-un-entorno-conda">1.4. Configuración de un entorno conda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Ejecutando-JupyterLab">1.5. Ejecutando JupyterLab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Verificando-tu-instalación">1.6. Verificando tu instalación</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="intro_a_jupyterlab.html">2. Introduction to Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro_a_latex.html">3. Introduction to LaTeX</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../01/index.html">Capítulo 1. Estudio Exploratorio de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/index.html">Capítulo 2. Análisis Espacial de Datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/index.html">Capítulo 3. Compositación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/index.html">Capítulo 4. Estimación de Recursos</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ore Body Modeling</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Chapter 0. Preparing your computer for this course</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Configuración de recursos computacionales</li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/arqlm/arqlm.github.io/blob/main/courses/MIN431_EN/lessons/00/preparando_tu_computador.ipynb" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+  <span style="white-space: nowrap;">
+    <a href="https://colab.research.google.com/github/arqlm/arqlm.github.io/blob/main/courses/MIN431_EN/lessons/00/preparando_tu_computador.ipynb">
+      <img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"
+        style="vertical-align:text-bottom">
+    |</a>
+    <a href="preparando_tu_computador.ipynb" class="reference download internal" download>Download notebook</a>.
+  </span>
+</div><section id="Configuración-de-recursos-computacionales">
+<h1><span class="section-number">1. </span>Configuración de recursos computacionales<a class="headerlink" href="#Configuración-de-recursos-computacionales" title="Link to this heading"></a></h1>
+<p>En esta sección configurarás un entorno de computación en Python para computación científica en tu propio computador y también aprenderás un poco sobre Google Colab, un servicio en la nube para ejecutar notebooks de Jupyter.</p>
+<p>Es ventajoso aprender a configurar una distribución de Python y gestionar paquetes en tu propio equipo, ya que cada persona puede tener diferentes necesidades. Dicho esto, <a class="reference external" href="https://colab.research.google.com/">Google Colab</a> es un recurso gratuito muy útil para ejecutar notebooks de Jupyter en los computadores de Google sin necesidad de instalaciones locales.</p>
+<section id="Configuración-de-Google-Colab">
+<h2><span class="section-number">1.1. </span>Configuración de Google Colab<a class="headerlink" href="#Configuración-de-Google-Colab" title="Link to this heading"></a></h2>
+<p>Para usar Google Colab, debes tener una cuenta de Google. Muchos de ustedes probablemente tienen una cuenta personal de Google, generalmente creada para cosas como GMail, YouTube, etc. Para tu trabajo en este curso, <strong>usa tu cuenta de la UAI.</strong> Esto facilitará la colaboración con tus compañeros y con el personal del curso.</p>
+<p>Muchos probablemente usan su cuenta personal de Google en su computador, por lo que puede ser molesto iniciar y cerrar sesión. Un truco útil es usar un navegador, por ejemplo, Safari o Microsoft Edge, para tu uso personal y navegación web, y otro navegador diferente para tu trabajo científico, incluyendo el trabajo de este curso. Google Colab está más probado en Chrome, Firefox y Safari (de hecho, JupyterLab, que usarás en tu propio computador, solo soporta estos tres navegadores).</p>
+<p>Una vez que hayas cerrado sesión en todas tus cuentas personales o tengas un navegador diferente abierto, puedes abrir un notebook de Colab simplemente navegando a <a class="reference external" href="https://colab.research.google.com/">https://colab.research.google.com/</a>. Alternativamente, puedes hacer clic en el botón “Launch in Colab” en la parte superior derecha de esta página, y se abrirá este notebook en Colab. Ese botón aparecerá en la parte superior derecha de todas las páginas del contenido del curso generado desde notebooks.</p>
+<section id="Advertencias-al-usar-Colab">
+<h3><span class="section-number">1.1.1. </span>Advertencias al usar Colab<a class="headerlink" href="#Advertencias-al-usar-Colab" title="Link to this heading"></a></h3>
+<p>Si ejecutas un notebook en Colab, estás haciendo tus cálculos en uno de los computadores de Google mediante una máquina virtual. Obtienes dos núcleos de CPU y una cantidad limitada (alrededor de 12 GB, pero varía) de RAM. También puedes obtener GPUs y TPUs (unidades de procesamiento tensorial de Google), pero no las usaremos en este curso. Los recursos computacionales deberían ser suficientes para todos nuestros cálculos este semestre (aunque necesitarás más potencia en la continuación de este
+curso). Sin embargo, hay algunas limitaciones que debes conocer.</p>
+<ul class="simple">
+<li><p>Si tu notebook está inactivo por mucho tiempo, te desconectarás. “Inactivo” significa que no se están editando ni ejecutando celdas. El tiempo de espera varía según la carga de los computadores de Google; casi siempre me desconecto si estoy inactivo por una hora.</p></li>
+<li><p>Tu máquina virtual se desconectará si se usa por demasiado tiempo. Normalmente solo estará disponible por 12 horas antes de desconectarse, aunque los tiempos pueden variar, nuevamente según la carga.</p></li>
+</ul>
+<p>Estas limitaciones existen para que Google pueda ofrecer Colab de forma gratuita. Si quieres más núcleos, tiempos de espera más largos, etc., puedes revisar <a class="reference external" href="https://colab.research.google.com/signup">Colab Pro</a>. Sin embargo, la versión gratuita debería funcionar bien para este curso. Por supuesto, siempre puedes trabajar en tu propio computador, y de hecho se recomienda hacerlo.</p>
+<p>Recomiendo leer las <a class="reference external" href="https://research.google.com/colaboratory/faq.html">Preguntas frecuentes de Colab</a> para más información sobre Colab.</p>
+</section>
+<section id="Software-en-Colab">
+<h3><span class="section-number">1.1.2. </span>Software en Colab<a class="headerlink" href="#Software-en-Colab" title="Link to this heading"></a></h3>
+<p>Cuando abres un notebook en Google Colab, gran parte del software que usaremos en clase ya está instalado. Sin embargo, no siempre es la versión más reciente. De hecho, en julio de 2024, Colab ejecuta Python 3.10, mientras que en tu computador usarás Python 3.12 a través de tu instalación de Anaconda. No obstante, la mayoría (pero no todas) de los análisis que haremos funcionarán bien en Colab. Haremos todo lo posible para avisarte cuando Colab no pueda manejar alguna actividad, siendo el
+ejemplo más importante algunas aplicaciones de dashboard.</p>
+<p>Como los notebooks en Colab tienen software preinstalado, y nada más, a menudo necesitarás instalar software antes de ejecutar el resto del código en un notebook.</p>
+</section>
+<section id="Colaborando-con-Colab">
+<h3><span class="section-number">1.1.3. </span>Colaborando con Colab<a class="headerlink" href="#Colaborando-con-Colab" title="Link to this heading"></a></h3>
+<p>Si quieres colaborar con otro estudiante o con el personal del curso en un notebook, puedes hacer clic en “Share” en la esquina superior derecha de la ventana de Colab y elegir con quién y cómo compartir (los valores por defecto están bien).</p>
+<p>Cuando hablemos de Git en una lección futura, discutiremos el soporte de Colab para GitHub, que será necesario para el control de versiones y para enviar y compartir tus tareas.</p>
+</section>
+</section>
+<section id="Instalación-en-tu-propio-computador">
+<h2><span class="section-number">1.2. </span>Instalación en tu propio computador<a class="headerlink" href="#Instalación-en-tu-propio-computador" title="Link to this heading"></a></h2>
+<p>Ahora procederemos a discutir la instalación del software necesario en tu propio equipo.</p>
+</section>
+<section id="Descargar-e-instalar-Anaconda">
+<h2><span class="section-number">1.3. </span>Descargar e instalar Anaconda<a class="headerlink" href="#Descargar-e-instalar-Anaconda" title="Link to this heading"></a></h2>
+<p>Si ya tienes Anaconda instalado en tu computador, puedes saltarte este paso y proceder a instalar node.js.</p>
+<p>Para descargar e instalar Anaconda, sigue estos pasos según tu sistema operativo.</p>
+<section id="Windows">
+<h3><span class="section-number">1.3.1. </span>Windows<a class="headerlink" href="#Windows" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Ve a la <a class="reference external" href="https://www.anaconda.com/products/distribution#download-section">página oficial de descargas de Anaconda</a>. Puedes saltarte el registro presionando en <em>Skip registration</em></p></li>
+<li><p>Haz clic en el botón de descarga para Windows (elige la versión recomendada para tu sistema, normalmente de 64 bits).</p></li>
+<li><p>Una vez descargado el instalador, haz doble clic en el archivo <code class="docutils literal notranslate"><span class="pre">.exe</span></code> para iniciar la instalación.</p></li>
+<li><p>Sigue las instrucciones del instalador. Se recomienda dejar las opciones por defecto.</p></li>
+<li><p>Cuando la instalación termine, puedes buscar “Anaconda Navigator” o “Anaconda Prompt” en el menú Inicio para comenzar a usar Anaconda.</p></li>
+</ol>
+</section>
+<section id="macOS">
+<h3><span class="section-number">1.3.2. </span>macOS<a class="headerlink" href="#macOS" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Ve a la <a class="reference external" href="https://www.anaconda.com/products/distribution#download-section">página oficial de descargas de Anaconda</a>. Puedes saltarte el registro presionando en <em>Skip registration</em></p></li>
+<li><p>Haz clic en el botón de descarga para macOS (elige la versión recomendada para tu sistema, Apple Silicon o Intel según corresponda).</p></li>
+<li><p>Una vez descargado el archivo <code class="docutils literal notranslate"><span class="pre">.pkg</span></code>, haz doble clic para iniciar la instalación.</p></li>
+<li><p>Sigue las instrucciones del instalador. Se recomienda dejar las opciones por defecto.</p></li>
+<li><p>Cuando la instalación termine, puedes buscar “Anaconda Navigator” o abrir una Terminal y escribir <code class="docutils literal notranslate"><span class="pre">anaconda-navigator</span></code> o <code class="docutils literal notranslate"><span class="pre">conda</span></code> para comenzar a usar Anaconda.</p></li>
+</ol>
+</section>
+<section id="Linux">
+<h3><span class="section-number">1.3.3. </span>Linux<a class="headerlink" href="#Linux" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Ve a la <a class="reference external" href="https://www.anaconda.com/products/distribution#download-section">página oficial de descargas de Anaconda</a>. Puedes saltarte el registro presionando en <em>Skip registration</em>.</p></li>
+<li><p>Descarga el instalador para Linux (archivo <code class="docutils literal notranslate"><span class="pre">.sh</span></code>).</p></li>
+<li><p>Abre una terminal y navega a la carpeta donde descargaste el archivo.</p></li>
+<li><p>Ejecuta el siguiente comando para iniciar la instalación:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash Anaconda3-*.sh
+</pre></div>
+</div>
+<p>(Reemplaza <code class="docutils literal notranslate"><span class="pre">Anaconda3-*.sh</span></code> por el nombre exacto del archivo descargado.)</p>
+</li>
+<li><p>Sigue las instrucciones en pantalla. Se recomienda dejar las opciones por defecto.</p></li>
+<li><p>Cuando la instalación termine, puedes iniciar Anaconda escribiendo <code class="docutils literal notranslate"><span class="pre">anaconda-navigator</span></code> o <code class="docutils literal notranslate"><span class="pre">conda</span></code> en la terminal.</p></li>
+</ol>
+</section>
+</section>
+<section id="Configuración-de-un-entorno-conda">
+<h2><span class="section-number">1.4. </span>Configuración de un entorno conda<a class="headerlink" href="#Configuración-de-un-entorno-conda" title="Link to this heading"></a></h2>
+<p>He creado un entorno conda para usar en este curso. Puedes descargar el archivo YML de especificación del entorno en el siguiente enlace (puede que necesites hacer clic derecho y luego descargar).</p>
+<blockquote>
+<div><p><a class="reference external" href="https://raw.githubusercontent.com/arqlm/arqlm.github.io/main/_static/min431.yml">Descargar min431.yml</a> (hacer click derecho y “Guardar enlace como…”)</p>
+</div></blockquote>
+<p>Puedes configurar y activar el entorno desde la línea de comandos. (Por “línea de comandos” me refiero a un prompt en una ventana de PowerShell o terminal). Navega al directorio donde guardaste el archivo <code class="docutils literal notranslate"><span class="pre">bebi103.yml</span></code>. (Por ejemplo, si está en un directorio llamado <code class="docutils literal notranslate"><span class="pre">Descargas</span></code> en tu carpeta personal, deberías hacer <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/Descargas</span></code> en la línea de comandos para ir allí). Luego, en la línea de comandos, escribe</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda env create -f min431.yml
+</pre></div>
+</div>
+<p>Esto debería crear el entorno para ti (puede tardar varios minutos). Para activarlo, escribe</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate min431
+</pre></div>
+</div>
+<p>en la línea de comandos.</p>
+</section>
+<section id="Ejecutando-JupyterLab">
+<h2><span class="section-number">1.5. </span>Ejecutando JupyterLab<a class="headerlink" href="#Ejecutando-JupyterLab" title="Link to this heading"></a></h2>
+<p>Puedes ejecutar JupyterLab desde el programa de terminal de tu sistema operativo (Terminal en macOS y PowerShell en Windows). Si estás en Mac, abre el programa <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>. Puedes hacerlo presionando <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">+</span> <span class="pre">espacio</span></code> y buscando “terminal”. En Windows, debes el programa <strong>Anaconda Prompt (Anaconda3)</strong></p>
+<p>Una vez que tengas una ventana de terminal abierta, tendrás un prompt. En el prompt, escribe</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate min431
+</pre></div>
+</div>
+<p>Esto asegurará que estás usando el entorno min431 que acabas de crear.</p>
+<p><strong>Debes asegurarte de estar usando el entorno min431 cada vez que ejecutes JupyterLab, así que debes hacer conda activate min431 cada vez que abras una terminal.</strong></p>
+<p>Ahora que has activado el entorno min431, puedes ejecutar JupyterLab escribiendo</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter lab
+</pre></div>
+</div>
+<p>en la línea de comandos. Tendrás una instancia de JupyterLab ejecutándose en tu navegador por defecto. Si quieres especificar el navegador, puedes, por ejemplo, escribir</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter lab --browser=firefox
+</pre></div>
+</div>
+<p>en la línea de comandos.</p>
+</section>
+<section id="Verificando-tu-instalación">
+<h2><span class="section-number">1.6. </span>Verificando tu instalación<a class="headerlink" href="#Verificando-tu-instalación" title="Link to this heading"></a></h2>
+<p>Ahora haremos una prueba rápida para asegurarnos de que todo funciona correctamente. Haremos un gráfico rápido que requiere algunas de las librerías científicas que usaremos.</p>
+<p>Abre JupyterLab (puedes obtener un nueva instancia haciendo clic en el ícono <code class="docutils literal notranslate"><span class="pre">+</span></code> en el panel izquierdo de JupyterLab) para abrir un notebook. En la primera celda (la caja junto al prompt <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]:</span></code>), pega el siguiente código. Para ejecutarlo, presiona <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code> mientras el cursor está dentro de la celda. Deberías ver un gráfico como el que aparece abajo. Si lo ves, ¡tienes un entorno de Python funcional para computación científica!</p>
+<p>También puedes probar esto en Colab (y debería funcionar sin problemas).</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">bokeh.plotting</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">bokeh.io</span>
+
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">output_notebook</span><span class="p">()</span>
+
+<span class="c1"># Generar valores para graficar</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">13</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">275</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Min 431&#39;</span><span class="p">,</span> <span class="n">text_align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_layout</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<style>
+    .bk-notebook-logo {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAOkSURBVDiNjZRtaJVlGMd/1/08zzln5zjP1LWcU9N0NkN8m2CYjpgQYQXqSs0I84OLIC0hkEKoPtiH3gmKoiJDU7QpLgoLjLIQCpEsNJ1vqUOdO7ppbuec5+V+rj4ctwzd8IIbbi6u+8f1539dt3A78eXC7QizUF7gyV1fD1Yqg4JWz84yffhm0qkFqBogB9rM8tZdtwVsPUhWhGcFJngGeWrPzHm5oaMmkfEg1usvLFyc8jLRqDOMru7AyC8saQr7GG7f5fvDeH7Ej8CM66nIF+8yngt6HWaKh7k49Soy9nXurCi1o3qUbS3zWfrYeQDTB/Qj6kX6Ybhw4B+bOYoLKCC9H3Nu/leUTZ1JdRWkkn2ldcCamzrcf47KKXdAJllSlxAOkRgyHsGC/zRday5Qld9DyoM4/q/rUoy/CXh3jzOu3bHUVZeU+DEn8FInkPBFlu3+nW3Nw0mk6vCDiWg8CeJaxEwuHS3+z5RgY+YBR6V1Z1nxSOfoaPa4LASWxxdNp+VWTk7+4vzaou8v8PN+xo+KY2xsw6une2frhw05CTYOmQvsEhjhWjn0bmXPjpE1+kplmmkP3suftwTubK9Vq22qKmrBhpY4jvd5afdRA3wGjFAgcnTK2s4hY0/GPNIb0nErGMCRxWOOX64Z8RAC4oCXdklmEvcL8o0BfkNK4lUg9HTl+oPlQxdNo3Mg4Nv175e/1LDGzZen30MEjRUtmXSfiTVu1kK8W4txyV6BMKlbgk3lMwYCiusNy9fVfvvwMxv8Ynl6vxoByANLTWplvuj/nF9m2+PDtt1eiHPBr1oIfhCChQMBw6Aw0UulqTKZdfVvfG7VcfIqLG9bcldL/+pdWTLxLUy8Qq38heUIjh4XlzZxzQm19lLFlr8vdQ97rjZVOLf8nclzckbcD4wxXMidpX30sFd37Fv/GtwwhzhxGVAprjbg0gCAEeIgwCZyTV2Z1REEW8O4py0wsjeloKoMr6iCY6dP92H6Vw/oTyICIthibxjm/DfN9lVz8IqtqKYLUXfoKVMVQVVJOElGjrnnUt9T9wbgp8AyYKaGlqingHZU/uG2NTZSVqwHQTWkx9hxjkpWDaCg6Ckj5qebgBVbT3V3NNXMSiWSDdGV3hrtzla7J+duwPOToIg42ChPQOQjspnSlp1V+Gjdged7+8UN5CRAV7a5EdFNwCjEaBR27b3W890TE7g24NAP/mMDXRWrGoFPQI9ls/MWO2dWFAar/xcOIImbbpA3zgAAAABJRU5ErkJggg==);
+    }
+</style>
+<div>
+    <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
+    <span id="dd6eb3ee-b72f-4784-bb02-04cacd6768b7">Loading BokehJS ...</span>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="output_javascript"></div>
+<script type="text/javascript">
+var element = document.currentScript.previousSibling.previousSibling;
+'use strict';
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  const force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+const JS_MIME_TYPE = 'application/javascript';
+  const HTML_MIME_TYPE = 'text/html';
+  const EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
+  const CLASS_NAME = 'output_bokeh rendered_html';
+
+  /**
+   * Render data to the DOM node
+   */
+  function render(props, node) {
+    const script = document.createElement("script");
+    node.appendChild(script);
+  }
+
+  /**
+   * Handle when an output is cleared or removed
+   */
+  function handleClearOutput(event, handle) {
+    function drop(id) {
+      const view = Bokeh.index.get_by_id(id)
+      if (view != null) {
+        view.model.document.clear()
+        Bokeh.index.delete(view)
+      }
+    }
+
+    const cell = handle.cell;
+
+    const id = cell.output_area._bokeh_element_id;
+    const server_id = cell.output_area._bokeh_server_id;
+
+    // Clean up Bokeh references
+    if (id != null) {
+      drop(id)
+    }
+
+    if (server_id !== undefined) {
+      // Clean up Bokeh references
+      const cmd_clean = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
+      cell.notebook.kernel.execute(cmd_clean, {
+        iopub: {
+          output: function(msg) {
+            const id = msg.content.text.trim()
+            drop(id)
+          }
+        }
+      });
+      // Destroy server and session
+      const cmd_destroy = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
+      cell.notebook.kernel.execute(cmd_destroy);
+    }
+  }
+
+  /**
+   * Handle when a new output is added
+   */
+  function handleAddOutput(event, handle) {
+    const output_area = handle.output_area;
+    const output = handle.output;
+
+    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
+    if ((output.output_type != "display_data") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {
+      return
+    }
+
+    const toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+
+    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
+      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
+      // store reference to embed id on output_area
+      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
+    }
+    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+      const bk_div = document.createElement("div");
+      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+      const script_attrs = bk_div.children[0].attributes;
+      for (let i = 0; i < script_attrs.length; i++) {
+        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
+        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
+      }
+      // store reference to server id on output_area
+      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+    }
+  }
+
+  function register_renderer(events, OutputArea) {
+
+    function append_mime(data, metadata, element) {
+      // create a DOM node to render to
+      const toinsert = this.create_output_subarea(
+        metadata,
+        CLASS_NAME,
+        EXEC_MIME_TYPE
+      );
+      this.keyboard_manager.register_events(toinsert);
+      // Render to node
+      const props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+      render(props, toinsert[toinsert.length - 1]);
+      element.append(toinsert);
+      return toinsert
+    }
+
+    /* Handle when an output is cleared or removed */
+    events.on('clear_output.CodeCell', handleClearOutput);
+    events.on('delete.Cell', handleClearOutput);
+
+    /* Handle when a new output is added */
+    events.on('output_added.OutputArea', handleAddOutput);
+
+    /**
+     * Register the mime type and append_mime function with output_area
+     */
+    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+      /* Is output safe? */
+      safe: true,
+      /* Index of renderer in `output_area.display_order` */
+      index: 0
+    });
+  }
+
+  // register the mime type if in Jupyter Notebook environment and previously unregistered
+  if (root.Jupyter !== undefined) {
+    const events = require('base/js/events');
+    const OutputArea = require('notebook/js/outputarea').OutputArea;
+
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  }
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  const NB_LOAD_WARNING = {'data': {'text/html':
+     "<div style='background-color: #fdd'>\n"+
+     "<p>\n"+
+     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+     "may be due to a slow or bad network connection. Possible fixes:\n"+
+     "</p>\n"+
+     "<ul>\n"+
+     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+     "<li>use INLINE resources instead, as so:</li>\n"+
+     "</ul>\n"+
+     "<code>\n"+
+     "from bokeh.resources import INLINE\n"+
+     "output_notebook(resources=INLINE)\n"+
+     "</code>\n"+
+     "</div>"}};
+
+  function display_loaded(error = null) {
+    const el = document.getElementById("dd6eb3ee-b72f-4784-bb02-04cacd6768b7");
+    if (el != null) {
+      const html = (() => {
+        if (typeof root.Bokeh === "undefined") {
+          if (error == null) {
+            return "BokehJS is loading ...";
+          } else {
+            return "BokehJS failed to load.";
+          }
+        } else {
+          const prefix = `BokehJS ${root.Bokeh.version}`;
+          if (error == null) {
+            return `${prefix} successfully loaded.`;
+          } else {
+            return `${prefix} <b>encountered errors</b> while loading and may not function as expected.`;
+          }
+        }
+      })();
+      el.innerHTML = html;
+
+      if (error != null) {
+        const wrapper = document.createElement("div");
+        wrapper.style.overflow = "auto";
+        wrapper.style.height = "5em";
+        wrapper.style.resize = "vertical";
+        const content = document.createElement("div");
+        content.style.fontFamily = "monospace";
+        content.style.whiteSpace = "pre-wrap";
+        content.style.backgroundColor = "rgb(255, 221, 221)";
+        content.textContent = error.stack ?? error.toString();
+        wrapper.append(content);
+        el.append(wrapper);
+      }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(() => display_loaded(error), 100);
+    }
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls == null || js_urls.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error(url) {
+      console.error("failed to load " + url);
+    }
+
+    for (let i = 0; i < css_urls.length; i++) {
+      const url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    for (let i = 0; i < js_urls.length; i++) {
+      const url = js_urls[i];
+      const element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.6.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.6.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.6.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.6.2.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.6.2.min.js"];
+  const css_urls = [];
+
+  const inline_js = [    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+function(Bokeh) {
+    }
+  ];
+
+  function run_inline_js() {
+    if (root.Bokeh !== undefined || force === true) {
+      try {
+            for (let i = 0; i < inline_js.length; i++) {
+      inline_js[i].call(root, root.Bokeh);
+    }
+
+      } catch (error) {display_loaded(error);throw error;
+      }if (force === true) {
+        display_loaded();
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    } else if (force !== true) {
+      const cell = $(document.getElementById("dd6eb3ee-b72f-4784-bb02-04cacd6768b7")).parents('.cell').data().cell;
+      cell.output_area.append_execute_result(NB_LOAD_WARNING)
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));
+</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div id="eb2ad23f-b1b0-4709-bca4-1738aac211e7" data-root-id="p1001" style="display: contents;"></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="output_javascript"></div>
+<script type="text/javascript">
+var element = document.currentScript.previousSibling.previousSibling;
+(function(root) {
+  function embed_document(root) {
+  const docs_json = {"304e5ed0-cf33-47f5-9940-14206c6597c0":{"version":"3.6.2","title":"Bokeh Application","roots":[{"type":"object","name":"Figure","id":"p1001","attributes":{"width":275,"height":250,"x_range":{"type":"object","name":"DataRange1d","id":"p1002"},"y_range":{"type":"object","name":"DataRange1d","id":"p1003"},"x_scale":{"type":"object","name":"LinearScale","id":"p1010"},"y_scale":{"type":"object","name":"LinearScale","id":"p1011"},"title":{"type":"object","name":"Title","id":"p1008"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1041","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1035","attributes":{"selected":{"type":"object","name":"Selection","id":"p1036","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1037"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[200],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[200],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1042","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1043"}}},"glyph":{"type":"object","name":"Line","id":"p1038","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_width":3}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1039","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.1,"line_width":3}},"muted_glyph":{"type":"object","name":"Line","id":"p1040","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"red","line_alpha":0.2,"line_width":3}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1009","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1022"},{"type":"object","name":"WheelZoomTool","id":"p1023","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1024","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1025","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1031","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1030","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1032"},{"type":"object","name":"ResetTool","id":"p1033"},{"type":"object","name":"HelpTool","id":"p1034"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1017","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1018","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1019"},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1020"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1012","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1013","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1014"},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1015"}}}],"center":[{"type":"object","name":"Grid","id":"p1016","attributes":{"axis":{"id":"p1012"}}},{"type":"object","name":"Grid","id":"p1021","attributes":{"dimension":1,"axis":{"id":"p1017"}}},{"type":"object","name":"Label","id":"p1044","attributes":{"text":"Min 431","text_align":"center","x":0,"y":0}}]}}]}};
+  const render_items = [{"docid":"304e5ed0-cf33-47f5-9940-14206c6597c0","roots":{"p1001":"eb2ad23f-b1b0-4709-bca4-1738aac211e7"},"root_ids":["p1001"]}];
+  void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined) {
+    embed_document(root);
+  } else {
+    let attempts = 0;
+    const timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else {
+        attempts++;
+        if (attempts > 100) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 10, root)
+  }
+})(window);
+</script></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Chapter 0. Preparing your computer for this course" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="intro_a_jupyterlab.html" class="btn btn-neutral float-right" title="2. Introducción a JupyterLab" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Alvaro I. Riquelme.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
